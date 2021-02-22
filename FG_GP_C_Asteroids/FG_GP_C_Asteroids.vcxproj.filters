@@ -13,6 +13,48 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Engine">
+      <UniqueIdentifier>{86e36800-63c8-48a8-8a7d-a57d3685ca02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine">
+      <UniqueIdentifier>{2371d0b3-e46f-494c-84a9-23da8237b86f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\Managers">
+      <UniqueIdentifier>{1db1cce2-d2a4-4c56-b4db-aeee896498f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Managers">
+      <UniqueIdentifier>{dbd9ef92-3aa3-424d-b75e-d22635450492}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Managers\Collision">
+      <UniqueIdentifier>{cbf00b41-299a-4042-9a82-dae5725cf59c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Managers\Render">
+      <UniqueIdentifier>{b6af3329-53a1-46ea-b24b-e7009c6e94aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Managers\Sprite">
+      <UniqueIdentifier>{f934ca9a-bb4b-4584-823c-30270a1086c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\Managers\Collision">
+      <UniqueIdentifier>{2e213bb2-839d-4633-8c9b-262f4c0bf374}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\Managers\Render">
+      <UniqueIdentifier>{21e4ce1b-ff57-4507-bf6f-a8fcd95980e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\Managers\Sprite">
+      <UniqueIdentifier>{4241d28f-1d3f-49ff-a1c9-6f45035a3131}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Managers\Input">
+      <UniqueIdentifier>{cb7eafc1-ace0-4996-8f67-71afd0a62d66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\Managers\Input">
+      <UniqueIdentifier>{da12bf41-7ecc-49df-ae2b-d1bf9b4e9d6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Managers\Entity">
+      <UniqueIdentifier>{1f10a5b2-6506-4327-b60d-91724718678e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\Managers\Entity">
+      <UniqueIdentifier>{b0cda970-7f50-404e-82e0-7275558a30f2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
