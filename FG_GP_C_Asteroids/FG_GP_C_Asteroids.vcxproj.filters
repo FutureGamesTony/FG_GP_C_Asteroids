@@ -66,6 +66,12 @@
     <ClCompile Include="RenderManager.cpp">
       <Filter>Source Files\Engine\Managers\Render</Filter>
     </ClCompile>
+    <ClCompile Include="Keyboard.cpp">
+      <Filter>Source Files\Engine\Managers\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Mouse.cpp">
+      <Filter>Source Files\Engine\Managers\Input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="InputManager.h">
@@ -73,6 +79,12 @@
     </ClInclude>
     <ClInclude Include="RenderManager.h">
       <Filter>Header Files\Engine\Managers\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Mouse.h">
+      <Filter>Header Files\Engine\Managers\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Keyboard.h">
+      <Filter>Header Files\Engine\Managers\Input</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
