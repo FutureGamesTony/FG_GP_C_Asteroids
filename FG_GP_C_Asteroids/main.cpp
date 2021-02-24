@@ -45,7 +45,7 @@ void input()
 
 void draw()
 {
-	SDL_SetRenderDrawColor(renderer, 49, 76, 83, 255); // set color to blueish-grey
+	SDL_SetRenderDrawColor(renderer, 49, 70, 83, 255); // set color to blueish-grey
 	SDL_Rect rect; //creates a rectangle
 	rect.x = rect.y = 0;
 	rect.w = WIDTH;
