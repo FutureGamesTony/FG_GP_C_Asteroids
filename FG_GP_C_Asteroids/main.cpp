@@ -1,11 +1,9 @@
 #include "SDL.h"
 #include "iostream"
 
+
 #define WIDTH 1280
 #define HEIGHT 720
-
-bool running;
-bool fullscreen;
 
 SDL_Renderer* renderer;
 SDL_Window* window;
@@ -14,6 +12,26 @@ int framecount;
 int timerFPS;
 int lastFrame;
 int fps;
+
+bool running;
+bool fullscreen;
+
+void input()
+{
+	SDL_Event e;
+	while (SDL_PollEvent(&e))
+	{
+		if (e.type == SDL_QUIT)
+		{
+			running = false;
+		}
+		const Uint8* keystates = SDL_GetKeyboardState(NULL);
+		{
+			if (keystates[SDL_SCANCODE_ESCAPE]) { running = false; }
+			if (keystates[SDL_SCANCODE_F11]) { fullscreen = !fullscreen; }
+		}
+	}
+}
 
 void update()
 {
@@ -24,22 +42,6 @@ void update()
 	if (!fullscreen)
 	{
 		SDL_SetWindowFullscreen(window, 0);
-	}
-}
-void input()
-{
-	SDL_Event e;
-	while (SDL_PollEvent(&e)) 
-	{
-		if(e.type == SDL_QUIT)
-		{
-			running = false;
-		}
-		const Uint8* keystates = SDL_GetKeyboardState(NULL);
-		{
-			if(keystates[SDL_SCANCODE_ESCAPE]) { running = false; }
-			if (keystates[SDL_SCANCODE_F11]) { fullscreen = !fullscreen; }
-		}
 	}
 }
 
