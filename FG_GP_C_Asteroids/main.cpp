@@ -1,6 +1,6 @@
 #include "SDL.h"
 #include "iostream"
-
+#include "Keyboard.h"
 
 #define WIDTH 1280
 #define HEIGHT 720
@@ -12,28 +12,30 @@ int framecount;
 int timerFPS;
 int lastFrame;
 int fps;
-
+Keyboard* key = nullptr;
 bool running;
 bool fullscreen;
 
-void input()
+void Input()
 {
-	SDL_Event e;
-	while (SDL_PollEvent(&e))
-	{
-		if (e.type == SDL_QUIT)
-		{
-			running = false;
-		}
-		const Uint8* keystates = SDL_GetKeyboardState(NULL);
-		{
-			if (keystates[SDL_SCANCODE_ESCAPE]) { running = false; }
-			if (keystates[SDL_SCANCODE_F11]) { fullscreen = !fullscreen; }
-		}
-	}
+	//SDL_Event e;
+	//while (SDL_PollEvent(&e))
+	//{
+	//	if (e.type == SDL_QUIT)
+	//	{
+	//		running = false;
+	//	}
+	//	const Uint8* keystates = SDL_GetKeyboardState(NULL);
+	//	{
+	//		if (keystates[SDL_SCANCODE_ESCAPE]) { running = false; }
+	//		if (keystates[SDL_SCANCODE_F11]) { fullscreen = !fullscreen; }
+	//	}
+	//}
+	key->GetKeyDown();
+
 }
 
-void update()
+void Update()
 {
 	if (fullscreen) 
 	{
@@ -45,7 +47,7 @@ void update()
 	}
 }
 
-void draw()
+void Draw()
 {
 	SDL_SetRenderDrawColor(renderer, 49, 70, 83, 255); // set color to blueish-grey
 	SDL_Rect rect; //creates a rectangle
@@ -84,11 +86,11 @@ int main(int argc, char** argv)
 			fps = framecount;
 			framecount = 0;
 		}
-		std::cout << fps << std::endl;
+		//std::cout << fps << std::endl;
 
-		update();
-		input();
-		draw();
+		Update();
+		Input();
+		Draw();
 	}
 
 	SDL_DestroyRenderer(renderer);

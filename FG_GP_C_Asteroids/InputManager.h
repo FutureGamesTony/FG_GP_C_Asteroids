@@ -7,8 +7,10 @@ class InputManager
 public:
 	InputManager();
 	~InputManager();
+	
 private:
 	Keyboard* keyboard;
 	Mouse* mouse;
+
 };
 
