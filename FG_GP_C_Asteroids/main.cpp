@@ -1,11 +1,9 @@
 #include "SDL.h"
 #include "iostream"
 
+
 #define WIDTH 1280
 #define HEIGHT 720
-
-bool running;
-bool fullscreen;
 
 SDL_Renderer* renderer;
 SDL_Window* window;
@@ -14,6 +12,26 @@ int framecount;
 int timerFPS;
 int lastFrame;
 int fps;
+
+bool running;
+bool fullscreen;
+
+void input()
+{
+	SDL_Event e;
+	while (SDL_PollEvent(&e))
+	{
+		if (e.type == SDL_QUIT)
+		{
+			running = false;
+		}
+		const Uint8* keystates = SDL_GetKeyboardState(NULL);
+		{
+			if (keystates[SDL_SCANCODE_ESCAPE]) { running = false; }
+			if (keystates[SDL_SCANCODE_F11]) { fullscreen = !fullscreen; }
+		}
+	}
+}
 
 void update()
 {
@@ -26,28 +44,13 @@ void update()
 		SDL_SetWindowFullscreen(window, 0);
 	}
 }
-void input()
-{
-	SDL_Event e;
-	while (SDL_PollEvent(&e)) 
-	{
-		if(e.type == SDL_QUIT)
-		{
-			running = false;
-		}
-		const Uint8* keystates = SDL_GetKeyboardState(NULL);
-		{
-			if(keystates[SDL_SCANCODE_ESCAPE]) { running = false; }
-			if (keystates[SDL_SCANCODE_F11]) { fullscreen = !fullscreen; }
-		}
-	}
-}
 
 void draw()
 {
 	SDL_SetRenderDrawColor(renderer, 49, 70, 83, 255); // set color to blueish-grey
 	SDL_Rect rect; //creates a rectangle
 	rect.x = rect.y = 0;
+
 	rect.w = WIDTH;
 	rect.h = HEIGHT;
 	SDL_RenderFillRect(renderer, &rect);
