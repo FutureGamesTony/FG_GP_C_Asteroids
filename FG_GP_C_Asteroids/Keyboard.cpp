@@ -14,6 +14,13 @@ void Keyboard::GetKeyDown()
 	SetKeyDown();
 }
 
+bool Keyboard::GetEscapePressed()
+{
+	return escapePressed;
+}
+
+
+
 void Keyboard::SetKeyDown()
 {
 	SDL_Event e;
@@ -37,7 +44,22 @@ void Keyboard::SetKeyDown()
 				break;
 			case SDLK_ESCAPE:
 				cout << "Escape pressed\n";
+				escapePressed = true;
 				break;
+			case SDLK_F11:
+				cout << "F11 pressed\n";
+				break;
+			default:
+				break;
+			}
+		}
+		if (e.type == SDL_KEYUP)
+		{
+			switch (e.key.keysym.sym)
+			{
+			case SDLK_ESCAPE:
+				cout << "Escape released\n";
+				escapePressed = false;
 			default:
 				break;
 			}

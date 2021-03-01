@@ -1,7 +1,7 @@
 #include "InputManager.h"
 #include "Keyboard.h"
 #include "Mouse.h"
-#include "SDL.h"
+//#include "SDL.h"
 
 InputManager::InputManager()
 {
@@ -15,4 +15,14 @@ InputManager::~InputManager()
 	keyboard = nullptr;
 	delete mouse;
 	mouse = nullptr;
+}
+
+void InputManager::GetKey()
+{
+	keyboard->GetKeyDown();
+}
+
+bool InputManager::QuitApplication()
+{
+	return keyboard->GetEscapePressed();
 }

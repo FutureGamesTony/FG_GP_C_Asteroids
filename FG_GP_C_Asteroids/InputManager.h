@@ -7,7 +7,8 @@ class InputManager
 public:
 	InputManager();
 	~InputManager();
-	
+	void GetKey();
+	bool QuitApplication();
 private:
 	Keyboard* keyboard;
 	Mouse* mouse;
