@@ -2,7 +2,8 @@
 #include "DrawWindow.h"
 RenderManager::RenderManager()
 {
-    m_drawWindow = new DrawWindow();
+    m_drawWindow = new DrawWindow(m_window, m_renderer);
+    
 }
 
 RenderManager::~RenderManager()
@@ -13,18 +14,14 @@ RenderManager::~RenderManager()
 
 bool RenderManager::InitializeWidow()
 {
-    //m_window = SDL_CreateWindow(m_windowTitle, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, m_width, m_height, 0);
-    //if(m_window == nullptr) return false;
-    //m_renderer = SDL_CreateRenderer(m_window, -1, 0);
-    //if (m_renderer == nullptr) return false;
-    //
-     m_drawWindow->CreateWindow();
+    m_window = m_drawWindow->CreateWindow(m_window);
+    m_renderer = m_drawWindow->CreateRenderer(m_window, m_renderer);
     return m_drawWindow != nullptr;
 }
 
 void RenderManager::UpdateWindow()
 {
-    m_drawWindow->UpdateWindow();
+    m_drawWindow->UpdateWindow(m_renderer);
 }
 
 void RenderManager::ShutDown()
