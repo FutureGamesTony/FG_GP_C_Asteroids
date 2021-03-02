@@ -81,6 +81,12 @@
     <ClCompile Include="DrawWindow.cpp">
       <Filter>Source Files\Engine\Managers\Render</Filter>
     </ClCompile>
+    <ClCompile Include="Asteroid.cpp">
+      <Filter>Source Files\Engine\Managers\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="Projectile.cpp">
+      <Filter>Source Files\Engine\Managers\Entity</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="InputManager.h">
@@ -106,6 +112,12 @@
     </ClInclude>
     <ClInclude Include="EngingConfig.h">
       <Filter>Header Files\Engine\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Asteroid.h">
+      <Filter>Header Files\Engine\Managers\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="Projectile.h">
+      <Filter>Header Files\Engine\Managers\Entity</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

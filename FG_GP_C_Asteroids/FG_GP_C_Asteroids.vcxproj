@@ -152,7 +152,9 @@
     <ClCompile Include="Mouse.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerSprite.cpp" />
+    <ClCompile Include="Projectile.cpp" />
     <ClCompile Include="RenderManager.cpp" />
+    <ClCompile Include="Asteroid.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DrawWindow.h" />
@@ -162,7 +164,9 @@
     <ClInclude Include="Mouse.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerSprite.h" />
+    <ClInclude Include="Projectile.h" />
     <ClInclude Include="RenderManager.h" />
+    <ClInclude Include="Asteroid.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
