@@ -33,10 +33,18 @@ void DrawWindow::CreateWindow()
 
 void DrawWindow::UpdateWindow()
 {
+	static int lastTime;
+
+	lastFrame = SDL_GetTicks();
+	if (lastFrame >= (lastFrame + 1000))
+	{
+		lastTime = lastFrame;
+		fps = framecount;
+		framecount = 0;
+	}
 	SDL_SetRenderDrawColor(renderer, 49, 70, 83, 255); // set color to blueish-grey
 	SDL_Rect rect; //creates a rectangle
 	rect.x = rect.y = 0;
-
 	rect.w = WIDTH;
 	rect.h = HEIGHT;
 	SDL_RenderFillRect(renderer, &rect);
@@ -47,7 +55,6 @@ void DrawWindow::UpdateWindow()
 	{
 		SDL_Delay((1000 / 60) - timerFPS);
 	}
-
 	SDL_RenderPresent(renderer);
 }
 

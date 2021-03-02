@@ -18,5 +18,8 @@ public:
 
 private:
 	void Fullscreen();
+
+
+
 	
 };
