@@ -1,15 +1,16 @@
 #pragma once
+#include "SDL.h"
 #include <vector>
 
 class Asteroid
 {
-private:
+
+public:
 	void Split();
 	void Explode();
 	void Advance();
 	void Draw();
-	void CreateAsteroid();
-public:
+
 	int population;
 
 	float xPos;
@@ -22,12 +23,17 @@ public:
 
 	static std::vector<Asteroid> asteroids;
 
-	Asteroid(float xPos, float yPos, float velocityX, float velocityY, int size){} // start of the game constructor
+	Asteroid(float xPos, float yPos, float velocityX, float velocityY, int size) //constructor
+	{
+		asteroids.push_back({ xPos, yPos, velocityX, velocityY, size });
+	}
 
+	/*
 	Asteroid(){} // split constructor
 	~Asteroid()
 	{
 
 	};
+	*/
 };
 
