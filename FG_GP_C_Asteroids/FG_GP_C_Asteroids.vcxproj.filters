@@ -81,6 +81,12 @@
     <ClCompile Include="DrawWindow.cpp">
       <Filter>Source Files\Engine\Managers\Render</Filter>
     </ClCompile>
+    <ClCompile Include="DopeAssEngine.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>Source Files\Engine\Managers\Render</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="InputManager.h">
@@ -105,7 +111,13 @@
       <Filter>Header Files\Engine\Managers\Render</Filter>
     </ClInclude>
     <ClInclude Include="EngingConfig.h">
-      <Filter>Header Files\Engine\Managers</Filter>
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="DopeAssEngine.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>Header Files\Engine\Managers\Render</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

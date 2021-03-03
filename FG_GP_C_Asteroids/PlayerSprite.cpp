@@ -1,8 +1,8 @@
 #include "PlayerSprite.h"
 #include "SDL.h"
-PlayerSprite::PlayerSprite(SDL_Renderer* renderer)
+PlayerSprite::PlayerSprite()
 {
-
+	
 }
 
 PlayerSprite::~PlayerSprite()

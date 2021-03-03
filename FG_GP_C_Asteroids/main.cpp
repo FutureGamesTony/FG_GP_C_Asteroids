@@ -2,6 +2,7 @@
 #include "iostream"
 #include "InputManager.h"
 #include "RenderManager.h"
+#include "DopeAssEngine.h"
 #define WIDTH 1280
 #define HEIGHT 720
 
@@ -12,13 +13,14 @@ int main(int argc, char** argv)
 {
 	InputManager m_getInputManager;
 	RenderManager m_getRenderer;
-	bool running = m_getRenderer.InitializeWidow();
-
+	DopeAssEngine dopeAssEngine;
+	//bool running = m_getRenderer.InitializeWidow();
+	bool running = dopeAssEngine.InitEngine();
 	while (running)
 	{
-		m_getInputManager.GetKey();
-		m_getRenderer.UpdateWindow();
-		running = !m_getInputManager.QuitApplication();
+		/*m_getInputManager.GetKey();*/
+		running = dopeAssEngine.UpdateEngine();
+		if (!running) dopeAssEngine.ShutDown();
 	}
 
 	//SDL_DestroyRenderer(renderer);
