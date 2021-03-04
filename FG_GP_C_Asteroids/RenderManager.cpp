@@ -8,6 +8,8 @@ RenderManager::RenderManager()
 {
 	m_drawWindow = new DrawWindow();
 	m_createRenderer = new Renderer();
+	InitializeWidow();
+	InitializeRenderer();
 	fps = 0;
 	framecount = 0;
 	fullscreen = 0;

@@ -14,8 +14,8 @@ int main(int argc, char** argv)
 	InputManager m_getInputManager;
 	RenderManager m_getRenderer;
 	DopeAssEngine dopeAssEngine;
-	//bool running = m_getRenderer.InitializeWidow();
-	bool running = dopeAssEngine.InitEngine();
+	bool running = m_getRenderer.InitializeWidow();
+	running = dopeAssEngine.InitEngine();
 	while (running)
 	{
 		/*m_getInputManager.GetKey();*/

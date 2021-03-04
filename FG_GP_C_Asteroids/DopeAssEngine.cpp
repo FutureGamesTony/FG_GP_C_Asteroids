@@ -16,7 +16,7 @@ DopeAssEngine::~DopeAssEngine()
 
 bool DopeAssEngine::InitEngine()
 {
-    m_renderManager->InitializeWidow();
+    //m_renderManager->InitializeWidow();
     return m_renderManager != nullptr;
 }
 

@@ -22,7 +22,7 @@ private:
 	int fps = 0;
 	bool running = 0;
 	bool fullscreen = 0;
-	SDL_Window* m_window = nullptr; // only window pointer, when used in other places, this should be passed in.
+	SDL_Window* m_window; // only window pointer, when used in other places, this should be passed in.
 	SDL_Renderer* m_renderer = nullptr; // only render pointer, when used in other places, this should be passed in.
 	DrawWindow* m_drawWindow = nullptr;
 	PlayerSprite* m_playerSprite = nullptr;
