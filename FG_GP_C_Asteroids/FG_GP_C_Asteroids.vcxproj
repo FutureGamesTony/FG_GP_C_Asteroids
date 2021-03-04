@@ -145,8 +145,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Asteroid.cpp" />
     <ClCompile Include="DopeAssEngine.cpp" />
     <ClCompile Include="DrawWindow.cpp" />
+    <ClCompile Include="EntityManager.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Keyboard.cpp" />
     <ClCompile Include="main.cpp" />
@@ -155,11 +157,14 @@
     <ClCompile Include="PlayerSprite.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="RenderManager.cpp" />
+    <ClCompile Include="sEntity.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Asteroid.h" />
     <ClInclude Include="DopeAssEngine.h" />
     <ClInclude Include="DrawWindow.h" />
     <ClInclude Include="EngingConfig.h" />
+    <ClInclude Include="EntityManager.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="Keyboard.h" />
     <ClInclude Include="Mouse.h" />
@@ -167,6 +172,7 @@
     <ClInclude Include="PlayerSprite.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="RenderManager.h" />
+    <ClInclude Include="sEntity.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
