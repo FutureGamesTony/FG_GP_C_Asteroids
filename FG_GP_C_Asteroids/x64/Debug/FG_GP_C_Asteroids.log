@@ -1,2 +1,6 @@
-﻿  DopeAssEngine.cpp
-  FG_GP_C_Asteroids.vcxproj -> C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\x64\Debug\FG_GP_C_Asteroids.exe
+﻿  Asteroid.cpp
+  main.cpp
+  Generating Code...
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Asteroid.h(18): warning C4717: 'Asteroid::Asteroid': recursive on all control paths, function will cause runtime stack overflow
+main.obj : error LNK2001: unresolved external symbol "public: static class std::vector<class Asteroid,class std::allocator<class Asteroid> > Asteroid::asteroids" (?asteroids@Asteroid@@2V?$vector@VAsteroid@@V?$allocator@VAsteroid@@@std@@@std@@A)
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\x64\Debug\FG_GP_C_Asteroids.exe : fatal error LNK1120: 1 unresolved externals

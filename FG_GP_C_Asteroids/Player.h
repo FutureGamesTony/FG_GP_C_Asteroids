@@ -1,18 +1,13 @@
 #pragma once
-static class Player
+#include "sEntity.h"
+
+static class Player : sEntity
 {
 private:
 //private stuff
 public:
 
 		/////////
-
-		float xPos;
-		float yPos;
-		float velocityX;
-		float velocityY;
-		float angle;
-		float roatationSpeed;
 		bool isDead;
 
 		void Reset();
