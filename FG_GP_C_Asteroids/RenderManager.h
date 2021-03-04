@@ -13,6 +13,7 @@ public:
 	bool InitializeRenderer();
 	void UpdateWindow();
 	void ShutDown();
+	void WrapCoordinates(float inX, float inY, float &outX, float &outY);
 private:
 	int m_width = 800;
 	int m_height = 600;
