@@ -1,3 +1,2 @@
-﻿  DopeAssEngine.cpp
-C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(31,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
+﻿  PlayerSprite.cpp
   FG_GP_C_Asteroids.vcxproj -> C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\x64\Debug\FG_GP_C_Asteroids.exe

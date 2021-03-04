@@ -34,12 +34,14 @@ bool RenderManager::InitializeWidow()
 bool RenderManager::InitializeRenderer()
 {
 	m_renderer = m_createRenderer->CreateRenderer(m_window, m_renderer);
+	m_playerSprite = new PlayerSprite();
 	return m_renderer != nullptr;
 	
 }
 
 void RenderManager::UpdateWindow()
 {
+	m_playerSprite->DrawPlayer(m_renderer);
 	m_drawWindow->UpdateWindow(m_renderer, lastFrame, fps, framecount);
 }
 
