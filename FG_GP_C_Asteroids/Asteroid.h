@@ -1,6 +1,5 @@
 #pragma once
 #include "sEntity.h"
-#include <vector>
 
 class Asteroid : sEntity
 {
@@ -10,19 +9,10 @@ public:
 	void Advance();
 	void Draw();
 
-	static std::vector<Asteroid> asteroids;
-
-	Asteroid(float xPos, float yPos, float velocityX, float velocityY, int size)
+	Asteroid(float x, float y, float velX, float velY, int size)
 	{
+		
 	}
 
-
-	/*
-	Asteroid(){} // split constructor
-	~Asteroid()
-	{
-
-	};
-	*/
 };
 

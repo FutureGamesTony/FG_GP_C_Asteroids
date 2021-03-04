@@ -148,6 +148,7 @@
     <ClCompile Include="Asteroid.cpp" />
     <ClCompile Include="DopeAssEngine.cpp" />
     <ClCompile Include="DrawWindow.cpp" />
+    <ClCompile Include="EntityManager.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Keyboard.cpp" />
     <ClCompile Include="main.cpp" />
@@ -163,6 +164,7 @@
     <ClInclude Include="DopeAssEngine.h" />
     <ClInclude Include="DrawWindow.h" />
     <ClInclude Include="EngingConfig.h" />
+    <ClInclude Include="EntityManager.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="Keyboard.h" />
     <ClInclude Include="Mouse.h" />

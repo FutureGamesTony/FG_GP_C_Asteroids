@@ -4,6 +4,7 @@
 #include "RenderManager.h"
 #include "DopeAssEngine.h"
 #include "Asteroid.h"
+#include "EntityManager.h"
 
 #define WIDTH 1280
 #define HEIGHT 720
@@ -16,16 +17,11 @@ int main(int argc, char** argv)
 	InputManager m_getInputManager;
 	RenderManager m_getRenderer;
 	DopeAssEngine dopeAssEngine;
-	Asteroid asteroid({20.0f, 10.0f, 8.0f, -6.0f, 15});
-	asteroid.asteroids
+	EntityManager entityManager; //(debug)
 	bool running = m_getRenderer.InitializeWidow();
 	running = dopeAssEngine.InitEngine();
 	while (running)
 	{
-		for (auto &a : asteroids)
-		{
-			a.
-		}
 		/*m_getInputManager.GetKey();*/
 		running = dopeAssEngine.UpdateEngine();
 		if (!running) dopeAssEngine.ShutDown();

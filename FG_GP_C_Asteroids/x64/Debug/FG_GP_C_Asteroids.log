@@ -1,6 +1,47 @@
 ﻿  Asteroid.cpp
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\sEntity.h(14,14): error C2039: 'vector': is not a member of 'std'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stddef.h(19): message : see declaration of 'std'
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\sEntity.h(14,20): error C2143: syntax error: missing ';' before '<'
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\sEntity.h(14,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\sEntity.h(14,40): error C2238: unexpected token(s) preceding ';'
+  DopeAssEngine.cpp
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\sEntity.h(14,14): error C2039: 'vector': is not a member of 'std'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stddef.h(19): message : see declaration of 'std'
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\sEntity.h(14,20): error C2143: syntax error: missing ';' before '<'
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\sEntity.h(14,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\sEntity.h(14,40): error C2238: unexpected token(s) preceding ';'
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(26,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
+  Keyboard.cpp
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\sEntity.h(14,14): error C2039: 'vector': is not a member of 'std'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stddef.h(19): message : see declaration of 'std'
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\sEntity.h(14,20): error C2143: syntax error: missing ';' before '<'
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\sEntity.h(14,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\sEntity.h(14,40): error C2238: unexpected token(s) preceding ';'
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(26,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
+  Player.cpp
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\sEntity.h(14,14): error C2039: 'vector': is not a member of 'std'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stddef.h(19): message : see declaration of 'std'
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\sEntity.h(14,20): error C2143: syntax error: missing ';' before '<'
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\sEntity.h(14,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\sEntity.h(14,40): error C2238: unexpected token(s) preceding ';'
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(26,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
   main.cpp
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\sEntity.h(14,14): error C2039: 'vector': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\iostream(19): message : see declaration of 'std'
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\sEntity.h(14,20): error C2143: syntax error: missing ';' before '<'
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\sEntity.h(14,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\sEntity.h(14,40): error C2238: unexpected token(s) preceding ';'
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\main.cpp(24,27): error C2039: 'asteroids': is not a member of 'Asteroid'
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Asteroid.h(5): message : see declaration of 'Asteroid'
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\main.cpp(24,3): error C2530: 'a': references must be initialized
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\main.cpp(24,3): error C3531: 'a': a symbol whose type contains 'auto' must have an initializer
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\main.cpp(24,16): error C2143: syntax error: missing ';' before ':'
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\main.cpp(24,36): error C2143: syntax error: missing ';' before ')'
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\main.cpp(27,3): error C2059: syntax error: '}'
+  sEntity.cpp
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\sEntity.h(14,14): error C2039: 'vector': is not a member of 'std'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stddef.h(19): message : see declaration of 'std'
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\sEntity.h(14,20): error C2143: syntax error: missing ';' before '<'
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\sEntity.h(14,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\sEntity.h(14,40): error C2238: unexpected token(s) preceding ';'
   Generating Code...
-C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Asteroid.h(18): warning C4717: 'Asteroid::Asteroid': recursive on all control paths, function will cause runtime stack overflow
-main.obj : error LNK2001: unresolved external symbol "public: static class std::vector<class Asteroid,class std::allocator<class Asteroid> > Asteroid::asteroids" (?asteroids@Asteroid@@2V?$vector@VAsteroid@@V?$allocator@VAsteroid@@@std@@@std@@A)
-C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\x64\Debug\FG_GP_C_Asteroids.exe : fatal error LNK1120: 1 unresolved externals
