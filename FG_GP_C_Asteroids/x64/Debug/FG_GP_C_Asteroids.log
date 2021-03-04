@@ -1,11 +1,5 @@
-﻿  DrawWindow.cpp
-  InputManager.cpp
-  Keyboard.cpp
-  main.cpp
-  Mouse.cpp
-  Player.cpp
-  PlayerSprite.cpp
-  RenderManager.cpp
+﻿  Projectile.cpp
+  Asteroid.cpp
   Generating Code...
   LINK : C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\x64\Debug\FG_GP_C_Asteroids.exe not found or not built by the last incremental link; performing full link
   FG_GP_C_Asteroids.vcxproj -> C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\x64\Debug\FG_GP_C_Asteroids.exe
