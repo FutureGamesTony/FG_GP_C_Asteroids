@@ -5,7 +5,8 @@
 #include "Player.h"
 DopeAssEngine::DopeAssEngine()
 {
-
+    m_drawWindow = new DrawWindow();
+    m_renderManager = new RenderManager();
 }
 
 DopeAssEngine::~DopeAssEngine()
@@ -16,8 +17,7 @@ DopeAssEngine::~DopeAssEngine()
 
 bool DopeAssEngine::InitEngine()
 {
-    //m_renderManager->InitializeWidow();
-    return m_renderManager != nullptr;
+    return m_drawWindow != nullptr && m_renderManager != nullptr;
 }
 
 bool DopeAssEngine::UpdateEngine()
@@ -25,10 +25,10 @@ bool DopeAssEngine::UpdateEngine()
     m_renderManager->UpdateWindow();
     return true;
 }
-void DopeAssEngine::InitializeRenderManager()
-{
-    m_renderManager = new RenderManager();
-}
+//void DopeAssEngine::InitializeRenderManager()
+//{
+//    m_renderManager = new RenderManager();
+//}
 
 void DopeAssEngine::InitializePlayer()
 {
