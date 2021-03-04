@@ -1,14 +1,2 @@
-﻿  Asteroid.cpp
-  DopeAssEngine.cpp
-C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(26,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
-  EntityManager.cpp
-  Keyboard.cpp
-C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(26,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
-  Player.cpp
-C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(26,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
-  RenderManager.cpp
-  main.cpp
-C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\main.cpp(20,16): warning C4101: 'entityManager': unreferenced local variable
-  sEntity.cpp
-  Generating Code...
+﻿  LINK : C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\x64\Debug\FG_GP_C_Asteroids.exe not found or not built by the last incremental link; performing full link
   FG_GP_C_Asteroids.vcxproj -> C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\x64\Debug\FG_GP_C_Asteroids.exe
