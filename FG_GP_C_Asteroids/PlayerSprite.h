@@ -1,13 +1,12 @@
 #pragma once
-class SDL_Renderer;
+struct SDL_Renderer;
 class PlayerSprite
 {
 public:
-	PlayerSprite(SDL_Renderer* renderer);
+	PlayerSprite();
 	~PlayerSprite();
 
-
-private:
 	void DrawPlayer(SDL_Renderer* drawPlayer);
+private:
 };
 

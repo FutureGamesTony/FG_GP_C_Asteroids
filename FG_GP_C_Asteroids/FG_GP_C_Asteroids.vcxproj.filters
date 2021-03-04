@@ -81,11 +81,11 @@
     <ClCompile Include="DrawWindow.cpp">
       <Filter>Source Files\Engine\Managers\Render</Filter>
     </ClCompile>
-    <ClCompile Include="Asteroid.cpp">
-      <Filter>Source Files\Engine\Managers\Entity</Filter>
+    <ClCompile Include="DopeAssEngine.cpp">
+      <Filter>Source Files\Engine</Filter>
     </ClCompile>
-    <ClCompile Include="Projectile.cpp">
-      <Filter>Source Files\Engine\Managers\Entity</Filter>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>Source Files\Engine\Managers\Render</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -111,13 +111,13 @@
       <Filter>Header Files\Engine\Managers\Render</Filter>
     </ClInclude>
     <ClInclude Include="EngingConfig.h">
-      <Filter>Header Files\Engine\Managers</Filter>
+      <Filter>Header Files\Engine</Filter>
     </ClInclude>
-    <ClInclude Include="Asteroid.h">
-      <Filter>Header Files\Engine\Managers\Entity</Filter>
+    <ClInclude Include="DopeAssEngine.h">
+      <Filter>Header Files\Engine</Filter>
     </ClInclude>
-    <ClInclude Include="Projectile.h">
-      <Filter>Header Files\Engine\Managers\Entity</Filter>
+    <ClInclude Include="Renderer.h">
+      <Filter>Header Files\Engine\Managers\Render</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

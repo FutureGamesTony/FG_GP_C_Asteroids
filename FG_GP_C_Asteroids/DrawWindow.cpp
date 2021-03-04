@@ -1,43 +1,25 @@
 #include "DrawWindow.h"
 #include "SDL.h"
+#include "EngingConfig.h"
 #include <iostream>
 
 using std::cout;
-#define WIDTH 1280
-#define HEIGHT 720
-DrawWindow::DrawWindow(SDL_Window* window, SDL_Renderer* renderer)
+
+DrawWindow::DrawWindow()
 {
-	//CreateWindow(window);
-	//CreateRenderer(window, renderer);
+
 }
 
 DrawWindow::~DrawWindow()
 {
-	//SDL_DestroyWindow(window);
-	//SDL_Quit();
-
 }
 
 SDL_Window* DrawWindow::CreateWindow(SDL_Window* window)
 {
-	window = SDL_CreateWindow("Asteroids Dope-ass version ", 10, 10, WIDTH, HEIGHT, 0);
+	window = SDL_CreateWindow("Asteroids Dope-ass version ", 10, 10, EngineConfig::WIDTH, EngineConfig::HEIGHT, 0);
 	return window;
 }
-
-SDL_Renderer* DrawWindow::CreateRenderer(SDL_Window* window, SDL_Renderer* renderer)
-{
-	fullscreen = 0;
-	static int lastTime;
-	if (SDL_Init(SDL_INIT_EVERYTHING) < 0) std::cout << "Failed at SDL_Init()" << std::endl; // initializing sdl
-	renderer = SDL_CreateRenderer(window, 0, 0);
-	SDL_SetWindowTitle(window, "Asteroids Dope-ass version ");
-	SDL_ShowCursor(0); // hides cursor in window
-	SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "2"); // render pixels better (anisotropic filtering)
-
-	return renderer;
-}
-
-void DrawWindow::UpdateWindow(SDL_Renderer* renderer)
+void DrawWindow::UpdateWindow(SDL_Renderer* renderer, int lastFrame, int fps, int framecount)
 {
 	static int lastTime;
 
@@ -48,11 +30,12 @@ void DrawWindow::UpdateWindow(SDL_Renderer* renderer)
 		fps = framecount;
 		framecount = 0;
 	}
+	//m_playerSprite->DrawPlayer(m_renderer);
 	SDL_SetRenderDrawColor(renderer, 49, 70, 83, 255); // set color to blueish-grey
 	SDL_Rect rect; //creates a rectangle
 	rect.x = rect.y = 0;
-	rect.w = WIDTH;
-	rect.h = HEIGHT;
+	rect.w = EngineConfig::WIDTH;
+	rect.h = EngineConfig::HEIGHT;
 	SDL_RenderFillRect(renderer, &rect);
 
 	framecount++;
@@ -62,16 +45,18 @@ void DrawWindow::UpdateWindow(SDL_Renderer* renderer)
 		SDL_Delay((1000 / 60) - timerFPS);
 	}
 	SDL_RenderPresent(renderer);
+	//m_drawWindow->UpdateWindow(m_renderer);
 }
-
-void DrawWindow::Fullscreen()
-{
-	if (fullscreen)
-	{
-		//SDL_SetWindowFullscreen(window, SDL_WINDOW_FULLSCREEN);
-	}
-	if (!fullscreen)
-	{
-		//SDL_SetWindowFullscreen(window, 0);
-	}
-}
+//
+//SDL_Renderer* DrawWindow::CreateRenderer(SDL_Window* window, SDL_Renderer* renderer)
+//{
+//
+//	static int lastTime;
+//	if (SDL_Init(SDL_INIT_EVERYTHING) < 0) std::cout << "Failed at SDL_Init()" << std::endl; // initializing sdl
+//	renderer = SDL_CreateRenderer(window, 0, 0);
+//	SDL_SetWindowTitle(window, "Asteroids Dope-ass version ");
+//	SDL_ShowCursor(0); // hides cursor in window
+//	SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "2"); // render pixels better (anisotropic filtering)
+//
+//	return renderer;
+//}

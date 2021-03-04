@@ -1,44 +1,46 @@
 #include "RenderManager.h"
 #include "DrawWindow.h"
-#include "Asteroid.h"
+#include "Renderer.h"
+#include "EngingConfig.h"
+#include "PlayerSprite.h"
+#include "SDL.h"
 RenderManager::RenderManager()
 {
-    m_drawWindow = new DrawWindow(m_window, m_renderer);
-    
+	m_drawWindow = new DrawWindow();
+	m_createRenderer = new Renderer();
+	InitializeWidow();
+	InitializeRenderer();
+	fps = 0;
+	framecount = 0;
+	fullscreen = 0;
+	lastFrame = 0;
+	running = 0;
+	timerFPS = 0;
 }
 
 RenderManager::~RenderManager()
 {
-    delete m_drawWindow;
-    m_drawWindow = nullptr;
+	ShutDown();
+    
 }
 
 bool RenderManager::InitializeWidow()
 {
     m_window = m_drawWindow->CreateWindow(m_window);
-    m_renderer = m_drawWindow->CreateRenderer(m_window, m_renderer);
-
+	
     return m_drawWindow != nullptr;
+}
 
+bool RenderManager::InitializeRenderer()
+{
+	m_renderer = m_createRenderer->CreateRenderer(m_window, m_renderer);
+	return m_renderer != nullptr;
+	
 }
 
 void RenderManager::UpdateWindow()
 {
-    m_drawWindow->UpdateWindow(m_renderer);
-
-    for (auto& a : Asteroid::asteroids)
-    {
-        a.xPos += a.velocityX * m_drawWindow->timerFPS;
-        a.yPos += a.velocityY * m_drawWindow->timerFPS;
-
-        for (int x = 0; x < a.size; x++)
-        {
-            for (int y = 0; y < a.size; y++)
-            {
-                //draw rectangle asteroid here
-            }
-        }
-    }
+	m_drawWindow->UpdateWindow(m_renderer, lastFrame, fps, framecount);
 }
 
 void RenderManager::ShutDown()
@@ -47,26 +49,4 @@ void RenderManager::ShutDown()
     m_renderer = nullptr;
     SDL_DestroyWindow(m_window);
     m_window = nullptr;
-}
-void RenderManager::WrapCoordinates(float inX, float inY, float &outX, float &outY)
-{
-    outX = inX;
-    outY = inY;
-    if (inX < 0.0f) // if input is less than 0, adjust: input + screenWidth
-    {
-        outX = inX + (float)m_width;
-    }
-    if (inX >= (float)m_width) //if input is greater that screenwidth, adjust: input - screenwidth
-    {
-        outX = inX - (float)m_width;
-    }
-    //same with Y
-    if (inY < 0.0f)
-    {
-        outX = inY + (float)m_height;
-    }
-    if (inY >= (float)m_height)
-    {
-        outX = inY - (float)m_height;
-    }
 }
