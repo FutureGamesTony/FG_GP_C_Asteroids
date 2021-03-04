@@ -11,3 +11,7 @@ void Player::ApplyRightRotation()
 void Player::ApplyAcceleration()
 {
 }
+
+void Player::FireWeapon()
+{
+}
