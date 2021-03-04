@@ -7,11 +7,19 @@ public:
 	void Split();
 	void Explode();
 	void Advance();
-	void Draw();
+	float getXpos();
+	float getYpos();
+	float getXvelocity();
+	float getYvelocity();
+	int getSize();
 
-	Asteroid(float x, float y, float velX, float velY, int size)
+	Asteroid(float x, float y, float velX, float velY, int passedsize)
 	{
-		
+		xPos = x;
+		yPos = y;
+		velocityX = velX;
+		velocityY = velY;
+		size = passedsize;
 	}
 
 };

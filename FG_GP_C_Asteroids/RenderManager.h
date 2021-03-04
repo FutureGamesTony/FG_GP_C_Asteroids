@@ -2,6 +2,7 @@
 class Renderer;
 class PlayerSprite;
 class DrawWindow;
+class Asteroid;
 struct SDL_Window;
 struct SDL_Renderer;
 class RenderManager
@@ -14,12 +15,14 @@ public:
 	void UpdateWindow();
 	void ShutDown();
 	void WrapCoordinates(float inX, float inY, float &outX, float &outY);
+	void DrawAsteroids(Asteroid asteroid);
+	int lastFrame = 0; //(debug test)
 private:
 	int m_width = 800;
 	int m_height = 600;
 	int framecount = 0;
 	int timerFPS = 0;
-	int lastFrame = 0;
+	//int lastFrame = 0;
 	int fps = 0;
 	bool running = 0;
 	bool fullscreen = 0;

@@ -1,7 +1,7 @@
 #pragma once
 #include "SDL.h"
 #include <vector>
-
+class Asteroid;
 struct sEntity
 {
 public:
@@ -11,6 +11,7 @@ public:
 	float yPos;
 	float velocityX;
 	float velocityY;
+	int size;
 	float angle;
 	float roatationSpeed;
 };
