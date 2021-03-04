@@ -4,8 +4,8 @@ class PlayerSprite;
 class DrawWindow;
 class RenderManager;
 class InputManager;
-struct SDL_Window;
-struct  SDL_Renderer;
+//struct SDL_Window;
+//struct  SDL_Renderer;
 class DopeAssEngine
 {
 public:

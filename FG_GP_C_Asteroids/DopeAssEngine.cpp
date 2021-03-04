@@ -5,19 +5,24 @@
 #include "Player.h"
 DopeAssEngine::DopeAssEngine()
 {
-    m_drawWindow = new DrawWindow();
-    m_renderManager = new RenderManager();
+
 }
 
 DopeAssEngine::~DopeAssEngine()
 {
     delete m_player;
     m_player = nullptr;
+    delete m_inputManager;
+    m_inputManager = nullptr;
+    delete m_renderManager;
+    m_renderManager = nullptr;
 }
 
 bool DopeAssEngine::InitEngine()
 {
-    return m_drawWindow != nullptr && m_renderManager != nullptr;
+    m_renderManager = new RenderManager();
+    m_inputManager = new InputManager();
+    return m_renderManager != nullptr && m_inputManager != nullptr;
 }
 
 bool DopeAssEngine::UpdateEngine()
@@ -25,10 +30,7 @@ bool DopeAssEngine::UpdateEngine()
     m_renderManager->UpdateWindow();
     return true;
 }
-//void DopeAssEngine::InitializeRenderManager()
-//{
-//    m_renderManager = new RenderManager();
-//}
+
 
 void DopeAssEngine::InitializePlayer()
 {
