@@ -55,6 +55,9 @@
     <Filter Include="Source Files\Engine\Managers\Entity">
       <UniqueIdentifier>{b0cda970-7f50-404e-82e0-7275558a30f2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="assets">
+      <UniqueIdentifier>{881b1fc9-b2e2-4169-b1be-192b8629dcf0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="InputManager.cpp">
@@ -137,5 +140,13 @@
     <ClInclude Include="EntityManager.h">
       <Filter>Header Files\Engine\Managers\Entity</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\Desktop\assets\AsteroidLarge.png">
+      <Filter>assets</Filter>
+    </Image>
+    <Image Include="..\..\..\..\Desktop\assets\AsteroidShip.png">
+      <Filter>assets</Filter>
+    </Image>
   </ItemGroup>
 </Project>

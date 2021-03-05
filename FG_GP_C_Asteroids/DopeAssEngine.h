@@ -1,4 +1,5 @@
 #pragma once
+#include "SDL_image.h" // debugging (new)
 class Player;
 class PlayerSprite;
 class DrawWindow;
@@ -14,8 +15,8 @@ public:
 	bool InitEngine();
 	bool UpdateEngine();
 	void ShutDown();
+	SDL_Texture* playerTex; //(new)
 private:
-
 	void InitializeRenderManager();
 	void InitializePlayer();
 	void InitializeAsteroids();

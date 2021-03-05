@@ -5,6 +5,7 @@
 #include "PlayerSprite.h"
 #include "Asteroid.h"
 #include "SDL.h"
+#include "SDL_image.h" //(new)
 RenderManager::RenderManager()
 {
 	m_drawWindow = new DrawWindow();
@@ -42,6 +43,7 @@ bool RenderManager::InitializeRenderer()
 void RenderManager::UpdateWindow()
 {
 	m_drawWindow->UpdateWindow(m_renderer, lastFrame, fps, framecount);
+
 }
 
 void RenderManager::DrawAsteroids(Asteroid asteroid)
@@ -54,21 +56,6 @@ void RenderManager::DrawAsteroids(Asteroid asteroid)
 
 	x += velX * lastFrame;
 	y += velY * lastFrame;
-
-
-	for (int x = 0; x < size; x++)
-	{
-		for (int y = 0; y < size; y++)
-		{
-			//????????????????????????????????????????? draw asteroid here
-			SDL_SetRenderDrawColor(m_renderer, 10, 140, 160, 255);
-			SDL_Rect rect; //creates a rectangle
-			rect.x = rect.y = 0;
-			rect.w = EngineConfig::WIDTH;
-			rect.h = EngineConfig::HEIGHT;
-			SDL_RenderFillRect(m_renderer, &rect);
-		}
-	}
 }
 
 void RenderManager::ShutDown()
