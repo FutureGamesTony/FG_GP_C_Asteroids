@@ -61,7 +61,7 @@ void RenderManager::DrawAsteroids(Asteroid asteroid)
 		for (int y = 0; y < size; y++)
 		{
 			//????????????????????????????????????????? draw asteroid here
-			SDL_SetRenderDrawColor(m_renderer, 10, 140, 160, 255); // set color to blueish-grey
+			SDL_SetRenderDrawColor(m_renderer, 10, 140, 160, 255);
 			SDL_Rect rect; //creates a rectangle
 			rect.x = rect.y = 0;
 			rect.w = EngineConfig::WIDTH;
