@@ -11,6 +11,7 @@ public:
 	float yPos;
 	float velocityX;
 	float velocityY;
+	int size;
 	float angle;
 	float roatationSpeed;
 };

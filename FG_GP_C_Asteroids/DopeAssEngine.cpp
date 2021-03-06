@@ -3,6 +3,8 @@
 #include "RenderManager.h"
 #include "DrawWindow.h"
 #include "Player.h"
+#include "SDL_image.h" //(new)
+
 DopeAssEngine::DopeAssEngine()
 {
 
@@ -35,6 +37,9 @@ bool DopeAssEngine::UpdateEngine()
 void DopeAssEngine::InitializePlayer()
 {
     m_player = new Player();
+    SDL_Surface* tempSurface = IMG_Load("assets/AsteroidShip.png"); //(new)
+    playerTex = SDL_CreateTextureFromSurface(m_renderManager->m_renderer, tempSurface); //(new)
+    SDL_FreeSurface(tempSurface); //(new)
 }
 
 void DopeAssEngine::InitializeInput()

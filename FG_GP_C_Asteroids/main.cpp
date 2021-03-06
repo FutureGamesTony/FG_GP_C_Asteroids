@@ -17,11 +17,13 @@ int main(int argc, char** argv)
 	InputManager m_getInputManager;
 	RenderManager m_getRenderer;
 	DopeAssEngine dopeAssEngine;
-	EntityManager entityManager; //(debug)
+	EntityManager entityManager;
+	Asteroid asteroid({20.0f, 10.0f, 8.0f, -6.0f, 15}); //(debug)
 	bool running = m_getRenderer.InitializeWidow();
 	running = dopeAssEngine.InitEngine();
 	while (running)
 	{
+		m_getRenderer.DrawAsteroids(asteroid);
 		/*m_getInputManager.GetKey();*/
 		running = dopeAssEngine.UpdateEngine();
 		if (!running) dopeAssEngine.ShutDown();

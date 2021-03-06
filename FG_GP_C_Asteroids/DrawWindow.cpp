@@ -1,6 +1,7 @@
 #include "DrawWindow.h"
 #include "SDL.h"
 #include "EngingConfig.h"
+#include "DopeAssEngine.h"
 #include <iostream>
 
 using std::cout;
@@ -45,7 +46,9 @@ void DrawWindow::UpdateWindow(SDL_Renderer* renderer, int lastFrame, int fps, in
 		SDL_Delay((1000 / 60) - timerFPS);
 	}
 	SDL_RenderPresent(renderer);
-	//m_drawWindow->UpdateWindow(m_renderer);
+	//m_drawWindow->UpdateWindow(m_renderer)
+
+	SDL_RenderCopy(renderer, ) // (new)
 }
 //
 //SDL_Renderer* DrawWindow::CreateRenderer(SDL_Window* window, SDL_Renderer* renderer)

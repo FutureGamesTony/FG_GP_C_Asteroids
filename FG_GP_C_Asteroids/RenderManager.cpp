@@ -3,7 +3,9 @@
 #include "Renderer.h"
 #include "EngingConfig.h"
 #include "PlayerSprite.h"
+#include "Asteroid.h"
 #include "SDL.h"
+#include "SDL_image.h" //(new)
 RenderManager::RenderManager()
 {
 	m_drawWindow = new DrawWindow();
@@ -43,6 +45,19 @@ void RenderManager::UpdateWindow()
 {
 	m_playerSprite->DrawPlayer(m_renderer);
 	m_drawWindow->UpdateWindow(m_renderer, lastFrame, fps, framecount);
+
+}
+
+void RenderManager::DrawAsteroids(Asteroid asteroid)
+{
+	float x = asteroid.getXpos();
+	float y = asteroid.getYpos();
+	float velX = asteroid.getXvelocity();
+	float velY = asteroid.getYvelocity();
+	int size = asteroid.getSize();
+
+	x += velX * lastFrame;
+	y += velY * lastFrame;
 }
 
 void RenderManager::ShutDown()

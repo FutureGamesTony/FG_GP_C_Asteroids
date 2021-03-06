@@ -1,6 +1,28 @@
 #include "Asteroid.h"
+#include "EngingConfig.h"
+#include "RenderManager.h"
 
-void Asteroid::Draw()
+float Asteroid::getXpos()
 {
+	return this->xPos;
+}
 
+float Asteroid::getYpos()
+{
+	return this->yPos;
+}
+
+float Asteroid::getXvelocity()
+{
+	return this->velocityX;
+}
+
+float Asteroid::getYvelocity()
+{
+	return this->velocityY;
+}
+
+int Asteroid::getSize()
+{
+	return this->size;
 }

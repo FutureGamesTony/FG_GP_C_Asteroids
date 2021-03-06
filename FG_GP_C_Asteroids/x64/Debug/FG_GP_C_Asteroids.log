@@ -1,19 +1,8 @@
-﻿  Asteroid.cpp
-  DopeAssEngine.cpp
-C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(26,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
+﻿  DopeAssEngine.cpp
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(26,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
   DrawWindow.cpp
-  EntityManager.cpp
-C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\EntityManager.cpp(11,2): error C2059: syntax error: '}'
-  InputManager.cpp
-  Keyboard.cpp
-C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(26,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
   main.cpp
-C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\main.cpp(20,16): warning C4101: 'entityManager': unreferenced local variable
-  Mouse.cpp
-  Player.cpp
-C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(26,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
-  PlayerSprite.cpp
-  Renderer.cpp
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\main.cpp(20,16): warning C4101: 'entityManager': unreferenced local variable
   RenderManager.cpp
-  sEntity.cpp
   Generating Code...
+  FG_GP_C_Asteroids.vcxproj -> C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\x64\Debug\FG_GP_C_Asteroids.exe
