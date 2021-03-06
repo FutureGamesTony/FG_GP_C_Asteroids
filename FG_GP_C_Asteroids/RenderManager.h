@@ -5,6 +5,7 @@ class DrawWindow;
 class Asteroid;
 struct SDL_Window;
 struct SDL_Renderer;
+struct SDL_Texture;
 class RenderManager
 {
 public:
@@ -27,6 +28,7 @@ private:
 	bool running = 0;
 	bool fullscreen = 0;
 	SDL_Window* m_window; // only window pointer, when used in other places, this should be passed in.
+	SDL_Texture* m_texture; // only window pointer, when used in other places, this should be passed in.
 	//SDL_Renderer* m_renderer = nullptr; // only render pointer, when used in other places, this should be passed in.
 	DrawWindow* m_drawWindow = nullptr;
 	PlayerSprite* m_playerSprite = nullptr;

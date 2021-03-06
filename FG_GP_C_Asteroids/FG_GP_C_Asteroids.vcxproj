@@ -78,8 +78,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Dependencies\SDL2_image\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Dependencies\SDL2_image\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)FG_GP_C_Asteroids\FG_GP_C_Asteroids\Dependencies\SDL2_image\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)FG_GP_C_Asteroids\Dependencies\SDL2_image\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -148,6 +148,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Asteroid.cpp" />
+    <ClCompile Include="AsteroidSprite.cpp" />
     <ClCompile Include="DopeAssEngine.cpp" />
     <ClCompile Include="DrawWindow.cpp" />
     <ClCompile Include="EntityManager.cpp" />
@@ -160,15 +161,18 @@
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="RenderManager.cpp" />
     <ClCompile Include="sEntity.cpp" />
+    <ClCompile Include="SpriteManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Asteroid.h" />
+    <ClInclude Include="AsteroidSprite.h" />
     <ClInclude Include="DopeAssEngine.h" />
     <ClInclude Include="DrawWindow.h" />
     <ClInclude Include="EngingConfig.h" />
     <ClInclude Include="EntityManager.h" />
     <ClInclude Include="IEntity.h" />
     <ClInclude Include="InputManager.h" />
+    <ClInclude Include="ISprite.h" />
     <ClInclude Include="Keyboard.h" />
     <ClInclude Include="Mouse.h" />
     <ClInclude Include="Player.h" />
@@ -176,6 +180,7 @@
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="RenderManager.h" />
     <ClInclude Include="sEntity.h" />
+    <ClInclude Include="SpriteManager.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\..\Desktop\assets\AsteroidLarge.png" />

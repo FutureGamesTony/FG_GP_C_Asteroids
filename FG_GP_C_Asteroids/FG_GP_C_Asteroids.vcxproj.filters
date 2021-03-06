@@ -99,6 +99,12 @@
     <ClCompile Include="EntityManager.cpp">
       <Filter>Source Files\Engine\Managers\Entity</Filter>
     </ClCompile>
+    <ClCompile Include="SpriteManager.cpp">
+      <Filter>Source Files\Engine\Managers\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="AsteroidSprite.cpp">
+      <Filter>Source Files\Engine\Managers\Sprite</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="InputManager.h">
@@ -140,8 +146,17 @@
     <ClInclude Include="EntityManager.h">
       <Filter>Header Files\Engine\Managers\Entity</Filter>
     </ClInclude>
+    <ClInclude Include="SpriteManager.h">
+      <Filter>Header Files\Engine\Managers\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="AsteroidSprite.h">
+      <Filter>Header Files\Engine\Managers\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="ISprite.h">
+      <Filter>Header Files\Engine\Managers\Sprite</Filter>
+    </ClInclude>
     <ClInclude Include="IEntity.h">
-      <Filter>Source Files\Engine\Managers\Entity</Filter>
+      <Filter>Header Files\Engine\Managers\Entity</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
