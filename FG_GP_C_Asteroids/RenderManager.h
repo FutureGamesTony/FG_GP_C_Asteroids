@@ -2,7 +2,9 @@
 class Renderer;
 class PlayerSprite;
 class DrawWindow;
-class Asteroid;
+class AsteroidSprite;
+class ISprite;
+class SpriteManager;
 struct SDL_Window;
 struct SDL_Renderer;
 struct SDL_Texture;
@@ -16,7 +18,7 @@ public:
 	void UpdateWindow();
 	void ShutDown();
 	void WrapCoordinates(float inX, float inY, float &outX, float &outY);
-	void DrawAsteroids(Asteroid asteroid);
+	void DrawAsteroids(AsteroidSprite asteroid);
 	SDL_Renderer* m_renderer = nullptr; // only render pointer, when used in other places, this should be passed in.
 private:
 	int m_width = 800;

@@ -10,7 +10,7 @@ PlayerSprite::~PlayerSprite()
 {
 }
 
-int PlayerSprite::CreateSprite(SDL_Window* window, int pixelFormat, int textureAccess, int width, int height)
+int PlayerSprite::CreateSprite(SDL_Window* window, SDL_Texture* texture, int pixelFormat, int textureAccess, int width, int height)
 {
 	if (SDL_Init(SDL_INIT_VIDEO) < 0) {
 		SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Couldn't initialize SDL: %s", SDL_GetError());
