@@ -1,7 +1,7 @@
 #pragma once
 #include "SDL.h"
 #include <vector>
-
+class Asteroid;
 struct sEntity
 {
 public:

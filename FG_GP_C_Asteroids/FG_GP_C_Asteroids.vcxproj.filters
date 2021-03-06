@@ -137,5 +137,8 @@
     <ClInclude Include="EntityManager.h">
       <Filter>Header Files\Engine\Managers\Entity</Filter>
     </ClInclude>
+    <ClInclude Include="IEntity.h">
+      <Filter>Source Files\Engine\Managers\Entity</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

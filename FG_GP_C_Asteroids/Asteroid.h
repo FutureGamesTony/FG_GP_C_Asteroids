@@ -1,9 +1,10 @@
 #pragma once
-#include "sEntity.h"
+#include "IEntity.h"
 
-class Asteroid : sEntity
+class Asteroid : IEntity
 {
 public:
+	void Update() override;
 	void Split();
 	void Explode();
 	void Advance();
@@ -11,7 +12,7 @@ public:
 
 	Asteroid(float x, float y, float velX, float velY, int size)
 	{
-		
+
 	}
 
 };
