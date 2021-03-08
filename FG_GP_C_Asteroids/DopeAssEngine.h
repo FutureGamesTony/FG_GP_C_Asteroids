@@ -6,6 +6,8 @@ class Player;
 class PlayerSprite;
 class DrawWindow;
 class RenderManager;
+class EntityManager;
+class SpriteManager;
 class InputManager;
 class ISprite;
 class AsteroidSprite;
@@ -31,6 +33,7 @@ private:
 	void InitializeRenderManager();
 	void InitializePlayer();
 	void InitializeAsteroids();
+	void InitializeEnteties();
 	void InitializeSprites();
 	void InitializeCollision();
 	void InitializeInput();
@@ -50,7 +53,9 @@ private:
 	AsteroidSprite* m_asteroidSprite = nullptr;
 	RenderManager* m_renderManager = nullptr;
 	DrawWindow* m_drawWindow = nullptr;
+	EntityManager* m_entityManager = nullptr;
 	InputManager* m_inputManager = nullptr;
+	SpriteManager* m_spriteManager = nullptr;
 	std::vector<IEntity*>(m_entities);
 	std::vector<ISprite*>(m_sprites);
 };

@@ -23,3 +23,22 @@ void Player::CreateEntity(Entity_Type entityType, SDL_Window* window, SDL_Render
 void Player::Update() 
 {
 }
+
+Size Player::SetSize()
+{
+    return Size();
+}
+
+Position Player::SetPosition()
+{
+    return Position();
+}
+
+Movement Player::SetMovementInput()
+{
+    return Movement();
+}
+
+void Player::UpdateMovement()
+{
+}
