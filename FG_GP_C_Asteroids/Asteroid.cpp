@@ -1,23 +1,24 @@
 #include "Asteroid.h"
+#include "AsteroidCollider.h"
 #include "EngingConfig.h"
 #include "RenderManager.h"
 
-float Asteroid::getXpos()
+int Asteroid::getXpos()
 {
 	return this->xPos;
 }
 
-float Asteroid::getYpos()
+int Asteroid::getYpos()
 {
 	return this->yPos;
 }
 
-float Asteroid::getXvelocity()
+int Asteroid::getXvelocity()
 {
 	return this->velocityX;
 }
 
-float Asteroid::getYvelocity()
+int Asteroid::getYvelocity()
 {
 	return this->velocityY;
 }
@@ -25,4 +26,15 @@ float Asteroid::getYvelocity()
 int Asteroid::getSize()
 {
 	return this->size;
+}
+
+ICollider* Asteroid::GetCollider()
+{
+	return dynamic_cast<AsteroidCollider*>(m_asteroidCollider);
+}
+
+AsteroidCollider* Asteroid::SetCollider()
+{
+	m_asteroidCollider = new AsteroidCollider();
+	return m_asteroidCollider;
 }

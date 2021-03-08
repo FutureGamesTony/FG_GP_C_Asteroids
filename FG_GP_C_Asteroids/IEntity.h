@@ -2,11 +2,12 @@
 #include "SDL.h"
 #include "SDL_image.h"
 #include "ICollider.h"
-class ISprite;
+class ICollider;
+class ISprite;//TODO: Remove comments
 struct Size // Just wanted an easier way to set size
 {
-	int sizeX;
-	int sizeY;
+	int width;
+	int height;
 };
 struct Position // Just wanted an easier way to set position
 {

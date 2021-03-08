@@ -1,17 +1,2 @@
 ﻿  Asteroid.cpp
-C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Asteroid.cpp(7,13): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
-C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Asteroid.cpp(12,13): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
-C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Asteroid.cpp(17,13): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
-C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Asteroid.cpp(22,13): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
-  DopeAssEngine.cpp
-C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(33,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
-  DrawWindow.cpp
-  EntityManager.cpp
-  Keyboard.cpp
-C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(33,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
-  Player.cpp
-C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(33,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
-  SpriteManager.cpp
-  main.cpp
-  Generating Code...
   FG_GP_C_Asteroids.vcxproj -> C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\x64\Debug\FG_GP_C_Asteroids.exe
