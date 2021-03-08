@@ -1,5 +1,6 @@
 #include "DrawWindow.h"
 #include "SDL.h"
+#include "SDL_image.h"
 #include "EngingConfig.h"
 #include "DopeAssEngine.h"
 #include <iostream>
@@ -8,7 +9,6 @@ using std::cout;
 
 DrawWindow::DrawWindow()
 {
-
 }
 
 DrawWindow::~DrawWindow()
@@ -20,7 +20,7 @@ SDL_Window* DrawWindow::CreateWindow(SDL_Window* window)
 	window = SDL_CreateWindow("Asteroids Dope-ass version ", 10, 10, EngineConfig::WIDTH, EngineConfig::HEIGHT, 0);
 	return window;
 }
-void DrawWindow::UpdateWindow(SDL_Renderer* renderer, SDL_Texture* texture, int lastFrame, int fps, int framecount)
+void DrawWindow::UpdateWindow(SDL_Renderer* renderer, SDL_Texture* texture, int lastFrame, int fps, int framecount, PlayerSprite* player)
 {
 	static int lastTime;
 
@@ -49,7 +49,6 @@ void DrawWindow::UpdateWindow(SDL_Renderer* renderer, SDL_Texture* texture, int 
 	//m_drawWindow->UpdateWindow(m_renderer)
 	//SDL_Rect* srect;
 	//Sdl_redrer
-	//SDL_RenderCopy(renderer,texture,srect,  ) // (new) //(Gussing for rendering a sprite? 
 }
 //
 //SDL_Renderer* DrawWindow::CreateRenderer(SDL_Window* window, SDL_Renderer* renderer)

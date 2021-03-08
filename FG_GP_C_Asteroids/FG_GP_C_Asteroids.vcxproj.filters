@@ -149,9 +149,6 @@
     <ClInclude Include="Asteroid.h">
       <Filter>Header Files\Engine\Managers\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="sEntity.h">
-      <Filter>Header Files\Engine\Managers\Entity</Filter>
-    </ClInclude>
     <ClInclude Include="EntityManager.h">
       <Filter>Header Files\Engine\Managers\Entity</Filter>
     </ClInclude>

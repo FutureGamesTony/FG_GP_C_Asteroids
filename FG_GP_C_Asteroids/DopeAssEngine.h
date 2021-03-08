@@ -27,7 +27,6 @@ public:
 	bool InitEngine();
 	bool UpdateEngine();
 	void ShutDown();
-	SDL_Texture* playerTex; //(new)
 
 private:
 	void InitializeRenderManager();

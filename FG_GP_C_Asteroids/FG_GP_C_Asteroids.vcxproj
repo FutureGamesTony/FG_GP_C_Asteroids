@@ -186,7 +186,6 @@
     <ClInclude Include="PlayerSprite.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="RenderManager.h" />
-    <ClInclude Include="sEntity.h" />
     <ClInclude Include="SpriteManager.h" />
   </ItemGroup>
   <ItemGroup>
