@@ -10,8 +10,10 @@ public:
 	~SpriteManager();
 	int CreateSprite(SDL_Window* window, SDL_Texture* texture, int pixelFormat, int textureAccess, int width, int height);
 	std::vector<ISprite*> GetSprites();
+	ISprite* GetISprite();
 private:
-	void SetSprites();
+	void SetPlayerSprite();
+	void SetAsteroidSprite();
 	ISprite* sprite = nullptr;
 	PlayerSprite* playerSprite = nullptr;
 	std::vector<ISprite*> m_sprites;

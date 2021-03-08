@@ -24,7 +24,7 @@ enum Entity_Type //to easy identify what entity for an entity handler, without h
 
 	Player_Entity,
 	Bullet_Entity,
-	Enemy_Asteroid,
+	Asteroid_Entity,
 
 }; //TODO: Remove comments 
 class IEntity { //class inherited by every entity created, must be public
