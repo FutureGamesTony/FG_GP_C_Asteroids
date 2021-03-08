@@ -3,7 +3,6 @@
 #include "SDL_image.h"
 PlayerSprite::PlayerSprite()
 {
-	
 }
 
 PlayerSprite::~PlayerSprite()
@@ -16,11 +15,16 @@ int PlayerSprite::CreateSprite(SDL_Window* window, SDL_Texture* texture, int pix
 		SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Couldn't initialize SDL: %s", SDL_GetError());
 		return 3;
 	}
-
 }
 
 void PlayerSprite::DrawPlayer(SDL_Renderer* drawPlayer)
 {
+	//SDL_RenderDrawLine(drawPlayer, 10, 100, 200, 300);
+	playerTex = SDL_CreateTextureFromSurface(drawPlayer, tempSurface);
+	SDL_FreeSurface(tempSurface);
+}
 
-	SDL_RenderDrawLine(drawPlayer, 10, 100, 200, 300);
+void PlayerSprite::RenderPlayer(SDL_Renderer* renderer)
+{
+	SDL_RenderCopy(renderer, playerTex, NULL, NULL);
 }

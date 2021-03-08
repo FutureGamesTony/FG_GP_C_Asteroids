@@ -56,9 +56,6 @@ void DopeAssEngine::InitializeRenderManager()
 //void DopeAssEngine::InitializePlayer()
 //{
 //    m_player = new Player();
-//    SDL_Surface* tempSurface = IMG_Load("assets/AsteroidShip.png"); //(new)
-//    playerTex = SDL_CreateTextureFromSurface(m_renderManager->m_renderer, tempSurface); //(new)
-//    SDL_FreeSurface(tempSurface); //(new)
 //}
 
 void DopeAssEngine::InitializeInput()
