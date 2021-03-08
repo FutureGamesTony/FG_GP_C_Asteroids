@@ -12,6 +12,7 @@
 #include "ICollider.h"
 #include "Keyboard.h"
 #include "Mouse.h"
+#include "CollisionManager.h"
 
 DopeAssEngine::DopeAssEngine()
 {
@@ -30,7 +31,11 @@ DopeAssEngine::~DopeAssEngine()
 
 bool DopeAssEngine::InitEngine()
 {
-   
+    InitializeRenderManager();
+    InitializeEnteties();
+    InitializeSpriteManager();
+    InitializeCollisionManager();
+    InitializeInput();
     
     return m_renderManager != nullptr && m_inputManager != nullptr;
     return true;
@@ -68,12 +73,13 @@ void DopeAssEngine::InitializeEnteties()
 {
     m_entityManager = new EntityManager();
 }
-void DopeAssEngine::InitializeSprites()
+void DopeAssEngine::InitializeSpriteManager()
 {
     m_spriteManager = new SpriteManager();
 }
-void DopeAssEngine::InitializeCollision()
+void DopeAssEngine::InitializeCollisionManager()
 {
+    m_collisionManager = new CollisionManager();
 }
 void DopeAssEngine::ShutDown()
 {

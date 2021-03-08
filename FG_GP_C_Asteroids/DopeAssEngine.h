@@ -34,8 +34,8 @@ private:
 	void InitializePlayer();
 	void InitializeAsteroids();
 	void InitializeEnteties();
-	void InitializeSprites();
-	void InitializeCollision();
+	void InitializeSpriteManager();
+	void InitializeCollisionManager();
 	void InitializeInput();
 	int m_width = 800;
 	int m_height = 600;
@@ -56,6 +56,7 @@ private:
 	EntityManager* m_entityManager = nullptr;
 	InputManager* m_inputManager = nullptr;
 	SpriteManager* m_spriteManager = nullptr;
+	CollisionManager* m_collisionManager = nullptr;
 	std::vector<IEntity*>(m_entities);
 	std::vector<ISprite*>(m_sprites);
 };
