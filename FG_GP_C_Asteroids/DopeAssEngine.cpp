@@ -1,9 +1,10 @@
 #include "DopeAssEngine.h"
 #include "Player.h"
 #include "InputManager.h"
+#include "EntityManager.h"
 #include "RenderManager.h"
 #include "DrawWindow.h"
-
+#include "SpriteManager.h"
 #include "Asteroid.h"
 #include "ISprite.h"
 #include "IEntity.h"
@@ -11,6 +12,7 @@
 #include "ICollider.h"
 #include "Keyboard.h"
 #include "Mouse.h"
+#include "CollisionManager.h"
 
 DopeAssEngine::DopeAssEngine()
 {
@@ -29,8 +31,12 @@ DopeAssEngine::~DopeAssEngine()
 
 bool DopeAssEngine::InitEngine()
 {
-    m_renderManager = new RenderManager();
-    m_inputManager = new InputManager();
+    InitializeRenderManager();
+    InitializeEnteties();
+    InitializeSpriteManager();
+    InitializeCollisionManager();
+    InitializeInput();
+    
     return m_renderManager != nullptr && m_inputManager != nullptr;
     return true;
 }
@@ -44,29 +50,36 @@ bool DopeAssEngine::UpdateEngine()
 
 void DopeAssEngine::InitializeRenderManager()
 {
+    m_renderManager = new RenderManager();
 }
 
-void DopeAssEngine::InitializePlayer()
-{
-    m_player = new Player();
-    SDL_Surface* tempSurface = IMG_Load("assets/AsteroidShip.png"); //(new)
-    playerTex = SDL_CreateTextureFromSurface(m_renderManager->m_renderer, tempSurface); //(new)
-    SDL_FreeSurface(tempSurface); //(new)
-}
+//void DopeAssEngine::InitializePlayer()
+//{
+//    m_player = new Player();
+//    SDL_Surface* tempSurface = IMG_Load("assets/AsteroidShip.png"); //(new)
+//    playerTex = SDL_CreateTextureFromSurface(m_renderManager->m_renderer, tempSurface); //(new)
+//    SDL_FreeSurface(tempSurface); //(new)
+//}
 
 void DopeAssEngine::InitializeInput()
 {
     m_inputManager = new InputManager();
 }
-void DopeAssEngine::InitializeAsteroids()
+//void DopeAssEngine::InitializeAsteroids()
+//{
+//        //TODO: When Asteroid class is done, add here m_asteroid = new Asteroid(); to create object Asteroid.
+//}
+void DopeAssEngine::InitializeEnteties()
 {
-        //TODO: When Asteroid class is done, add here m_asteroid = new Asteroid(); to create object Asteroid.
+    m_entityManager = new EntityManager();
 }
-void DopeAssEngine::InitializeSprites()
+void DopeAssEngine::InitializeSpriteManager()
 {
+    m_spriteManager = new SpriteManager();
 }
-void DopeAssEngine::InitializeCollision()
+void DopeAssEngine::InitializeCollisionManager()
 {
+    m_collisionManager = new CollisionManager();
 }
 void DopeAssEngine::ShutDown()
 {

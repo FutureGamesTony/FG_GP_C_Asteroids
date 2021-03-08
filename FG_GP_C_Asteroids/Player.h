@@ -21,6 +21,10 @@ public:
 		void CreateEntity(Entity_Type entityType, SDL_Window* window, SDL_Renderer* renderer, int renderIndex, Uint32 renderFlags,
 			ISprite* sprite, ICollider* collider, SDL_Surface* image, char& spriteFilePath, Size size, Position position, Movement movementInput) override;
 		void Update() override;
+		Size SetSize() override;
+		Position SetPosition() override;
+		Movement SetMovementInput() override;
+		void UpdateMovement() override;
 		Player() {}; // constructor play-time ship
 		Player(int extraLifes) {}; //constructor for extra lifes
 		~Player() {};

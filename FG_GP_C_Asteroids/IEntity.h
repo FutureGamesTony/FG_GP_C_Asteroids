@@ -26,11 +26,21 @@ enum Entity_Type //to easy identify what entity for an entity handler, without h
 	Bullet_Entity,
 	Enemy_Asteroid,
 
-};
-class IEntity { //class inherited by every entity created, must be public,
-public:
-	virtual void CreateEntity(Entity_Type entityType, SDL_Window* window, SDL_Renderer* renderer, int renderIndex, Uint32 renderFlags, //TODO: Remove comments 
-		ISprite* sprite, ICollider* collider, SDL_Surface* image, char& spriteFilePath, Size size, Position position, Movement movementInput) = 0; // This is an attempt to get everything in the SpriteClass 
-																											 // that's needed to create a sprite including collider and sprite
+}; //TODO: Remove comments 
+class IEntity { //class inherited by every entity created, must be public
+public: 
+	/*
+	* by creating functions in here as we discover there needs in various scripts, we make sure all scripts using this class initialize everything that's needed.
+		*/
+	// This is an attempt to get everything in the SpriteClass that's needed to create a sprite including collider and sprite
+	virtual void CreateEntity(Entity_Type entityType, SDL_Window* window, SDL_Renderer* renderer, int renderIndex, Uint32 renderFlags,
+		ISprite* sprite, ICollider* collider, SDL_Surface* image, char& spriteFilePath, Size size, Position position, Movement movementInput) = 0; 
+	virtual Size SetSize() = 0;
+	virtual Position SetPosition() = 0;
+	virtual Movement SetMovementInput() = 0;
+	virtual void UpdateMovement();
+
+
+
 	virtual void Update() = 0;
 };
