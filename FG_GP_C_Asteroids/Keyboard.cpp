@@ -24,7 +24,7 @@ bool Keyboard::GetEscapePressed()
 
 void Keyboard::SetKeyDown()
 {
-	Player player;
+	Player playerObject;
 	SDL_Event e;
 	while (SDL_PollEvent(&e))
 	{
@@ -34,16 +34,16 @@ void Keyboard::SetKeyDown()
 			{
 			case SDLK_w:
 				cout << "W pressed\n";
-				if (!player.isDead)
+				if (!playerObject.isDead)
 				{
-					player.ApplyAcceleration();
+					playerObject.ApplyAcceleration();
 				}
 				break;
 			case SDLK_a:
 				cout << "A pressed\n";
-				if (!player.isDead)
+				if (!playerObject.isDead)
 				{
-					player.ApplyLeftRotation();
+					playerObject.ApplyLeftRotation();
 				}
 				break;
 			case SDLK_s:
@@ -52,13 +52,13 @@ void Keyboard::SetKeyDown()
 				break;
 			case SDLK_d:
 				cout << "D pressed\n";
-				if (!player.isDead) 
+				if (!playerObject.isDead)
 				{
-					player.ApplyRightRotation();
+					playerObject.ApplyRightRotation();
 				}
 				break;
 			case SDLK_SPACE:
-				player.FireWeapon();
+				playerObject.FireWeapon();
 				break;
 			case SDLK_ESCAPE:
 				cout << "Escape pressed\n";

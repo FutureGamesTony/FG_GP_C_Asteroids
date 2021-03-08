@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Desktop\assets" t="Include">
+      <e p="AsteroidLarge.png" t="Include" />
+      <e p="AsteroidShip.png" t="Include" />
+    </e>
+    <e p="C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids" t="IncludeRecursive">
+      <e p="Asteroid.cpp" t="Include" />
+      <e p="Asteroid.h" t="Include" />
+      <e p="AsteroidSprite.cpp" t="Include" />
+      <e p="AsteroidSprite.h" t="Include" />
+      <e p="DopeAssEngine.cpp" t="Include" />
+      <e p="DopeAssEngine.h" t="Include" />
+      <e p="DrawWindow.cpp" t="Include" />
+      <e p="DrawWindow.h" t="Include" />
+      <e p="EngingConfig.h" t="Include" />
+      <e p="EntityManager.cpp" t="Include" />
+      <e p="EntityManager.h" t="Include" />
+      <e p="FG_GP_C_Asteroids.sln" t="IncludeFlat" />
+      <e p="FG_GP_C_Asteroids.vcxproj" t="IncludeRecursive" />
+      <e p="IEntity.h" t="Include" />
+      <e p="InputManager.cpp" t="Include" />
+      <e p="InputManager.h" t="Include" />
+      <e p="ISprite.h" t="Include" />
+      <e p="Keyboard.cpp" t="Include" />
+      <e p="Keyboard.h" t="Include" />
+      <e p="main.cpp" t="Include" />
+      <e p="Mouse.cpp" t="Include" />
+      <e p="Mouse.h" t="Include" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Player.cpp" t="Include" />
+      <e p="Player.h" t="Include" />
+      <e p="PlayerSprite.cpp" t="Include" />
+      <e p="PlayerSprite.h" t="Include" />
+      <e p="Renderer.cpp" t="Include" />
+      <e p="Renderer.h" t="Include" />
+      <e p="RenderManager.cpp" t="Include" />
+      <e p="RenderManager.h" t="Include" />
+      <e p="sEntity.cpp" t="Include" />
+      <e p="sEntity.h" t="Include" />
+      <e p="SpriteManager.cpp" t="Include" />
+      <e p="SpriteManager.h" t="Include" />
+      <e p="x64\Debug" t="ExcludeRecursive" />
+    </e>
+    <e p="C:\Users\runds\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\runds\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_FG_GP_C_Asteroids.2044877013.00" t="ExcludeRecursive" />
+  </component>
+</project>

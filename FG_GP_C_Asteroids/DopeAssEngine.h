@@ -1,12 +1,22 @@
 #pragma once
 #include "SDL_image.h" // debugging (new)
+#include "IEntity.h"
+#include <vector>
 class Player;
 class PlayerSprite;
 class DrawWindow;
 class RenderManager;
 class InputManager;
+class ISprite;
+class AsteroidSprite;
+class CollisionManager;
+class Asteroid;
+class AsteroidSprite;
+class IEntity;
+class ICollider;
 struct SDL_Window;
 struct  SDL_Renderer;
+
 class DopeAssEngine
 {
 public:
@@ -16,10 +26,13 @@ public:
 	bool UpdateEngine();
 	void ShutDown();
 	SDL_Texture* playerTex; //(new)
+
 private:
 	void InitializeRenderManager();
 	void InitializePlayer();
 	void InitializeAsteroids();
+	void InitializeSprites();
+	void InitializeCollision();
 	void InitializeInput();
 	int m_width = 800;
 	int m_height = 600;
@@ -29,11 +42,16 @@ private:
 	int fps = 0;
 	bool running = 0;
 	bool fullscreen = 0;
+	////Player
+	Player* m_player = nullptr;
+	PlayerSprite* m_playerSprite = nullptr;
+	//Asteroid
+	Asteroid* m_asteroid = nullptr;
+	AsteroidSprite* m_asteroidSprite = nullptr;
 	RenderManager* m_renderManager = nullptr;
 	DrawWindow* m_drawWindow = nullptr;
-	Player* m_player = nullptr;
 	InputManager* m_inputManager = nullptr;
-	//DrawWindow* m_drawWindow = nullptr;
-	PlayerSprite* m_playerSprite = nullptr;
+	std::vector<IEntity*>(m_entities);
+	std::vector<ISprite*>(m_sprites);
 };
 

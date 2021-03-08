@@ -1,25 +1,38 @@
 #include "DopeAssEngine.h"
+#include "Player.h"
 #include "InputManager.h"
 #include "RenderManager.h"
 #include "DrawWindow.h"
-#include "Player.h"
-#include "SDL_image.h" //(new)
+
+#include "Asteroid.h"
+#include "ISprite.h"
+#include "IEntity.h"
+#include "SDL.h"
+#include "ICollider.h"
+#include "Keyboard.h"
+#include "Mouse.h"
 
 DopeAssEngine::DopeAssEngine()
 {
-    m_drawWindow = new DrawWindow();
-    m_renderManager = new RenderManager();
+
 }
 
 DopeAssEngine::~DopeAssEngine()
 {
     delete m_player;
     m_player = nullptr;
+    delete m_inputManager;
+    m_inputManager = nullptr;
+    delete m_renderManager;
+    m_renderManager = nullptr;
 }
 
 bool DopeAssEngine::InitEngine()
 {
-    return m_drawWindow != nullptr && m_renderManager != nullptr;
+    m_renderManager = new RenderManager();
+    m_inputManager = new InputManager();
+    return m_renderManager != nullptr && m_inputManager != nullptr;
+    return true;
 }
 
 bool DopeAssEngine::UpdateEngine()
@@ -27,10 +40,11 @@ bool DopeAssEngine::UpdateEngine()
     m_renderManager->UpdateWindow();
     return true;
 }
-//void DopeAssEngine::InitializeRenderManager()
-//{
-//    m_renderManager = new RenderManager();
-//}
+
+
+void DopeAssEngine::InitializeRenderManager()
+{
+}
 
 void DopeAssEngine::InitializePlayer()
 {
@@ -46,7 +60,13 @@ void DopeAssEngine::InitializeInput()
 }
 void DopeAssEngine::InitializeAsteroids()
 {
-
+        //TODO: When Asteroid class is done, add here m_asteroid = new Asteroid(); to create object Asteroid.
+}
+void DopeAssEngine::InitializeSprites()
+{
+}
+void DopeAssEngine::InitializeCollision()
+{
 }
 void DopeAssEngine::ShutDown()
 {

@@ -3,9 +3,10 @@
 #include "Renderer.h"
 #include "EngingConfig.h"
 #include "PlayerSprite.h"
-#include "Asteroid.h"
+#include "AsteroidSprite.h"
 #include "SDL.h"
 #include "SDL_image.h" //(new)
+#include "ISprite.h"
 RenderManager::RenderManager()
 {
 	m_drawWindow = new DrawWindow();
@@ -36,26 +37,28 @@ bool RenderManager::InitializeWidow()
 bool RenderManager::InitializeRenderer()
 {
 	m_renderer = m_createRenderer->CreateRenderer(m_window, m_renderer);
+	m_playerSprite = new PlayerSprite();
 	return m_renderer != nullptr;
 	
 }
 
 void RenderManager::UpdateWindow()
 {
-	m_drawWindow->UpdateWindow(m_renderer, lastFrame, fps, framecount);
+	m_playerSprite->DrawPlayer(m_renderer);
+	m_drawWindow->UpdateWindow(m_renderer, m_texture, lastFrame, fps, framecount);
 
 }
 
-void RenderManager::DrawAsteroids(Asteroid asteroid)
+void RenderManager::DrawAsteroids(AsteroidSprite asteroid)
 {
-	float x = asteroid.getXpos();
-	float y = asteroid.getYpos();
-	float velX = asteroid.getXvelocity();
-	float velY = asteroid.getYvelocity();
-	int size = asteroid.getSize();
+	//float x = asteroid.getXpos();
+	//float y = asteroid.getYpos();
+	//float velX = asteroid.getXvelocity();
+	//float velY = asteroid.getYvelocity();
+	//int size = asteroid.getSize();
 
-	x += velX * lastFrame;
-	y += velY * lastFrame;
+	//x += velX * lastFrame;
+	//y += velY * lastFrame;
 }
 
 void RenderManager::ShutDown()
