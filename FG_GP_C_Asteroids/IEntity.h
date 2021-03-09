@@ -4,6 +4,7 @@
 #include "ICollider.h"
 class ICollider;
 class ISprite;//TODO: Remove comments
+struct Circle;
 struct Size // Just wanted an easier way to set size
 {
 	int width;
@@ -35,11 +36,11 @@ public:
 		*/
 	// This is an attempt to get everything in the SpriteClass that's needed to create a sprite including collider and sprite
 	virtual void CreateEntity(Entity_Type entityType, SDL_Window* window, SDL_Renderer* renderer, int renderIndex, Uint32 renderFlags,
-		ISprite* sprite, ICollider* collider, SDL_Surface* image, char& spriteFilePath, Size size, Position position, Movement movementInput) = 0; 
+		ISprite* sprite, ICollider* collider, SDL_Surface* image, char* spriteFilePath, Size size, Circle circle, Position position, Movement movementInput) = 0; 
 	virtual Size SetSize() = 0;
 	virtual Position SetPosition() = 0;
 	virtual Movement SetMovementInput() = 0;
-	virtual void UpdateMovement();
+	virtual void UpdateMovement() = 0;
 
 
 
