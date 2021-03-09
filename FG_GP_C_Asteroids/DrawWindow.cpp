@@ -35,8 +35,6 @@ void DrawWindow::UpdateWindow(SDL_Renderer* renderer, SDL_Texture* texture, int 
 		fps = framecount;
 		framecount = 0;
 	}
-
-
 	framecount++;
 	int timerFPS = SDL_GetTicks() - lastFrame;
 	if (timerFPS < (1000 / 60))
@@ -44,9 +42,10 @@ void DrawWindow::UpdateWindow(SDL_Renderer* renderer, SDL_Texture* texture, int 
 		SDL_Delay((1000 / 60) - timerFPS);
 	}
 	SDL_RenderPresent(renderer);
-	//m_drawWindow->UpdateWindow(m_renderer)
-	//SDL_Rect* srect;
-	//Sdl_redrer
+	
+	sprite->RenderSprite(renderer, sprite->DrawSprite(renderer));
+	sprite->ModifyRects();
+
 }
 //
 //SDL_Renderer* DrawWindow::CreateRenderer(SDL_Window* window, SDL_Renderer* renderer)

@@ -2,17 +2,18 @@
 #include "DrawWindow.h"
 #include "Renderer.h"
 #include "EngingConfig.h"
+#include "ISprite.h"
 #include "PlayerSprite.h"
 #include "AsteroidSprite.h"
 #include "SDL.h"
-#include "SDL_image.h" //(new)
-#include "ISprite.h"
+#include "SDL_image.h"
 using std::vector;
 
 RenderManager::RenderManager()
 {
 	m_drawWindow = new DrawWindow();
 	m_createRenderer = new Renderer();
+	m_renderSprite = new PlayerSprite(); // Debug
 	InitializeWidow();
 	InitializeRenderer();
 	fps = 0;
@@ -40,7 +41,7 @@ bool RenderManager::InitializeRenderer()
 {
 
 	m_renderer = m_createRenderer->CreateRenderer(m_window, m_renderer);
-	//m_renderSprite->DrawSprite(m_renderer);
+	m_renderSprite->DrawSprite(m_renderer);
 
 	return m_renderer != nullptr;
 	
