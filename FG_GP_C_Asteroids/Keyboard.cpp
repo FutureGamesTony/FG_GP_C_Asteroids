@@ -24,7 +24,6 @@ bool Keyboard::GetEscapePressed()
 
 void Keyboard::SetKeyDown()
 {
-	//Player player;
 	//SDL_Event e;
 	//while (SDL_PollEvent(&e))
 	//{
@@ -50,7 +49,7 @@ void Keyboard::SetKeyDown()
 
 	//		case SDLK_s:
 	//			cout << "S pressed\n";
-	//			//nothing should happen
+	//			nothing should happen
 	//			break;
 
 	//		case SDLK_d:
@@ -71,13 +70,13 @@ void Keyboard::SetKeyDown()
 
 	//		case SDLK_ESCAPE:
 	//			cout << "Escape pressed\n";
-	//			//QuitGame()
+	//			QuitGame()
 	//			escapePressed = true;
 	//			break;
 
 	//		case SDLK_F11:
 	//			cout << "F11 pressed\n";
-	//			//ToggleFullscreen()
+	//			ToggleFullscreen()
 	//			break;
 
 	//		default:

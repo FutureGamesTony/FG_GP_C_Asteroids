@@ -1,3 +1,7 @@
-﻿  Keyboard.cpp
+﻿  DopeAssEngine.cpp
 C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(35,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
+  InputManager.cpp
+  Keyboard.cpp
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(35,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
+  Generating Code...
   FG_GP_C_Asteroids.vcxproj -> C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\x64\Debug\FG_GP_C_Asteroids.exe
