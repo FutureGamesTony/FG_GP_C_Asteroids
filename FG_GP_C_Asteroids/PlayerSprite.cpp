@@ -21,26 +21,29 @@ int PlayerSprite::CreateSprite(SDL_Window* window, SDL_Texture* texture, int pix
 	}
 }
 
-SDL_Texture* PlayerSprite::DrawSprite(SDL_Renderer* drawSprite)
+SDL_Texture* PlayerSprite::DrawSprite(SDL_Renderer* renderer)
 {
-	//SDL_RenderDrawLine(drawPlayer, 10, 100, 200, 300);
 	SDL_Surface* tempSurface = IMG_Load("assets/AsteroidShip.png");
-	SDL_Texture* playerTex = SDL_CreateTextureFromSurface(drawSprite, tempSurface);
+	SDL_Texture* playerTex = SDL_CreateTextureFromSurface(renderer, tempSurface);
 	SDL_FreeSurface(tempSurface);
 	return playerTex;
 }
 
 void PlayerSprite::RenderSprite(SDL_Renderer* renderer, SDL_Texture* sprite)
 {
-	SDL_RenderCopy(renderer, sprite, GetSourceRect(), GetDestRect());
+	SDL_RenderCopy(renderer, sprite, NULL, GetDestRect());
 }
-
+int i = 0;
 void PlayerSprite::ModifyRects()
 {
-	sourceRect.h = 16;
-	sourceRect.w = 16;
-	destinationRect.h = 50;
-	destinationRect.w = 50;
+	i++;
+	//sourceRect.h = 16;
+	//sourceRect.w = 16;
+
+	destinationRect.h = 32;
+	destinationRect.w = 32;
+	destinationRect.x = i;
+	destinationRect.y = i;
 }
 
 SDL_Rect* PlayerSprite::GetSourceRect()

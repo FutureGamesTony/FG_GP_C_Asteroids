@@ -1,5 +1,5 @@
-#include "Keyboard.h"
 #include "Player.h"
+#include "Keyboard.h"
 #include <iostream>
 using std::cout;
 Keyboard::Keyboard()
@@ -24,7 +24,7 @@ bool Keyboard::GetEscapePressed()
 
 void Keyboard::SetKeyDown()
 {
-	//Player playerObject;
+	//Player player;
 	//SDL_Event e;
 	//while (SDL_PollEvent(&e))
 	//{
@@ -34,41 +34,52 @@ void Keyboard::SetKeyDown()
 	//		{
 	//		case SDLK_w:
 	//			cout << "W pressed\n";
-	//			if (!playerObject.isDead)
+	//			if(!player.isDead)
 	//			{
-	//				playerObject.ApplyAcceleration();
+	//				player.ApplyAcceleration();
 	//			}
 	//			break;
+
 	//		case SDLK_a:
 	//			cout << "A pressed\n";
-	//			if (!playerObject.isDead)
+	//			if (!player.isDead)
 	//			{
-	//				playerObject.ApplyLeftRotation();
+	//				player.ApplyLeftRotation();
 	//			}
 	//			break;
+
 	//		case SDLK_s:
 	//			cout << "S pressed\n";
 	//			//nothing should happen
 	//			break;
+
 	//		case SDLK_d:
 	//			cout << "D pressed\n";
-	//			if (!playerObject.isDead)
+	//			if (!player.isDead)
 	//			{
-	//				playerObject.ApplyRightRotation();
+	//				player.ApplyRightRotation();
 	//			}
 	//			break;
+
 	//		case SDLK_SPACE:
-	//			playerObject.FireWeapon();
+	//			cout << "Space pressed\n";
+	//			if (!player.isDead)
+	//			{
+	//				player.FireWeapon();
+	//			}
 	//			break;
+
 	//		case SDLK_ESCAPE:
 	//			cout << "Escape pressed\n";
 	//			//QuitGame()
 	//			escapePressed = true;
 	//			break;
+
 	//		case SDLK_F11:
 	//			cout << "F11 pressed\n";
 	//			//ToggleFullscreen()
 	//			break;
+
 	//		default:
 	//			break;
 	//		}

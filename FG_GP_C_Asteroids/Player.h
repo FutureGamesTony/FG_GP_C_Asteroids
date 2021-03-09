@@ -12,13 +12,12 @@ public:
 	Player(int extraLifes) {}; //constructor for extra lifes
 	~Player();
 		/////////
-		bool isDead;
+		bool isDead = false;
 		Entity_Type playerEntity = Entity_Type::Player_Entity;
 		void Reset();
 		void ApplyLeftRotation();
 		void ApplyRightRotation();
 		void ApplyAcceleration();
-		void Draw();
 		void Explode();
 		void FireWeapon();
 		void CreateEntity(Entity_Type entityType, SDL_Window* window, SDL_Renderer* renderer, int renderIndex, Uint32 renderFlags,
