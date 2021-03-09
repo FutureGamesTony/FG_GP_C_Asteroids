@@ -11,4 +11,5 @@ public: // By creating an abstract class, we can ensure all functions that inher
 	virtual SDL_Texture* DrawSprite(SDL_Renderer* drawSprite) = 0;
 	virtual void RenderSprite(SDL_Renderer* renderer, SDL_Texture* sprite) = 0;
 	virtual const char* GetFilepath() = 0;
+	virtual SDL_Texture* GetSprite() = 0;
 };

@@ -13,5 +13,8 @@ public:
 	const char* GetFilepath() override;
 private:
 	std::string filePath = "../assets/AsteroidLarge.png";
+
+	// Inherited via ISprite
+	SDL_Texture* GetSprite() override;
 };
 

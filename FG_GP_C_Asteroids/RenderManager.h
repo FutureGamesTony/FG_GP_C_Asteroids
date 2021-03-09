@@ -20,6 +20,7 @@ public:
 	~RenderManager();
 	bool InitializeWidow();
 	bool InitializeRenderer();
+	bool InitializeSpriteManager();
 	bool InistializeTexture(ISprite* sprite);
 	void InitializeSprites();
 	void UpdateWindow();
@@ -27,9 +28,10 @@ public:
 	void WrapCoordinates(float inX, float inY, float &outX, float &outY);
 	void DrawAsteroids(AsteroidSprite asteroid);
 
-	ISprite* SetSprite(ISprite* sprite);
 	SDL_Renderer* m_renderer = nullptr; // only render pointer, when used in other places, this should be passed in.
 private:
+	void SetSprite();
+
 	int m_width = 800;
 	int m_height = 600;
 	int framecount = 0;
@@ -43,6 +45,7 @@ private:
 	//SDL_Renderer* m_renderer = nullptr; // only render pointer, when used in other places, this should be passed in.
 	DrawWindow* m_drawWindow = nullptr;
 	ISprite* m_renderSprite;
+	SpriteManager* m_spriteManager = nullptr;
 	std::vector<ISprite*> s_renderSprites; // Holds our sprites
 	Renderer* m_createRenderer = nullptr;
 	const char* m_windowTitle = "Window Title"; //TODO: Destroy pointer array

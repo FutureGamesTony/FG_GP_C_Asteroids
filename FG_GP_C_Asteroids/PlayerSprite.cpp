@@ -23,9 +23,14 @@ int PlayerSprite::CreateSprite(SDL_Window* window, SDL_Texture* texture, int pix
 
 SDL_Texture* PlayerSprite::DrawSprite(SDL_Renderer* renderer)
 {
-	SDL_Surface* tempSurface = IMG_Load("assets/AsteroidShip.png");
-	SDL_Texture* playerTex = SDL_CreateTextureFromSurface(renderer, tempSurface);
+	SDL_Surface* tempSurface = IMG_Load(GetFilepath());
+	playerTex = SDL_CreateTextureFromSurface(renderer, tempSurface);
 	SDL_FreeSurface(tempSurface);
+	return playerTex;
+}
+
+SDL_Texture* PlayerSprite::GetSprite()
+{
 	return playerTex;
 }
 
