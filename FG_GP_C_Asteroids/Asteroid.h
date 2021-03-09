@@ -26,7 +26,7 @@ public:
 	void UpdateMovement() override;
 
 	ICollider* GetCollider();
-	ISprite* GetSprite();
+	ISprite* GetSprite() override;
 
 	int velocityX;
 	int velocityY;

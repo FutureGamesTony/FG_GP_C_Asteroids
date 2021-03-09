@@ -2,6 +2,7 @@
 #include "IEntity.h"
 #include "SDL.h"
 #include "SDL_image.h"
+class PlayerSprite;
 static class Player : public IEntity
 {
 private:
@@ -25,10 +26,12 @@ public:
 		Position SetPosition() override;
 		Movement SetMovementInput() override;
 		void UpdateMovement() override;
+		ISprite* GetSprite() override;
 		Player() {}; // constructor play-time ship
 		Player(int extraLifes) {}; //constructor for extra lifes
 		~Player() {};
 		
+		PlayerSprite* m_playerSprite;
 		/////////
 };
 

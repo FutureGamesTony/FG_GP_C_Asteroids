@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "SDL_image.h"
+#include "PlayerSprite.h"
 
 void Player::ApplyLeftRotation()
 {
@@ -42,4 +43,9 @@ Movement Player::SetMovementInput()
 
 void Player::UpdateMovement()
 {
+}
+
+ISprite* Player::GetSprite()
+{
+    return dynamic_cast<ISprite*>(m_playerSprite);
 }

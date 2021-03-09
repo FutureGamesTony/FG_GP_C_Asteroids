@@ -15,8 +15,8 @@ public:
 	SDL_Rect destinationRect{ 1,1,16,16 };
 
 	int CreateSprite(SDL_Window* window, SDL_Texture* texture, int pixelFormat, int textureAccess, int width, int height) override;
-	SDL_Texture* DrawPlayer(SDL_Renderer* drawPlayer);
-	void RenderPlayer(SDL_Renderer* renderer, SDL_Texture* sprite);
+	SDL_Texture* DrawSprite(SDL_Renderer* drawSprite) override;
+	void RenderSprite(SDL_Renderer* renderer, SDL_Texture* sprite);
 	void ModifyRects() override;
 	SDL_Rect* GetSourceRect();
 	SDL_Rect* GetDestRect();
