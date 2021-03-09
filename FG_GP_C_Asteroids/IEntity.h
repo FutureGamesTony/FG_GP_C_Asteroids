@@ -2,11 +2,12 @@
 #include "SDL.h"
 #include "SDL_image.h"
 #include "ICollider.h"
-class ISprite;
+class ICollider;
+class ISprite;//TODO: Remove comments
 struct Size // Just wanted an easier way to set size
 {
-	int sizeX;
-	int sizeY;
+	int width;
+	int height;
 };
 struct Position // Just wanted an easier way to set position
 {
@@ -24,7 +25,7 @@ enum Entity_Type //to easy identify what entity for an entity handler, without h
 
 	Player_Entity,
 	Bullet_Entity,
-	Enemy_Asteroid,
+	Asteroid_Entity,
 
 }; //TODO: Remove comments 
 class IEntity { //class inherited by every entity created, must be public

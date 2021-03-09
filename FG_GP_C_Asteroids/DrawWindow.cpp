@@ -4,6 +4,9 @@
 #include "EngingConfig.h"
 #include "DopeAssEngine.h"
 #include "PlayerSprite.h"
+#include "IEntity.h"
+#include "RenderManager.h"
+#include "Renderer.h"
 #include <iostream>
 
 using std::cout;
@@ -33,12 +36,12 @@ void DrawWindow::UpdateWindow(SDL_Renderer* renderer, SDL_Texture* texture, int 
 		framecount = 0;
 	}
 	//m_playerSprite->DrawPlayer(m_renderer);
-	//SDL_SetRenderDrawColor(renderer, 49, 70, 83, 255); // set color to blueish-grey
+	SDL_SetRenderDrawColor(renderer, 49, 70, 83, 255); // set color to blueish-grey
 	SDL_Rect rect; //creates a rectangle
 	rect.x = rect.y = 0;
 	rect.w = EngineConfig::WIDTH;
 	rect.h = EngineConfig::HEIGHT;
-	//SDL_RenderFillRect(renderer, &rect);
+	SDL_RenderFillRect(renderer, &rect);
 
 	framecount++;
 	int timerFPS = SDL_GetTicks() - lastFrame;
@@ -47,8 +50,6 @@ void DrawWindow::UpdateWindow(SDL_Renderer* renderer, SDL_Texture* texture, int 
 		SDL_Delay((1000 / 60) - timerFPS);
 	}
 	SDL_RenderPresent(renderer);
-	player->ModifyRects(); // DEBUG
-	player->RenderPlayer(renderer, player->DrawPlayer(renderer)); // DEBUG
 	//m_drawWindow->UpdateWindow(m_renderer)
 	//SDL_Rect* srect;
 	//Sdl_redrer

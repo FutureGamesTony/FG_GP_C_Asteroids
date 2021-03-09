@@ -1,4 +1,7 @@
 #pragma once
+#include "IEntity.h"
+#include "ISprite.h"
+#include "ICollider.h"
 class Renderer;
 class PlayerSprite;
 class DrawWindow;

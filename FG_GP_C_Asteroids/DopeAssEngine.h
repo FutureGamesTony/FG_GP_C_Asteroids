@@ -1,6 +1,8 @@
 #pragma once
 #include "SDL_image.h" // debugging (new)
 #include "IEntity.h"
+#include "ICollider.h"
+#include "ISprite.h"
 #include <vector>
 class Player;
 class PlayerSprite;
@@ -58,5 +60,6 @@ private:
 	CollisionManager* m_collisionManager = nullptr;
 	std::vector<IEntity*>(m_entities);
 	std::vector<ISprite*>(m_sprites);
+	std::vector<ICollider*>(m_colliders);
 };
 
