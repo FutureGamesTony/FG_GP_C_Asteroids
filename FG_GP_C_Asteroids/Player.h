@@ -19,7 +19,7 @@ public:
 		void Explode();
 		void FireWeapon();
 		void CreateEntity(Entity_Type entityType, SDL_Window* window, SDL_Renderer* renderer, int renderIndex, Uint32 renderFlags,
-			ISprite* sprite, ICollider* collider, SDL_Surface* image, char& spriteFilePath, Size size, Position position, Movement movementInput) override;
+			ISprite* sprite, ICollider* collider, SDL_Surface* image, char* spriteFilePath, Size size, Circle circle, Position position, Movement movementInput) override;
 		void Update() override;
 		Size SetSize() override;
 		Position SetPosition() override;
