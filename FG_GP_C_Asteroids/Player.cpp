@@ -2,8 +2,14 @@
 #include "SDL_image.h"
 #include "PlayerSprite.h"
 
+Player::Player()
+{
+    m_playerSprite = new PlayerSprite();
+}
+
 void Player::ApplyLeftRotation()
 {
+
 }
 
 void Player::ApplyRightRotation()
@@ -47,5 +53,5 @@ void Player::UpdateMovement()
 
 ISprite* Player::GetSprite()
 {
-    return dynamic_cast<ISprite*>(m_playerSprite);
+    return (m_playerSprite);
 }

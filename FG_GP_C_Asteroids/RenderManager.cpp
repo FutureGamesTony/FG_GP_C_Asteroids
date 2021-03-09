@@ -38,12 +38,9 @@ bool RenderManager::InitializeWidow()
 
 bool RenderManager::InitializeRenderer()
 {
-	if (m_renderSprite == nullptr)
-	{
-		return false;
-	}
+
 	m_renderer = m_createRenderer->CreateRenderer(m_window, m_renderer);
-	m_renderSprite->DrawSprite(m_renderer);
+	//m_renderSprite->DrawSprite(m_renderer);
 
 	return m_renderer != nullptr;
 	
@@ -51,6 +48,7 @@ bool RenderManager::InitializeRenderer()
 
 void RenderManager::UpdateWindow()
 {
+	if (m_renderSprite == nullptr) return;
 	m_drawWindow->UpdateWindow(m_renderer, m_texture, lastFrame, fps, framecount, m_renderSprite);
 }
 

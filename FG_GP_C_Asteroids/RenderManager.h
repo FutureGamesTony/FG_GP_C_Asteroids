@@ -19,6 +19,7 @@ public:
 	~RenderManager();
 	bool InitializeWidow();
 	bool InitializeRenderer();
+	void InitializeSprites();
 	void UpdateWindow();
 	void ShutDown();
 	void WrapCoordinates(float inX, float inY, float &outX, float &outY);

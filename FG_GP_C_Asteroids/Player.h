@@ -8,7 +8,9 @@ static class Player : public IEntity
 private:
 //private stuff
 public:
-
+	Player(); // constructor play-time ship
+	Player(int extraLifes) {}; //constructor for extra lifes
+	~Player();
 		/////////
 		bool isDead;
 		Entity_Type playerEntity = Entity_Type::Player_Entity;
@@ -27,9 +29,7 @@ public:
 		Movement SetMovementInput() override;
 		void UpdateMovement() override;
 		ISprite* GetSprite() override;
-		Player() {}; // constructor play-time ship
-		Player(int extraLifes) {}; //constructor for extra lifes
-		~Player() {};
+
 		
 		PlayerSprite* m_playerSprite;
 		/////////
