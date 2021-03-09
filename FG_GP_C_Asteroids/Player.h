@@ -29,7 +29,7 @@ public:
 		Movement SetMovementInput() override;
 		void UpdateMovement() override;
 		ISprite* GetSprite() override;
-
+		
 		
 		PlayerSprite* m_playerSprite;
 		/////////

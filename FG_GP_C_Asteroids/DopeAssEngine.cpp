@@ -71,7 +71,7 @@ void DopeAssEngine::InitializeInput()
 void DopeAssEngine::InitializeEnteties()
 {
     m_entityManager = new EntityManager();
-    m_player = m_entityManager->GetPlayer();
+    m_player = m_entityManager->GetEntity();
     m_playerSprite = m_player->GetSprite();
 
 }

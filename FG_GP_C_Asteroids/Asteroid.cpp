@@ -7,9 +7,9 @@
 #include "ISprite.h"
 #include "SDL.h"
 #include "SDL_image.h"
-Asteroid::Asteroid(int posX, int posY, int sizeX, int sizeY, char* path)
+Asteroid::Asteroid(int posX, int posY, int sizeX, int sizeY, const char* path)
 {
-	path = &filePath[0];
+	path = filePath.c_str();
 
 	m_asteroidSprite = new AsteroidSprite();
 	m_asteroidCollider = new AsteroidCollider(position.xPosition, position.yPosition);
@@ -63,6 +63,25 @@ ICollider* Asteroid::GetCollider()
 ISprite* Asteroid::GetSprite()
 {
 	return dynamic_cast<AsteroidSprite*>(m_asteroidSprite);
+}
+
+Size Asteroid::SetSize()
+{
+	return size;
+}
+
+Position Asteroid::SetPosition()
+{
+	return position;
+}
+
+Movement Asteroid::SetMovementInput()
+{
+	return movement;
+}
+
+void Asteroid::Update()
+{
 }
 
 void Asteroid::CreateAsteroid(Entity_Type& entityType, SDL_Window* window, SDL_Renderer* renderer, int renderIndex, Uint32 renderFlags, ISprite* asteroidSprite, ICollider* asteroidCollider, SDL_Surface* surface, char* spriteFilePath, Circle circle, Position position, Movement movement)

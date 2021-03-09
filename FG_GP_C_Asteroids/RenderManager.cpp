@@ -7,6 +7,7 @@
 #include "SDL.h"
 #include "SDL_image.h" //(new)
 #include "ISprite.h"
+
 using std::vector;
 
 RenderManager::RenderManager()
@@ -15,6 +16,7 @@ RenderManager::RenderManager()
 	m_createRenderer = new Renderer();
 	InitializeWidow();
 	InitializeRenderer();
+	
 	fps = 0;
 	framecount = 0;
 	fullscreen = 0;
@@ -44,6 +46,13 @@ bool RenderManager::InitializeRenderer()
 
 	return m_renderer != nullptr;
 	
+}
+
+bool RenderManager::InistializeTexture(ISprite* sprite)
+{
+	
+	m_texture = IMG_LoadTexture(m_renderer, sprite->GetFilepath());
+	return m_texture != nullptr;
 }
 
 void RenderManager::UpdateWindow()

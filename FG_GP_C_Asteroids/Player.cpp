@@ -7,6 +7,12 @@ Player::Player()
     m_playerSprite = new PlayerSprite();
 }
 
+Player::~Player()
+{
+    delete m_playerSprite;
+    m_playerSprite = nullptr;
+}
+
 void Player::ApplyLeftRotation()
 {
 

@@ -17,3 +17,8 @@ SDL_Texture* AsteroidSprite::DrawSprite(SDL_Renderer* drawSprite)
 {
 	return nullptr;
 }
+
+const char* AsteroidSprite::GetFilepath()
+{
+	return filePath.c_str();
+}
