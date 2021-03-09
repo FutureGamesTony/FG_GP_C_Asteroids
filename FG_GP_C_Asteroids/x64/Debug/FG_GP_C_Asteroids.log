@@ -1,7 +1,11 @@
 ﻿  Asteroid.cpp
   DopeAssEngine.cpp
-C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(33,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(33,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
   EntityManager.cpp
   main.cpp
+  SpriteManager.cpp
   Generating Code...
-  FG_GP_C_Asteroids.vcxproj -> C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\x64\Debug\FG_GP_C_Asteroids.exe
+  LINK : C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\x64\Debug\FG_GP_C_Asteroids.exe not found or not built by the last incremental link; performing full link
+Asteroid.obj : error LNK2001: unresolved external symbol "public: virtual void __cdecl IEntity::UpdateMovement(void)" (?UpdateMovement@IEntity@@UEAAXXZ)
+Asteroid.obj : error LNK2001: unresolved external symbol "public: virtual void __cdecl Asteroid::CreateEntity(enum Entity_Type,struct SDL_Window *,struct SDL_Renderer *,int,unsigned int,class ISprite *,class ICollider *,struct SDL_Surface *,char &,struct Size,struct Position,struct Movement)" (?CreateEntity@Asteroid@@UEAAXW4Entity_Type@@PEAUSDL_Window@@PEAUSDL_Renderer@@HIPEAVISprite@@PEAVICollider@@PEAUSDL_Surface@@AEADUSize@@UPosition@@UMovement@@@Z)
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\x64\Debug\FG_GP_C_Asteroids.exe : fatal error LNK1120: 2 unresolved externals

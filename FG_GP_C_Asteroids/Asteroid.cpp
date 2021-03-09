@@ -9,7 +9,7 @@
 #include "SDL_image.h"
 Asteroid::Asteroid()
 {
-	m_asteroidSprite = new AsteroidSprite();
+	//m_asteroidSprite = new AsteroidSprite();
 	m_asteroidCollider = new AsteroidCollider(position.xPosition, position.yPosition);
 }
 int Asteroid::getXpos()
