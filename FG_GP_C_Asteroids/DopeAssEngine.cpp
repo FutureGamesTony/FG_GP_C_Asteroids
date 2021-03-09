@@ -34,7 +34,7 @@ bool DopeAssEngine::InitEngine()
 {
     InitializeRenderManager();
     InitializeEnteties();
-    InitializeSpriteManager();
+    //InitializeSpriteManager();
     InitializeCollisionManager();
     InitializeInput();
     InitializePlayer();

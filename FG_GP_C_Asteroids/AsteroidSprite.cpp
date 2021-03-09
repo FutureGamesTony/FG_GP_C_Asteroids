@@ -22,3 +22,8 @@ const char* AsteroidSprite::GetFilepath()
 {
 	return filePath.c_str();
 }
+
+SDL_Texture* AsteroidSprite::GetSprite()
+{
+	return nullptr;
+}

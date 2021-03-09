@@ -16,6 +16,7 @@ public:
 
 	int CreateSprite(SDL_Window* window, SDL_Texture* texture, int pixelFormat, int textureAccess, int width, int height) override;
 	SDL_Texture* DrawSprite(SDL_Renderer* renderer) override;
+	SDL_Texture* GetSprite() override;
 	void RenderSprite(SDL_Renderer* renderer, SDL_Texture* sprite);
 	void ModifyRects() override;
 	SDL_Rect* GetSourceRect();
@@ -24,7 +25,7 @@ public:
 
 private:
 	std::string m_playerPath = "assets/AsteroidShip.png";
-
+	SDL_Texture* playerTex;
 	// Inherited via ISprite
 
 };

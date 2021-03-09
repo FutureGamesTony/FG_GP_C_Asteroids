@@ -4,6 +4,7 @@
 #include "EngingConfig.h"
 #include "ISprite.h"
 #include "PlayerSprite.h"
+#include "SpriteManager.h"
 #include "AsteroidSprite.h"
 #include "SDL.h"
 #include "SDL_image.h"
@@ -16,6 +17,7 @@ RenderManager::RenderManager()
 	m_renderSprite = new PlayerSprite(); // Debug
 	InitializeWidow();
 	InitializeRenderer();
+	InitializeSpriteManager();
 	fps = 0;
 	framecount = 0;
 	fullscreen = 0;
@@ -47,9 +49,20 @@ bool RenderManager::InitializeRenderer()
 	
 }
 
+bool RenderManager::InitializeSpriteManager()
+{
+	m_spriteManager = new SpriteManager();
+	return m_spriteManager != nullptr;
+}
+
 void RenderManager::UpdateWindow()
 {
 	if (m_renderSprite == nullptr) return;
+	for (int i = 0; i < s_renderSprites.size(); i++)
+	{
+		m_drawWindow->UpdateWindow(m_renderer, s_renderSprites[i]->GetSprite(), lastFrame, fps, framecount, m_renderSprite);
+
+	}
 	m_drawWindow->UpdateWindow(m_renderer, m_texture, lastFrame, fps, framecount, m_renderSprite);
 }
 
@@ -62,9 +75,10 @@ void RenderManager::ShutDown()
     m_window = nullptr;
 }
 
-ISprite* RenderManager::SetSprite(ISprite* sprite)
+void RenderManager::SetSprite()
 {
-	dynamic_cast<ISprite*>(sprite);
-	m_renderSprite = sprite;
-	return sprite;
+	//for (int i = 0;  i < spritema; i++)
+	//{
+
+	//}
 }

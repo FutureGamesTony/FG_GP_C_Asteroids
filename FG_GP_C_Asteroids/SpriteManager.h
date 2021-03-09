@@ -16,6 +16,7 @@ private:
 	void SetAsteroidSprite();
 	ISprite* sprite = nullptr;
 	PlayerSprite* playerSprite = nullptr;
+	std::vector<AsteroidSprite*>s_asteroidSprites;
 	std::vector<ISprite*> m_sprites;
 };
 

@@ -31,4 +31,6 @@ void SpriteManager::SetPlayerSprite()
 
 void SpriteManager::SetAsteroidSprite()
 {
+	s_asteroidSprites.push_back(new AsteroidSprite());
+	m_sprites.push_back(s_asteroidSprites[s_asteroidSprites.size() - 1]);
 }
