@@ -51,7 +51,7 @@ bool RenderManager::InitializeRenderer()
 
 bool RenderManager::InitializeSpriteManager()
 {
-	m_spriteManager = new SpriteManager();
+	m_spriteManager = new SpriteManager(m_renderer);
 	for (int i = 0; i < m_spriteManager->GetSprites().size(); i++)
 	{
 		s_renderSprites.push_back(m_spriteManager->GetSprites()[i]); //Gets all the sprites from ISprite, populates list

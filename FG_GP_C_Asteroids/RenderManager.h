@@ -27,7 +27,7 @@ public:
 	void ShutDown();
 	void WrapCoordinates(float inX, float inY, float &outX, float &outY);
 	void DrawAsteroids(AsteroidSprite asteroid);
-
+	void DrawSprites();
 	SDL_Renderer* m_renderer = nullptr; // only render pointer, when used in other places, this should be passed in.
 private:
 	void SetSprite();

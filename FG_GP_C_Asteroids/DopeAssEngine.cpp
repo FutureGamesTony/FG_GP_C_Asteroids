@@ -75,10 +75,10 @@ void DopeAssEngine::InitializeEnteties()
     m_playerSprite = m_player->GetSprite();
 
 }
-void DopeAssEngine::InitializeSpriteManager()
-{
-    m_spriteManager = new SpriteManager();
-}
+//void DopeAssEngine::InitializeSpriteManager()
+//{
+//    m_spriteManager = new SpriteManager();
+//}
 void DopeAssEngine::InitializeCollisionManager()
 {
     m_collisionManager = new CollisionManager();
