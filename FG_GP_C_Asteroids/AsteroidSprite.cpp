@@ -4,3 +4,7 @@ int AsteroidSprite::CreateSprite(SDL_Window* window, SDL_Texture* texture, int p
 {
 	return 0;
 }
+
+void AsteroidSprite::ModifyRects()
+{
+}

@@ -36,7 +36,7 @@ void DrawWindow::UpdateWindow(SDL_Renderer* renderer, SDL_Texture* texture, int 
 		framecount = 0;
 	}
 	//m_playerSprite->DrawPlayer(m_renderer);
-	SDL_SetRenderDrawColor(renderer, 49, 70, 83, 255); // set color to blueish-grey
+	//SDL_SetRenderDrawColor(renderer, 49, 70, 83, 255); // set color to blueish-grey
 	SDL_Rect rect; //creates a rectangle
 	rect.x = rect.y = 0;
 	rect.w = EngineConfig::WIDTH;
