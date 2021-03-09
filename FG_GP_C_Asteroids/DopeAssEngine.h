@@ -2,7 +2,6 @@
 #include "SDL_image.h" // debugging (new)
 #include "IEntity.h"
 #include "ICollider.h"
-#include "ISprite.h"
 #include <vector>
 class Player;
 class PlayerSprite;

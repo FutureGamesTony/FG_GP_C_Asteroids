@@ -7,6 +7,8 @@
 #include "SDL.h"
 #include "SDL_image.h" //(new)
 #include "ISprite.h"
+using std::vector;
+
 RenderManager::RenderManager()
 {
 	m_drawWindow = new DrawWindow();
@@ -36,17 +38,20 @@ bool RenderManager::InitializeWidow()
 
 bool RenderManager::InitializeRenderer()
 {
+	if (m_renderSprite == nullptr)
+	{
+		return false;
+	}
 	m_renderer = m_createRenderer->CreateRenderer(m_window, m_renderer);
-	m_playerSprite = new PlayerSprite();
+	m_renderSprite->DrawSprite(m_renderer);
+
 	return m_renderer != nullptr;
 	
 }
 
 void RenderManager::UpdateWindow()
 {
-	m_playerSprite->DrawPlayer(m_renderer);
-	m_drawWindow->UpdateWindow(m_renderer, m_texture, lastFrame, fps, framecount, m_playerSprite);
-
+	m_drawWindow->UpdateWindow(m_renderer, m_texture, lastFrame, fps, framecount, m_renderSprite);
 }
 
 
@@ -56,4 +61,11 @@ void RenderManager::ShutDown()
     m_renderer = nullptr;
     SDL_DestroyWindow(m_window);
     m_window = nullptr;
+}
+
+ISprite* RenderManager::SetSprite(ISprite* sprite)
+{
+	dynamic_cast<ISprite*>(sprite);
+	m_renderSprite = sprite;
+	return sprite;
 }

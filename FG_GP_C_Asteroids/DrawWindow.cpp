@@ -24,7 +24,7 @@ SDL_Window* DrawWindow::CreateWindow(SDL_Window* window)
 	window = SDL_CreateWindow("Asteroids Dope-ass version ", 10, 10, EngineConfig::WIDTH, EngineConfig::HEIGHT, 0);
 	return window;
 }
-void DrawWindow::UpdateWindow(SDL_Renderer* renderer, SDL_Texture* texture, int lastFrame, int fps, int framecount, PlayerSprite* player)
+void DrawWindow::UpdateWindow(SDL_Renderer* renderer, SDL_Texture* texture, int lastFrame, int fps, int framecount, ISprite* sprite)
 {
 	static int lastTime;
 
@@ -35,13 +35,7 @@ void DrawWindow::UpdateWindow(SDL_Renderer* renderer, SDL_Texture* texture, int 
 		fps = framecount;
 		framecount = 0;
 	}
-	//m_playerSprite->DrawPlayer(m_renderer);
-	SDL_SetRenderDrawColor(renderer, 49, 70, 83, 255); // set color to blueish-grey
-	SDL_Rect rect; //creates a rectangle
-	rect.x = rect.y = 0;
-	rect.w = EngineConfig::WIDTH;
-	rect.h = EngineConfig::HEIGHT;
-	SDL_RenderFillRect(renderer, &rect);
+
 
 	framecount++;
 	int timerFPS = SDL_GetTicks() - lastFrame;

@@ -2,6 +2,7 @@
 #include "IEntity.h"
 #include "ISprite.h"
 #include "ICollider.h"
+#include <vector>
 class Renderer;
 class PlayerSprite;
 class DrawWindow;
@@ -22,6 +23,8 @@ public:
 	void ShutDown();
 	void WrapCoordinates(float inX, float inY, float &outX, float &outY);
 	void DrawAsteroids(AsteroidSprite asteroid);
+
+	ISprite* SetSprite(ISprite* sprite);
 	SDL_Renderer* m_renderer = nullptr; // only render pointer, when used in other places, this should be passed in.
 private:
 	int m_width = 800;
@@ -36,7 +39,8 @@ private:
 	SDL_Texture* m_texture; // only window pointer, when used in other places, this should be passed in.
 	//SDL_Renderer* m_renderer = nullptr; // only render pointer, when used in other places, this should be passed in.
 	DrawWindow* m_drawWindow = nullptr;
-	PlayerSprite* m_playerSprite = nullptr;
+	ISprite* m_renderSprite;
+	std::vector<ISprite*> s_renderSprites; // Holds our sprites
 	Renderer* m_createRenderer = nullptr;
 	const char* m_windowTitle = "Window Title"; //TODO: Destroy pointer array
 };

@@ -13,6 +13,7 @@
 #include "Keyboard.h"
 #include "Mouse.h"
 #include "CollisionManager.h"
+#include "PlayerSprite.h"
 
 DopeAssEngine::DopeAssEngine()
 {
@@ -53,10 +54,11 @@ void DopeAssEngine::InitializeRenderManager()
     m_renderManager = new RenderManager();
 }
 
-//void DopeAssEngine::InitializePlayer()
-//{
-//    m_player = new Player();
-//}
+void DopeAssEngine::InitializePlayer()
+{
+    m_player = new Player();
+    m_renderManager->SetSprite(m_playerSprite);
+}
 
 void DopeAssEngine::InitializeInput()
 {
