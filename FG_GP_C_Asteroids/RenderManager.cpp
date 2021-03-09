@@ -45,21 +45,10 @@ bool RenderManager::InitializeRenderer()
 void RenderManager::UpdateWindow()
 {
 	m_playerSprite->DrawPlayer(m_renderer);
-	m_drawWindow->UpdateWindow(m_renderer, m_texture, lastFrame, fps, framecount,);
+	m_drawWindow->UpdateWindow(m_renderer, m_texture, lastFrame, fps, framecount, m_playerSprite);
 
 }
 
-void RenderManager::DrawAsteroids(AsteroidSprite asteroid)
-{
-	//float x = asteroid.getXpos();
-	//float y = asteroid.getYpos();
-	//float velX = asteroid.getXvelocity();
-	//float velY = asteroid.getYvelocity();
-	//int size = asteroid.getSize();
-
-	//x += velX * lastFrame;
-	//y += velY * lastFrame;
-}
 
 void RenderManager::ShutDown()
 {

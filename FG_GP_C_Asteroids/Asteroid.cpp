@@ -22,6 +22,10 @@ float Asteroid::getYvelocity()
 	return this->velocityY;
 }
 
+void Asteroid::ModifyRects()
+{
+}
+
 int Asteroid::getSize()
 {
 	return this->size;

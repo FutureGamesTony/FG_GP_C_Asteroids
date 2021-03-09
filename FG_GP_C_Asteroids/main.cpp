@@ -5,6 +5,7 @@
 #include "DopeAssEngine.h"
 #include "Asteroid.h"
 #include "EntityManager.h"
+#include "PlayerSprite.h"
 
 #define WIDTH 1280
 #define HEIGHT 720
@@ -20,6 +21,8 @@ int main(int argc, char** argv)
 	//EntityManager entityManager;
 	//Asteroid asteroid({20.0f, 10.0f, 8.0f, -6.0f, 15}); //(debug)
 	bool running = dopeAssEngine.InitEngine();
+	PlayerSprite* player;
+	player = new PlayerSprite();
 	while (running)
 	{
 		//m_getRenderer.DrawAsteroids(asteroid);
