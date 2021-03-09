@@ -37,7 +37,7 @@ bool DopeAssEngine::InitEngine()
     InitializeSpriteManager();
     InitializeCollisionManager();
     InitializeInput();
-    
+    InitializePlayer();
     return m_renderManager != nullptr && m_inputManager != nullptr;
     return true;
 }
@@ -56,7 +56,7 @@ void DopeAssEngine::InitializeRenderManager()
 
 void DopeAssEngine::InitializePlayer()
 {
-    m_player = new Player();
+    //m_player = new Player();
     m_renderManager->SetSprite(m_playerSprite);
 }
 
@@ -71,6 +71,9 @@ void DopeAssEngine::InitializeInput()
 void DopeAssEngine::InitializeEnteties()
 {
     m_entityManager = new EntityManager();
+    m_player = m_entityManager->GetPlayer();
+    m_playerSprite = m_player->GetSprite();
+
 }
 void DopeAssEngine::InitializeSpriteManager()
 {

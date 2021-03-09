@@ -46,8 +46,8 @@ private:
 	bool running = 0;
 	bool fullscreen = 0;
 	////Player
-	Player* m_player = nullptr;
-	PlayerSprite* m_playerSprite = nullptr;
+	IEntity* m_player = nullptr;
+	ISprite* m_playerSprite = nullptr;
 	//Asteroid
 	Asteroid* m_asteroid = nullptr;
 	AsteroidSprite* m_asteroidSprite = nullptr;
