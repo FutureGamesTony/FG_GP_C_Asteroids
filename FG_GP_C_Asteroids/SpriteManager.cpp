@@ -2,8 +2,10 @@
 #include "PlayerSprite.h"
 #include "AsteroidSprite.h"
 using std::vector;
-SpriteManager::SpriteManager()
+SpriteManager::SpriteManager(SDL_Renderer* renderer)
 {
+	SetPlayerSprite(renderer);
+	SetAsteroidSprite();
 }
 
 SpriteManager::~SpriteManager()
@@ -20,10 +22,10 @@ ISprite* SpriteManager::GetISprite()
 	return sprite;
 }
 
-void SpriteManager::SetPlayerSprite()
+void SpriteManager::SetPlayerSprite(SDL_Renderer* renderer)
 {
 
-	playerSprite = new PlayerSprite();
+	playerSprite = new PlayerSprite(renderer);
 	sprite = dynamic_cast<ISprite*>(playerSprite);
 	m_sprites.push_back(sprite);
 	

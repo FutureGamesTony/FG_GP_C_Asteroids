@@ -44,7 +44,7 @@ void DrawWindow::UpdateWindow(SDL_Renderer* renderer, SDL_Texture* texture, int 
 	SDL_RenderPresent(renderer);
 	
 	SDL_RenderClear(renderer);
-	sprite->RenderSprite(renderer, sprite->DrawSprite(renderer));
+	sprite->RenderSprite(renderer, texture);
 	sprite->ModifyRects();
 	SDL_RenderPresent(renderer);
 }

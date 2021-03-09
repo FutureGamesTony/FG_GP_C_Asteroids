@@ -1,6 +1,6 @@
 #include "AsteroidSprite.h"
 #include "SDL.h";
-int AsteroidSprite::CreateSprite(SDL_Window* window, SDL_Texture* texture, int pixelFormat, int textureAccess, int width, int height)
+int AsteroidSprite::CreateSprite()
 {
 	return 0;
 }

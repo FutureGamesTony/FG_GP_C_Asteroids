@@ -10,7 +10,7 @@ class AsteroidSprite;
 class Asteroid : public IEntity 
 {
 public:
-	Asteroid(int posX, int posY, int sizeX, int sizeY, const char *path);
+	Asteroid(const char *path);
 	~Asteroid();
 
 	void Split();

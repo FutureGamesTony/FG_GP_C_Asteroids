@@ -8,13 +8,13 @@ struct SDL_Surface;
 class PlayerSprite : public ISprite //public so it can be cast to a vector in a sprite handeler;
 {
 public:
-	PlayerSprite();
+	PlayerSprite(SDL_Renderer* renderer);
 	~PlayerSprite();
 
 	SDL_Rect sourceRect{ 1,1,16,16 };
 	SDL_Rect destinationRect{ 1,1,16,16 };
 
-	int CreateSprite(SDL_Window* window, SDL_Texture* texture, int pixelFormat, int textureAccess, int width, int height) override;
+	int CreateSprite() override;
 	SDL_Texture* DrawSprite(SDL_Renderer* renderer) override;
 	SDL_Texture* GetSprite() override;
 	void RenderSprite(SDL_Renderer* renderer, SDL_Texture* sprite);

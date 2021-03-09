@@ -56,7 +56,7 @@ void DopeAssEngine::InitializeRenderManager()
 
 void DopeAssEngine::InitializePlayer()
 {
-    m_player = new Player();
+    //m_player = new Player();
     //m_renderManager->SetSprite(m_playerSprite);
 }
 

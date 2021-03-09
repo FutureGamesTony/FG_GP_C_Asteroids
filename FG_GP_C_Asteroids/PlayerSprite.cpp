@@ -1,19 +1,16 @@
 #include "PlayerSprite.h"
 #include "SDL.h"
 #include "SDL_image.h"
-PlayerSprite::PlayerSprite()
+PlayerSprite::PlayerSprite(SDL_Renderer* renderer)
 {
-	sourceRect.h = 16;
-	sourceRect.w = 16;
-	destinationRect.h = 50;
-	destinationRect.w = 50;
+	DrawSprite(renderer);
 }
 
 PlayerSprite::~PlayerSprite()
 {
 }
 
-int PlayerSprite::CreateSprite(SDL_Window* window, SDL_Texture* texture, int pixelFormat, int textureAccess, int width, int height)
+int PlayerSprite::CreateSprite()
 {
 	if (SDL_Init(SDL_INIT_VIDEO) < 0) {
 		SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Couldn't initialize SDL: %s", SDL_GetError());

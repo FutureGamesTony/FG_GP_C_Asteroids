@@ -2,9 +2,9 @@
 #include "SDL_image.h"
 #include "PlayerSprite.h"
 
-Player::Player()
+Player::Player(SDL_Renderer* renderer)
 {
-    m_playerSprite = new PlayerSprite();
+    m_playerSprite = new PlayerSprite(renderer);
 }
 
 Player::~Player()

@@ -1,2 +1,7 @@
-﻿  LINK : C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\x64\Debug\FG_GP_C_Asteroids.exe not found or not built by the last incremental link; performing full link
-  FG_GP_C_Asteroids.vcxproj -> C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\x64\Debug\FG_GP_C_Asteroids.exe
+﻿  DopeAssEngine.cpp
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(35,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\DopeAssEngine.cpp(80,40): error C2512: 'SpriteManager::SpriteManager': no appropriate default constructor available
+  RenderManager.cpp
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\RenderManager.cpp(54,37): error C2512: 'SpriteManager::SpriteManager': no appropriate default constructor available
+  SpriteManager.cpp
+  Generating Code...

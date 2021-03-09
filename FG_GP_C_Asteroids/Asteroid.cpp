@@ -7,7 +7,7 @@
 #include "ISprite.h"
 #include "SDL.h"
 #include "SDL_image.h"
-Asteroid::Asteroid(int posX, int posY, int sizeX, int sizeY, const char* path)
+Asteroid::Asteroid(const char* path)
 {
 	path = filePath.c_str();
 

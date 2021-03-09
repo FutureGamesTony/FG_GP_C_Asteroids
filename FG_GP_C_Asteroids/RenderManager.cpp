@@ -14,7 +14,7 @@ RenderManager::RenderManager()
 {
 	m_drawWindow = new DrawWindow();
 	m_createRenderer = new Renderer();
-	m_renderSprite = new PlayerSprite(); // Debug
+	m_renderSprite = new PlayerSprite(m_renderer); // Debug
 	InitializeWidow();
 	InitializeRenderer();
 	InitializeSpriteManager();
@@ -52,18 +52,20 @@ bool RenderManager::InitializeRenderer()
 bool RenderManager::InitializeSpriteManager()
 {
 	m_spriteManager = new SpriteManager();
+	for (int i = 0; i < m_spriteManager->GetSprites().size(); i++)
+	{
+		s_renderSprites.push_back(m_spriteManager->GetSprites()[i]); //Gets all the sprites from ISprite, populates list
+	}
 	return m_spriteManager != nullptr;
 }
 
 void RenderManager::UpdateWindow()
 {
-	if (m_renderSprite == nullptr) return;
 	for (int i = 0; i < s_renderSprites.size(); i++)
 	{
 		m_drawWindow->UpdateWindow(m_renderer, s_renderSprites[i]->GetSprite(), lastFrame, fps, framecount, m_renderSprite);
-
 	}
-	m_drawWindow->UpdateWindow(m_renderer, m_texture, lastFrame, fps, framecount, m_renderSprite);
+	//m_drawWindow->UpdateWindow(m_renderer, m_texture, lastFrame, fps, framecount, m_renderSprite);
 }
 
 

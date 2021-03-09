@@ -15,7 +15,7 @@ public:
 	Asteroid* ast;
 private:
 	void CreatePlayer();
-	void CreateAsteroid(int posX, int posY, int sizeX, int sizeY, char* path);
+	void CreateAsteroid(const char* path);
 	void CreateEnteties();
 	std::vector<IEntity*>m_enteties;
 	Entity_Type entityType;
@@ -27,7 +27,7 @@ private:
 	std::vector<Asteroid*> m_asteroids; //asteroids will almost never be alone so created a vector. 
 	ICollider* collider; 
 	SDL_Surface* image; 
-	char* spriteFilePath; 
+	const char* spriteFilePath; 
 	Size size; 
 	Position position; 
 	Movement movementInput;

@@ -44,7 +44,7 @@ private:
 	SDL_Texture* m_texture; // only window pointer, when used in other places, this should be passed in.
 	//SDL_Renderer* m_renderer = nullptr; // only render pointer, when used in other places, this should be passed in.
 	DrawWindow* m_drawWindow = nullptr;
-	ISprite* m_renderSprite;
+	ISprite* m_renderSprite = nullptr;
 	SpriteManager* m_spriteManager = nullptr;
 	std::vector<ISprite*> s_renderSprites; // Holds our sprites
 	Renderer* m_createRenderer = nullptr;
