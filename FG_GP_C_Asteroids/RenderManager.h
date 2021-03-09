@@ -3,6 +3,7 @@
 #include "ISprite.h"
 #include "ICollider.h"
 #include <vector>
+#include <iostream>
 class Renderer;
 class PlayerSprite;
 class DrawWindow;
@@ -19,6 +20,7 @@ public:
 	~RenderManager();
 	bool InitializeWidow();
 	bool InitializeRenderer();
+	bool InistializeTexture(ISprite* sprite);
 	void InitializeSprites();
 	void UpdateWindow();
 	void ShutDown();

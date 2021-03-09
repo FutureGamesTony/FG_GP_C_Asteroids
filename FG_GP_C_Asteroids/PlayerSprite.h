@@ -1,7 +1,7 @@
 #pragma once
 #include "ISprite.h"
 #include "SDL.h"
-
+#include <iostream>
 struct SDL_Renderer;
 struct SDL_Texture;
 struct SDL_Surface;
@@ -20,7 +20,12 @@ public:
 	void ModifyRects() override;
 	SDL_Rect* GetSourceRect();
 	SDL_Rect* GetDestRect();
+	const char* GetFilepath() override;
+
 private:
+	std::string m_playerPath = "assets/AsteroidShip.png";
+
+	// Inherited via ISprite
 
 };
 

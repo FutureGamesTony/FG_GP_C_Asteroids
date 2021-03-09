@@ -10,7 +10,7 @@ class AsteroidSprite;
 class Asteroid : public IEntity 
 {
 public:
-	Asteroid(int posX, int posY, int sizeX, int sizeY, char *path);
+	Asteroid(int posX, int posY, int sizeX, int sizeY, const char *path);
 	~Asteroid();
 
 	void Split();
@@ -27,6 +27,10 @@ public:
 
 	ICollider* GetCollider();
 	ISprite* GetSprite() override;
+	Size SetSize() override;
+	Position SetPosition() override;
+	Movement SetMovementInput() override;
+	void Update() override;
 
 	int velocityX;
 	int velocityY;

@@ -56,4 +56,9 @@ SDL_Rect* PlayerSprite::GetDestRect()
 	return &destinationRect;
 }
 
+const char* PlayerSprite::GetFilepath()
+{
+	return m_playerPath.c_str();
+}
+
 
