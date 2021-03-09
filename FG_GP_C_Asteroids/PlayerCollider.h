@@ -5,7 +5,7 @@ class PlayerCollider : public ICollider
 {
 public:// LazyFoo 
     //Initializes the variables
-	void CreateCollider(Entity_Type entity_type, Size size, Position setPosition, Movement setMovement, SDL_Rect* collider) override;
+	void CreateCollider(Entity_Type entity_type, Size size, Position setPosition, Movement setMovement, SDL_Rect* collider, Circle circleCollider) override;
 
     //Takes key presses and adjusts the square's velocity
     void handle_input();

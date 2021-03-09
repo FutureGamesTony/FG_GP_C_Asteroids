@@ -1,6 +1,6 @@
 #include "PlayerCollider.h"
 
-void PlayerCollider::CreateCollider(Entity_Type entity_type, Size size, Position setPosition, Movement setMovement, SDL_Rect* collider)
+void PlayerCollider::CreateCollider(Entity_Type entity_type, Size size, Position setPosition, Movement setMovement, SDL_Rect* collider, Circle circleCollider)
 {
 }
 

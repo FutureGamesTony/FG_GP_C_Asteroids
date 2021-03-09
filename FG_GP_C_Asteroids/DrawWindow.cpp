@@ -3,6 +3,10 @@
 #include "SDL_image.h"
 #include "EngingConfig.h"
 #include "DopeAssEngine.h"
+#include "PlayerSprite.h"
+#include "IEntity.h"
+#include "RenderManager.h"
+#include "Renderer.h"
 #include <iostream>
 
 using std::cout;

@@ -45,7 +45,7 @@ bool RenderManager::InitializeRenderer()
 void RenderManager::UpdateWindow()
 {
 	m_playerSprite->DrawPlayer(m_renderer);
-	m_drawWindow->UpdateWindow(m_renderer, m_texture, lastFrame, fps, framecount,);
+	m_drawWindow->UpdateWindow(m_renderer, m_texture, lastFrame, fps, framecount, m_playerSprite);
 
 }
 
