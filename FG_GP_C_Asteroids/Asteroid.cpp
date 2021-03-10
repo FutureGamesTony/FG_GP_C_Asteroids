@@ -12,7 +12,7 @@ Asteroid::Asteroid(const char* path, SDL_Renderer* renderer)
 	path = filePath.c_str();
 
 	m_asteroidSprite = new AsteroidSprite(renderer);
-	m_asteroidCollider = new AsteroidCollider(Asteroid_Entity, size, position, movement, collider, circleCollider);
+	m_asteroidCollider = new AsteroidCollider(Asteroid_Entity, size, position, movement, circleCollider);
 }
 Asteroid::~Asteroid()
 {

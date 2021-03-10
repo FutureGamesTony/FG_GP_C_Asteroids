@@ -114,6 +114,9 @@
     <ClCompile Include="PlayerCollider.cpp">
       <Filter>Source Files\Engine\Managers\Collision</Filter>
     </ClCompile>
+    <ClCompile Include="BulletCollider.cpp">
+      <Filter>Source Files\Engine\Managers\Collision</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="InputManager.h">
@@ -174,6 +177,9 @@
       <Filter>Header Files\Engine\Managers\Collision</Filter>
     </ClInclude>
     <ClInclude Include="PlayerCollider.h">
+      <Filter>Header Files\Engine\Managers\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletCollider.h">
       <Filter>Header Files\Engine\Managers\Collision</Filter>
     </ClInclude>
   </ItemGroup>

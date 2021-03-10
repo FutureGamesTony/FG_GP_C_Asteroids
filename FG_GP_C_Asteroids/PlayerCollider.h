@@ -4,6 +4,8 @@
 class PlayerCollider : public ICollider
 {
 public:// LazyFoo 
+    PlayerCollider(Entity_Type entity_type, Size size, Position setPosition, Movement setMovement, SDL_Rect* collider);
+    ~PlayerCollider();
     //Initializes the variables
 	void CreateCollider(Entity_Type entity_type, Size size, Position setPosition, Movement setMovement, SDL_Rect* collider, Circle circleCollider) override;
 
@@ -26,6 +28,20 @@ private:
 
 
   
+    Circle cirle;
+
+    // Inherited via ICollider
+     void DrawCollider() override;
+
+     Position SetColliderPosition(Position colliderPosition) override;
+
+     Size GetCollider() override;
+
+     Position GetPosition() override;
+
+    virtual bool HasCollided() override;
+
+    virtual bool Collision(bool collision) override;
 
 };
 

@@ -3,6 +3,7 @@
 #include "SDL.h"
 #include "SDL_image.h"
 class PlayerSprite;
+class PlayerCollider;
 static class Player : public IEntity
 {
 private:
@@ -28,9 +29,16 @@ public:
 		Movement SetMovementInput() override;
 		void UpdateMovement() override;
 		ISprite* GetSprite() override;
-		
+		SDL_Rect* m_collider;
 		
 		PlayerSprite* m_playerSprite;
+		PlayerCollider* m_playerCollider;
+		// Inherited via IEntity
+		ICollider* GetCollider() override;
 		/////////
+		Circle circle;
+		Position position;
+		Movement movement;
+		Size size;
 };
 

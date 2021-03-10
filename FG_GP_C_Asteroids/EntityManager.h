@@ -10,6 +10,7 @@ public:
 	EntityManager();
 	~EntityManager();
 	std::vector<IEntity*> GetEnteties();
+	
 	IEntity* GetEntity();
 	void Func();
 	Asteroid* ast;

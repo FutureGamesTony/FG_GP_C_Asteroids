@@ -1,18 +1,6 @@
-﻿  Asteroid.cpp
-  AsteroidCollider.cpp
-  CollisionManager.cpp
-  DopeAssEngine.cpp
-C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(35,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
+﻿  DopeAssEngine.cpp
+C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(43,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
   DrawWindow.cpp
-  EntityManager.cpp
-C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(35,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
-C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\EntityManager.cpp(48,3): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  Keyboard.cpp
-C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(35,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
-  Player.cpp
-C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(35,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
-  PlayerCollider.cpp
   RenderManager.cpp
-  main.cpp
   Generating Code...
   FG_GP_C_Asteroids.vcxproj -> C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\x64\Debug\FG_GP_C_Asteroids.exe

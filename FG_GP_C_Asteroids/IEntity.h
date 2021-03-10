@@ -42,7 +42,7 @@ public:
 	virtual Movement SetMovementInput() = 0;
 	virtual void UpdateMovement() = 0;
 	virtual ISprite* GetSprite() = 0;
-
+	virtual ICollider* GetCollider() = 0;
 
 	virtual void Update() = 0;
 };

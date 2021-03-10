@@ -2,9 +2,9 @@
 #include "EngingConfig.h"
 
 
-AsteroidCollider::AsteroidCollider(Entity_Type entity_type, Size size, Position setPosition, Movement setMovement, SDL_Rect* collider, Circle circleCollider)
+AsteroidCollider::AsteroidCollider(Entity_Type entity_type, Size size, Position setPosition, Movement setMovement, Circle circleCollider)
 {
-    CreateCollider(entity_type, size, setPosition, setMovement, collider, circleCollider);
+    CreateCollider(entity_type, size, setPosition, setMovement, nullptr, circleCollider);
 }
 void AsteroidCollider::CreateCollider(Entity_Type entity_type, Size size, Position setPosition, Movement setMovement, SDL_Rect* collider, Circle circleCollider)
 {

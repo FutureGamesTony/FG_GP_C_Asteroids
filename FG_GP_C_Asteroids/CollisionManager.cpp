@@ -1,5 +1,13 @@
 #include "CollisionManager.h"
+
 #include "SDL.h"
+CollisionManager::CollisionManager(std::vector<ICollider*> colliders)
+{
+   
+}
+CollisionManager::~CollisionManager()
+{
+}
 // https://lazyfoo.net/SDL_tutorials/lesson19/index.php
 bool CollisionManager::CheckCollision(SDL_Rect A, SDL_Rect B)
 {
@@ -106,6 +114,16 @@ bool CollisionManager::CheckCollision(Circle& A, std::vector<SDL_Rect>& B)
     return false;
 }
 
+std::vector<ICollider*> CollisionManager::GetColliders()
+{
+    return s_colliders;
+}
+
+void CollisionManager::SetColliders(ICollider* collider)
+{
+    s_colliders.push_back(collider);
+}
+
 
 
 double CollisionManager::DistanceSquared(int x1, int y1, int x2, int y2)
@@ -113,6 +131,7 @@ double CollisionManager::DistanceSquared(int x1, int y1, int x2, int y2)
     //Return the distance between the two points
     return sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
 }
+
 
 double CollisionManager::Distance(int x1, int y1, int x2, int y2)
 {

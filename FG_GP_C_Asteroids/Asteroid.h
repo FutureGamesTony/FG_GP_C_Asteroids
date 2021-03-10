@@ -25,7 +25,7 @@ public:
 		ISprite* sprite, ICollider* collider, SDL_Surface* image, char* spriteFilePath, Size size, Circle circle, Position position, Movement movementInput) override;
 	void UpdateMovement() override;
 
-	ICollider* GetCollider();
+	ICollider* GetCollider() override;
 	ISprite* GetSprite() override;
 	Size SetSize() override;
 	Position SetPosition() override;

@@ -1,10 +1,12 @@
 #include "Player.h"
 #include "SDL_image.h"
 #include "PlayerSprite.h"
+#include "PlayerCollider.h"
 
 Player::Player(SDL_Renderer* renderer)
 {
     m_playerSprite = new PlayerSprite(renderer);
+    m_playerCollider = new PlayerCollider(playerEntity, size, position, movement, m_collider);
 }
 
 Player::~Player()
@@ -60,4 +62,9 @@ void Player::UpdateMovement()
 ISprite* Player::GetSprite()
 {
     return (m_playerSprite);
+}
+
+ICollider* Player::GetCollider()
+{
+    return dynamic_cast<PlayerCollider*>(m_playerCollider);
 }

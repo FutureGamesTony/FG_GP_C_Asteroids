@@ -37,7 +37,7 @@ bool DopeAssEngine::InitEngine()
     //InitializeSpriteManager();
     InitializeCollisionManager();
     InitializeInput();
-    InitializePlayer();
+    //InitializePlayer();
     return m_renderManager != nullptr && m_inputManager != nullptr;
     return true;
 }
@@ -73,7 +73,12 @@ void DopeAssEngine::InitializeEnteties()
     m_entityManager = new EntityManager();
     m_player = m_entityManager->GetEntity();
     m_playerSprite = m_player->GetSprite();
-
+    m_entities = m_entityManager->GetEnteties();
+    for (int i = 0; i < m_entities.size(); i++)
+    {
+        m_colliders.push_back(m_entities[i]->GetCollider());
+    }
+    InitializeCollisionManager();
 }
 //void DopeAssEngine::InitializeSpriteManager()
 //{
@@ -81,7 +86,7 @@ void DopeAssEngine::InitializeEnteties()
 //}
 void DopeAssEngine::InitializeCollisionManager()
 {
-    m_collisionManager = new CollisionManager();
+    m_collisionManager = new CollisionManager(m_colliders);
 }
 void DopeAssEngine::ShutDown()
 {
