@@ -1,6 +1,7 @@
 #include "InputManager.h"
 #include "Keyboard.h"
 #include "Mouse.h"
+#include "Player.h"
 //#include "SDL.h"
 
 InputManager::InputManager()
@@ -17,9 +18,9 @@ InputManager::~InputManager()
 	mouse = nullptr;
 }
 
-void InputManager::GetKey()
+void InputManager::GetKey(IEntity* player)
 {
-	keyboard->GetKeyDown();
+	player->SetMovementInput(keyboard->GetKeyDown());
 }
 
 bool InputManager::QuitApplication()

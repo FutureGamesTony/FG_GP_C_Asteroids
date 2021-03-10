@@ -3,6 +3,7 @@
 #include "SDL.h"
 #include "SDL_image.h"
 class PlayerSprite;
+class Keyboard;
 static class Player : public IEntity
 {
 private:
@@ -25,7 +26,7 @@ public:
 		void Update() override;
 		Size SetSize() override;
 		Position SetPosition() override;
-		Movement SetMovementInput() override;
+		Movement SetMovementInput(std::vector<Keyboard::PlayerInput> inputList) override;
 		void UpdateMovement() override;
 		ISprite* GetSprite() override;
 		

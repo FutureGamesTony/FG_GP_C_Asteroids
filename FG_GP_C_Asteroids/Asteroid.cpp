@@ -75,7 +75,7 @@ Position Asteroid::SetPosition()
 	return position;
 }
 
-Movement Asteroid::SetMovementInput()
+Movement Asteroid::SetMovementInput(std::vector<Keyboard::PlayerInput> inputList)
 {
 	return movement;
 }

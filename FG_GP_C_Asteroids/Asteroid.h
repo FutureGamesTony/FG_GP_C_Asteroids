@@ -29,7 +29,7 @@ public:
 	ISprite* GetSprite() override;
 	Size SetSize() override;
 	Position SetPosition() override;
-	Movement SetMovementInput() override;
+	Movement SetMovementInput(std::vector<Keyboard::PlayerInput> inputList) override;
 	void Update() override;
 
 	int velocityX;
