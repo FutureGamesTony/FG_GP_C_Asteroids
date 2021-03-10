@@ -61,11 +61,31 @@ bool RenderManager::InitializeSpriteManager()
 
 void RenderManager::UpdateWindow()
 {
-	for (int i = 0; i < s_renderSprites.size(); i++)
+	static int lastTime;
+
+	lastFrame = SDL_GetTicks();
+	if (lastFrame >= (lastFrame + 1000))
 	{
-		m_drawWindow->UpdateWindow(m_renderer, s_renderSprites[i]->GetSprite(), lastFrame, fps, framecount, m_renderSprite);
+		lastTime = lastFrame;
+		fps = framecount;
+		framecount = 0;
 	}
-	//m_drawWindow->UpdateWindow(m_renderer, m_texture, lastFrame, fps, framecount, m_renderSprite);
+	framecount++;
+	int timerFPS = SDL_GetTicks() - lastFrame;
+	if (timerFPS < (1000 / 60))
+	{
+		SDL_Delay((1000 / 60) - timerFPS);
+	}
+	SDL_RenderPresent(m_renderer);
+
+	SDL_RenderClear(m_renderer);
+	for (ISprite* sprite : s_renderSprites) 
+	{
+		sprite->RenderSprite(m_renderer, sprite->GetSprite());
+		sprite->ModifyRects();
+	}
+
+	SDL_RenderPresent(m_renderer);
 }
 
 
@@ -75,6 +95,10 @@ void RenderManager::ShutDown()
     m_renderer = nullptr;
     SDL_DestroyWindow(m_window);
     m_window = nullptr;
+}
+
+void RenderManager::RenderColliders()
+{
 }
 
 void RenderManager::SetSprite()

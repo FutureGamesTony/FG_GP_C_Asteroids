@@ -13,7 +13,7 @@ public:
 
 private:
 	void SetPlayerSprite(SDL_Renderer* renderer);
-	void SetAsteroidSprite();
+	void SetAsteroidSprite(SDL_Renderer* renderer);
 	ISprite* sprite = nullptr;
 	PlayerSprite* playerSprite = nullptr;
 	std::vector<AsteroidSprite*>s_asteroidSprites;

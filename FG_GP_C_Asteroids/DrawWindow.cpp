@@ -24,30 +24,6 @@ SDL_Window* DrawWindow::CreateWindow(SDL_Window* window)
 	window = SDL_CreateWindow("Asteroids Dope-ass version ", 10, 10, EngineConfig::WIDTH, EngineConfig::HEIGHT, 0);
 	return window;
 }
-void DrawWindow::UpdateWindow(SDL_Renderer* renderer, SDL_Texture* texture, int lastFrame, int fps, int framecount, ISprite* sprite)
-{
-	static int lastTime;
-
-	lastFrame = SDL_GetTicks();
-	if (lastFrame >= (lastFrame + 1000))
-	{
-		lastTime = lastFrame;
-		fps = framecount;
-		framecount = 0;
-	}
-	framecount++;
-	int timerFPS = SDL_GetTicks() - lastFrame;
-	if (timerFPS < (1000 / 60))
-	{
-		SDL_Delay((1000 / 60) - timerFPS);
-	}
-	SDL_RenderPresent(renderer);
-	
-	SDL_RenderClear(renderer);
-	sprite->RenderSprite(renderer, texture);
-	sprite->ModifyRects();
-	SDL_RenderPresent(renderer);
-}
 //
 //SDL_Renderer* DrawWindow::CreateRenderer(SDL_Window* window, SDL_Renderer* renderer)
 //{

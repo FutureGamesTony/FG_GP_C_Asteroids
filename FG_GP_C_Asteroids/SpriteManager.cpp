@@ -5,7 +5,7 @@ using std::vector;
 SpriteManager::SpriteManager(SDL_Renderer* renderer)
 {
 	SetPlayerSprite(renderer);
-	SetAsteroidSprite();
+	SetAsteroidSprite(renderer);
 }
 
 SpriteManager::~SpriteManager()
@@ -31,8 +31,8 @@ void SpriteManager::SetPlayerSprite(SDL_Renderer* renderer)
 	
 }
 
-void SpriteManager::SetAsteroidSprite()
+void SpriteManager::SetAsteroidSprite(SDL_Renderer* renderer)
 {
-	s_asteroidSprites.push_back(new AsteroidSprite());
+	s_asteroidSprites.push_back(new AsteroidSprite(renderer));
 	m_sprites.push_back(s_asteroidSprites[s_asteroidSprites.size() - 1]);
 }

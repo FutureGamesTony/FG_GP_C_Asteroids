@@ -2,55 +2,50 @@
 #include "EngingConfig.h"
 
 
-void AsteroidCollider::CreateCollider(Entity_Type entity_type, Size size, Position setPosition, Movement setMovement, SDL_Rect* collider, Circle cricleCollider)
+AsteroidCollider::AsteroidCollider(Entity_Type entity_type, Size size, Position setPosition, Movement setMovement, Circle circleCollider)
 {
-    isCoolided = false;
+    CreateCollider(entity_type, size, setPosition, setMovement, nullptr, circleCollider);
+}
+void AsteroidCollider::CreateCollider(Entity_Type entity_type, Size size, Position setPosition, Movement setMovement, SDL_Rect* collider, Circle circleCollider)
+{
+    m_collider = circleCollider;
+
+    
+    
+    size.height = circleCollider.r * 2;
+    size.width = circleCollider.r * 2;
+    hasCollided = false;
 }
 
-AsteroidCollider::AsteroidCollider(int x, int y)
-{
-    //Initialize the offsets
-    mPosX = x;
-    mPosY = y;
-
-    //Set collision circle size
-    m_Collider.r = DOT_WIDTH / 2;
-
-    //Initialize the velocity
-    mVelX = 0;
-    mVelY = 0;
-
-    //Move collider relative to the circle
-    ShiftColliders();
-}
-
-void AsteroidCollider::HandleEvent(SDL_Event& e)
+void AsteroidCollider::DrawCollider()
 {
 }
 
-void AsteroidCollider::Move()
+Position AsteroidCollider::SetColliderPosition(Position colliderPosition)
 {
-    //Move the dot left or right
-    mPosX += mVelX;
-    ShiftColliders();
-
+    m_collider.x = colliderPosition.xPosition;
+    m_collider.y = colliderPosition.yPosition;
+    position = colliderPosition;
+    return colliderPosition;
 }
 
-void AsteroidCollider::Render()
+Size AsteroidCollider::GetCollider()
 {
+	return size;
 }
 
-Circle& AsteroidCollider::GetCollider()
+bool AsteroidCollider::HasCollided()
 {
-	// TODO: insert return statement here
-	return m_Collider;
+    return hasCollided;
 }
 
-void AsteroidCollider::IsCollided(bool collision)
+bool AsteroidCollider::Collision(bool collision)
 {
-    isCoolided = collision;
+    hasCollided = collision;
+    return hasCollided;
 }
 
-void AsteroidCollider::ShiftColliders()
+Position AsteroidCollider::GetPosition()
 {
+    return position;
 }

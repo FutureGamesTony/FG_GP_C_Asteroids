@@ -10,6 +10,7 @@ public:
 	EntityManager();
 	~EntityManager();
 	std::vector<IEntity*> GetEnteties();
+	
 	IEntity* GetEntity();
 	void Func();
 	Asteroid* ast;
@@ -29,6 +30,7 @@ private:
 	SDL_Surface* image; 
 	const char* spriteFilePath; 
 	Size size; 
+	int asteroidRadius = 10;
 	Position position; 
 	Movement movementInput;
 };
