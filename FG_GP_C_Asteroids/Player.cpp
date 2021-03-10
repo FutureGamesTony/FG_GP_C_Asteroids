@@ -2,6 +2,7 @@
 #include "SDL_image.h"
 #include "PlayerSprite.h"
 #include "PlayerCollider.h"
+#include "Keyboard.h"
 
 Player::Player(SDL_Renderer* renderer)
 {
@@ -53,36 +54,9 @@ Position Player::SetPosition()
     return Position();
 }
 
-Movement Player::SetMovementInput(std::vector<Keyboard::PlayerInput> inputList)
-{
-    for (int i = 0; i < inputList.size(); i++)
-    {
-        switch (inputList[i])
-        {
-        case Keyboard::PlayerForward:
-            ApplyAcceleration();
-            break;
-
-        case Keyboard::PlayerRotateLeft:
-            ApplyLeftRotation();
-            break;
-
-        case Keyboard::PlayerRotateRight:
-            ApplyRightRotation();
-            break;
-
-        case Keyboard::PlayerShoot:
-            FireWeapon();
-            break;
-        default:
-            break;
-        }
-    }
-    return Movement();
-}
-
 void Player::UpdateMovement()
 {
+    //TODO: Make gooder code
 }
 
 ISprite* Player::GetSprite()
@@ -93,4 +67,13 @@ ISprite* Player::GetSprite()
 ICollider* Player::GetCollider()
 {
     return dynamic_cast<PlayerCollider*>(m_playerCollider);
+}
+
+Movement Player::SetMovementInput(Keyboard::PlayerInput moveCommand)
+{
+    if (moveCommand == Keyboard::PlayerForward) { ApplyAcceleration(); }
+    else if (moveCommand == Keyboard::PlayerRotateLeft) { ApplyLeftRotation(); }
+    else if (moveCommand == Keyboard::PlayerRotateRight) { ApplyRightRotation(); }
+    else if (moveCommand == Keyboard::PlayerFireWeapon) { FireWeapon(); }
+    return movement;
 }
