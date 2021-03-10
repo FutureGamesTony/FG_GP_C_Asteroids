@@ -36,17 +36,17 @@ void PlayerSprite::RenderSprite(SDL_Renderer* renderer, SDL_Texture* sprite)
 {
 	SDL_RenderCopy(renderer, sprite, NULL, GetDestRect());
 }
-int i = 0;
+//int i = 0;
 void PlayerSprite::ModifyRects()
 {
-	i++;
+	//i++;
 	//sourceRect.h = 16;
 	//sourceRect.w = 16;
 
-	destinationRect.h = 32;
-	destinationRect.w = 32;
-	destinationRect.x = i;
-	destinationRect.y = i;
+	//destinationRect.h = 32;
+	//destinationRect.w = 32;
+	//destinationRect.x = i;
+	//destinationRect.y = i;
 }
 
 SDL_Rect* PlayerSprite::GetSourceRect()

@@ -11,8 +11,8 @@ public:
 	PlayerSprite(SDL_Renderer* renderer);
 	~PlayerSprite();
 
-	SDL_Rect sourceRect{ 1,1,16,16 };
-	SDL_Rect destinationRect{ 1,1,16,16 };
+	SDL_Rect sourceRect{ 640,640,32,32 };
+	SDL_Rect destinationRect{ 640,360,32,32 };
 
 	int CreateSprite() override;
 	SDL_Texture* DrawSprite(SDL_Renderer* renderer) override;

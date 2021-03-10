@@ -2,9 +2,11 @@
 #include "SDL.h"
 #include "SDL_image.h"
 #include "ICollider.h"
+#include "Keyboard.h"
 class ICollider;
 class ISprite;//TODO: Remove comments
 struct Circle;
+class Keyboard;
 struct Size // Just wanted an easier way to set size
 {
 	int width;
@@ -39,7 +41,7 @@ public:
 		ISprite* sprite, ICollider* collider, SDL_Surface* image, char* spriteFilePath, Size size, Circle circle, Position position, Movement movementInput) = 0; 
 	virtual Size SetSize() = 0;
 	virtual Position SetPosition() = 0;
-	virtual Movement SetMovementInput() = 0;
+	virtual Movement SetMovementInput(std::vector<Keyboard::PlayerInput> inputList) = 0;
 	virtual void UpdateMovement() = 0;
 	virtual ISprite* GetSprite() = 0;
 	virtual ICollider* GetCollider() = 0;

@@ -2,12 +2,14 @@
 
 class Keyboard;
 class Mouse;
+class Player;
+class IEntity;
 class InputManager
 {
 public:
 	InputManager();
 	~InputManager();
-	void GetKey();
+	void GetKey(IEntity* player);
 	bool QuitApplication();
 private:
 	Keyboard* keyboard;
