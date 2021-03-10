@@ -29,6 +29,7 @@ private:
 	SDL_Surface* image; 
 	const char* spriteFilePath; 
 	Size size; 
+	int asteroidRadius = 10;
 	Position position; 
 	Movement movementInput;
 };

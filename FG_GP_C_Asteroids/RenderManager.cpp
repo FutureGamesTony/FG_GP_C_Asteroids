@@ -77,6 +77,10 @@ void RenderManager::ShutDown()
     m_window = nullptr;
 }
 
+void RenderManager::RenderColliders()
+{
+}
+
 void RenderManager::SetSprite()
 {
 	//for (int i = 0;  i < spritema; i++)

@@ -34,7 +34,7 @@ void EntityManager::CreatePlayer()
 
 void EntityManager::CreateAsteroid(const char* path)
 {
-	m_asteroids.push_back(new Asteroid(path));
+	m_asteroids.push_back(new Asteroid(path, renderer));
 }
 
 void EntityManager::CreateEnteties()

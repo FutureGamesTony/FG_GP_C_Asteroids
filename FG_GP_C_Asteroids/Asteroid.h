@@ -10,7 +10,7 @@ class AsteroidSprite;
 class Asteroid : public IEntity 
 {
 public:
-	Asteroid(const char *path);
+	Asteroid(const char *path, SDL_Renderer* renderer);
 	~Asteroid();
 
 	void Split();
@@ -31,7 +31,8 @@ public:
 	Position SetPosition() override;
 	Movement SetMovementInput() override;
 	void Update() override;
-
+	SDL_Rect* collider = nullptr;
+	Circle circleCollider;
 	int velocityX;
 	int velocityY;
 private:
@@ -39,7 +40,7 @@ private:
 	void CreateAsteroid(Entity_Type &entityType, SDL_Window* window, SDL_Renderer* renderer, int renderIndex,
 						Uint32 renderFlags, ISprite* asteroidSprite, ICollider* asteroidCollider, 
 						SDL_Surface* surface, char* spriteFilePath, Circle circle, Position position, Movement movement);
-	std::string filePath = "../assets/AsteroidLarge.png";
+	std::string filePath = "assets/AsteroidLarge.png";
 	AsteroidSprite* m_asteroidSprite;
 	AsteroidCollider* m_asteroidCollider;
 	Position position;

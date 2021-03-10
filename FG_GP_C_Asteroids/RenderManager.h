@@ -28,6 +28,7 @@ public:
 	void WrapCoordinates(float inX, float inY, float &outX, float &outY);
 	void DrawAsteroids(AsteroidSprite asteroid);
 	void DrawSprites();
+	void RenderColliders();
 	SDL_Renderer* m_renderer = nullptr; // only render pointer, when used in other places, this should be passed in.
 private:
 	void SetSprite();
@@ -47,6 +48,7 @@ private:
 	ISprite* m_renderSprite = nullptr;
 	SpriteManager* m_spriteManager = nullptr;
 	std::vector<ISprite*> s_renderSprites; // Holds our sprites
+	std::vector <ICollider*> s_colliders;
 	Renderer* m_createRenderer = nullptr;
 	const char* m_windowTitle = "Window Title"; //TODO: Destroy pointer array
 };

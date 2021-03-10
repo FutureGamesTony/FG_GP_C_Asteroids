@@ -7,12 +7,12 @@
 #include "ISprite.h"
 #include "SDL.h"
 #include "SDL_image.h"
-Asteroid::Asteroid(const char* path)
+Asteroid::Asteroid(const char* path, SDL_Renderer* renderer)
 {
 	path = filePath.c_str();
 
-	m_asteroidSprite = new AsteroidSprite();
-	m_asteroidCollider = new AsteroidCollider(position.xPosition, position.yPosition);
+	m_asteroidSprite = new AsteroidSprite(renderer);
+	m_asteroidCollider = new AsteroidCollider(Asteroid_Entity, size, position, movement, collider, circleCollider);
 }
 Asteroid::~Asteroid()
 {
