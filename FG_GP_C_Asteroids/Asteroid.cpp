@@ -75,11 +75,6 @@ Position Asteroid::SetPosition()
 	return position;
 }
 
-Movement Asteroid::SetMovementInput(std::vector<Keyboard::PlayerInput> inputList)
-{
-	return movement;
-}
-
 void Asteroid::Update()
 {
 }
@@ -89,5 +84,10 @@ void Asteroid::CreateAsteroid(Entity_Type& entityType, SDL_Window* window, SDL_R
 
 	asteroidSprite = dynamic_cast<AsteroidSprite*>(m_asteroidSprite);
 	entityType = m_asteroid_Entity;
+}
+
+Movement Asteroid::SetMovementInput(Keyboard::PlayerInput moveCommand)
+{
+	return movement;
 }
 

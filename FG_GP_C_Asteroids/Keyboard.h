@@ -8,18 +8,28 @@ class Keyboard
 public:
 	Keyboard();
 	~Keyboard();
-	bool GetEscapePressed();
+
 	enum PlayerInput
 	{
+		NoKeyPressed,
 		PlayerForward,
 		PlayerRotateLeft,
 		PlayerRotateRight,
-		PlayerShoot
+		PlayerFireWeapon
 	};
-	std::vector<PlayerInput> playerInput;
-	std::vector<PlayerInput> GetKeyDown();
+
+	bool GetEscapePressed();
+	PlayerInput GetKeyDown();
+	bool checkForwardPressed();
+	bool checkRotateLeftPressed();
+	bool checkRootateRightPressed();
+	bool checkFireWeaponPressed();
+
+	bool wPressed = false;
+	bool aPressed = false;
+	bool dPressed = false;
+	bool spacePressed = false;
 private:
-	void RemoveElemement(PlayerInput input);
 	bool SetEscapePressed();
 	void SetKeyDown();
 	bool escapePressed;

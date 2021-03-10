@@ -17,22 +17,30 @@ bool Keyboard::GetEscapePressed()
 	return escapePressed;
 }
 
-std::vector<Keyboard::PlayerInput> Keyboard::GetKeyDown()
+Keyboard::PlayerInput Keyboard::GetKeyDown()
 {
 	SetKeyDown();
-	return playerInput;
+	if (wPressed) return PlayerForward;
+	else if (aPressed) return PlayerRotateLeft;
+	else if (dPressed) return PlayerRotateRight;
+	else if (spacePressed) return PlayerFireWeapon;
+	else return NoKeyPressed;
 }
-
-void Keyboard::RemoveElemement(PlayerInput input)
+bool Keyboard::checkForwardPressed()
 {
-	for (int i = 0; i < playerInput.size(); i++)
-	{
-		if (i == input)
-		{
-			playerInput.erase(playerInput.begin() + i);
-			playerInput.shrink_to_fit();
-		}
-	}
+	return wPressed;
+}
+bool Keyboard::checkRotateLeftPressed()
+{
+	return aPressed;
+}
+bool Keyboard::checkRootateRightPressed()
+{
+	return dPressed;
+}
+bool Keyboard::checkFireWeaponPressed()
+{
+	return spacePressed;
 }
 
 void Keyboard::SetKeyDown()
@@ -46,12 +54,12 @@ void Keyboard::SetKeyDown()
 			{
 			case SDLK_w:
 				cout << "W pressed\n";
-				playerInput.push_back(PlayerForward);
+				wPressed = true;
 				break;
 
 			case SDLK_a:
 				cout << "A pressed\n";
-				playerInput.push_back(PlayerRotateLeft);
+				aPressed = true;
 				break;
 
 			case SDLK_s:
@@ -61,13 +69,12 @@ void Keyboard::SetKeyDown()
 
 			case SDLK_d:
 				cout << "D pressed\n";
-				playerInput.push_back(PlayerRotateRight);
+				dPressed = true;
 				break;
 
 			case SDLK_SPACE:
 				cout << "Space pressed\n";
-				playerInput.push_back(PlayerShoot);
-				//spacePressed = true;
+				spacePressed = true;
 				break;
 
 			case SDLK_ESCAPE:
@@ -91,12 +98,12 @@ void Keyboard::SetKeyDown()
 			{
 			case SDLK_w:
 				cout << "W pressed\n";
-				RemoveElemement(PlayerForward);
+				wPressed = false;
 				break;
 
 			case SDLK_a:
 				cout << "A pressed\n";
-				RemoveElemement(PlayerRotateLeft);
+				aPressed = false;
 				break;
 
 			case SDLK_s:
@@ -105,12 +112,12 @@ void Keyboard::SetKeyDown()
 
 			case SDLK_d:
 				cout << "D pressed -  :(\n";
-				RemoveElemement(PlayerRotateRight);
+				dPressed = false;
 				break;
 
 			case SDLK_SPACE:
 				cout << "Space pressed - pew pew\n";
-				RemoveElemement(PlayerShoot);
+				spacePressed = false;
 				break;
 
 			case SDLK_ESCAPE:
