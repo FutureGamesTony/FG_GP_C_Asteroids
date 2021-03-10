@@ -1,7 +1,7 @@
 #include "CollisionManager.h"
 
 #include "SDL.h"
-CollisionManager::CollisionManager(std::vector<ICollider*> colliders)
+CollisionManager::CollisionManager()
 {
    
 }

@@ -4,10 +4,11 @@
 #include <vector>
 class Asteroid;
 class Player;
+class CollisionManager;
 class EntityManager 
 {
 public:
-	EntityManager();
+	EntityManager(CollisionManager* collisionManger);
 	~EntityManager();
 	std::vector<IEntity*> GetEnteties();
 	
@@ -16,7 +17,7 @@ public:
 	Asteroid* ast;
 private:
 	void CreatePlayer();
-	void CreateAsteroid(const char* path);
+	void CreateAsteroid(const char* path, CollisionManager* collisionManager);
 	void CreateEnteties();
 	std::vector<IEntity*>m_enteties;
 	Entity_Type entityType;

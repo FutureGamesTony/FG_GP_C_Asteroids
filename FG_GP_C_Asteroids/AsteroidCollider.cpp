@@ -1,10 +1,15 @@
 #include "AsteroidCollider.h"
 #include "EngingConfig.h"
 
-
-AsteroidCollider::AsteroidCollider(Entity_Type entity_type, Size size, Position setPosition, Movement setMovement, Circle circleCollider)
+#include "CollisionManager.h"
+AsteroidCollider::AsteroidCollider(Entity_Type entity_type, CollisionManager* collisionManager, Size size, Position setPosition, Movement setMovement, Circle circleCollider)
 {
     CreateCollider(entity_type, size, setPosition, setMovement, nullptr, circleCollider);
+    for(AsteroidCollider* asteroid  :  s_asteroidColliders)
+    {
+        collisionManager->SetColliders(asteroid);
+    }
+    
 }
 void AsteroidCollider::CreateCollider(Entity_Type entity_type, Size size, Position setPosition, Movement setMovement, SDL_Rect* collider, Circle circleCollider)
 {
@@ -17,9 +22,7 @@ void AsteroidCollider::CreateCollider(Entity_Type entity_type, Size size, Positi
     hasCollided = false;
 }
 
-void AsteroidCollider::DrawCollider()
-{
-}
+
 
 Position AsteroidCollider::SetColliderPosition(Position colliderPosition)
 {

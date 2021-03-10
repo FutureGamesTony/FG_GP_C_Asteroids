@@ -4,10 +4,11 @@
 class PlayerCollider;
 class AsteroidCollider;
 class BulletCollider;
+class CollisionManager;
 class AsteroidCollider : public ICollider
 {
 public:
-    AsteroidCollider(Entity_Type entity_type, Size size, Position setPosition, Movement setMovement, Circle circleCollider);
+    AsteroidCollider(Entity_Type entity_type, CollisionManager* collisionManager, Size size, Position setPosition, Movement setMovement, Circle circleCollider);
     void CreateCollider(Entity_Type entity_type, Size size, Position setPosition, Movement setMovement, SDL_Rect* collider, Circle circleCollider) override;
     void DrawCollider();
     Position SetColliderPosition(Position colliderPosition);

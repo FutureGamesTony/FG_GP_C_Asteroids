@@ -9,7 +9,7 @@
 #include "ISprite.h"
 #include "IEntity.h"
 #include "SDL.h"
-#include "ICollider.h"
+
 #include "Keyboard.h"
 #include "Mouse.h"
 #include "CollisionManager.h"
@@ -33,9 +33,10 @@ DopeAssEngine::~DopeAssEngine()
 bool DopeAssEngine::InitEngine()
 {
     InitializeRenderManager();
+    InitializeCollisionManager();
     InitializeEnteties();
     //InitializeSpriteManager();
-    InitializeCollisionManager();
+
     InitializeInput();
     //InitializePlayer();
     return m_renderManager != nullptr && m_inputManager != nullptr;
@@ -70,7 +71,7 @@ void DopeAssEngine::InitializeInput()
 //}
 void DopeAssEngine::InitializeEnteties()
 {
-    m_entityManager = new EntityManager();
+    m_entityManager = new EntityManager(m_collisionManager);
     m_player = m_entityManager->GetEntity();
     m_playerSprite = m_player->GetSprite();
     m_entities = m_entityManager->GetEnteties();
@@ -86,7 +87,7 @@ void DopeAssEngine::InitializeEnteties()
 //}
 void DopeAssEngine::InitializeCollisionManager()
 {
-    m_collisionManager = new CollisionManager(m_colliders);
+    m_collisionManager = new CollisionManager();
 }
 void DopeAssEngine::ShutDown()
 {

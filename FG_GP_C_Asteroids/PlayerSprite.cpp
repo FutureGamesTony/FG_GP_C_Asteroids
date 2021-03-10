@@ -4,6 +4,7 @@
 PlayerSprite::PlayerSprite(SDL_Renderer* renderer)
 {
 	DrawSprite(renderer);
+
 }
 
 PlayerSprite::~PlayerSprite()

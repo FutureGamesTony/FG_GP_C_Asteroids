@@ -1,11 +1,12 @@
 #include "EntityManager.h"
 #include "Asteroid.h"
 #include "Player.h"
+#include "CollisionManager.h"
 using std::vector;
-EntityManager::EntityManager()
+EntityManager::EntityManager(CollisionManager* collisionManger)
 {
 	CreatePlayer();
-	CreateAsteroid(spriteFilePath);
+	CreateAsteroid(spriteFilePath, collisionManger);
 }
 
 EntityManager::~EntityManager()
@@ -32,9 +33,9 @@ void EntityManager::CreatePlayer()
 	m_player = new Player(renderer);
 }
 
-void EntityManager::CreateAsteroid(const char* path)
+void EntityManager::CreateAsteroid(const char* path, CollisionManager *collisionManager)
 {
-	m_asteroids.push_back(new Asteroid(path, renderer));
+	m_asteroids.push_back(new Asteroid(path, renderer, collisionManager));
 }
 
 void EntityManager::CreateEnteties()

@@ -3,6 +3,7 @@
 
 #include <iostream>
 //#include "sEntity.h"
+class CollisionManager;
 class AsteroidCollider;
 class ICollider;
 class ISprite;
@@ -10,7 +11,7 @@ class AsteroidSprite;
 class Asteroid : public IEntity 
 {
 public:
-	Asteroid(const char *path, SDL_Renderer* renderer);
+	Asteroid(const char *path, SDL_Renderer* renderer, CollisionManager* collisionManager);
 	~Asteroid();
 
 	void Split();
