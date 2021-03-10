@@ -16,11 +16,13 @@ bool Keyboard::GetEscapePressed()
 {
 	return escapePressed;
 }
+
 std::vector<Keyboard::PlayerInput> Keyboard::GetKeyDown()
 {
 	SetKeyDown();
 	return playerInput;
 }
+
 void Keyboard::RemoveElemement(PlayerInput input)
 {
 	for (int i = 0; i < playerInput.size(); i++)
@@ -28,9 +30,11 @@ void Keyboard::RemoveElemement(PlayerInput input)
 		if (i == input)
 		{
 			playerInput.erase(playerInput.begin() + i);
+			playerInput.shrink_to_fit();
 		}
 	}
 }
+
 void Keyboard::SetKeyDown()
 {
 	SDL_Event e;

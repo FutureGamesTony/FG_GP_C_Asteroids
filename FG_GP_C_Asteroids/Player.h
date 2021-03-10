@@ -26,7 +26,7 @@ public:
 		void Update() override;
 		Size SetSize() override;
 		Position SetPosition() override;
-		Movement SetMovementInput() override;
+		Movement SetMovementInput(std::vector<Keyboard::PlayerInput> inputList) override;
 		void UpdateMovement() override;
 		ISprite* GetSprite() override;
 		SDL_Rect* m_collider;
