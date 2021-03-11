@@ -5,7 +5,7 @@
 using std::vector;
 SpriteManager::SpriteManager(SDL_Renderer* renderer, EntityManager* entityManager)
 {
-	SetPlayerSprite(renderer);
+	//SetSprite(renderer);
 	SetAsteroidSprite(renderer);
 	m_entityManager = entityManager;
 }
@@ -24,12 +24,12 @@ ISprite* SpriteManager::GetISprite()
 	return sprite;
 }
 
-void SpriteManager::SetSprite(SDL_Renderer* renderer)
+void SpriteManager::SetSprite(ISprite* sprite)
 {
-
+	ISprite* temp;
 	//playerSprite = (PlayerSprite*)m_entityManager->GetEntity()->GetSprite();
-	//sprite = dynamic_cast<ISprite*>(playerSprite);
-	//m_sprites.push_back(sprite);
+	temp = dynamic_cast<ISprite*>(sprite);
+	m_sprites.push_back(temp);
 	
 }
 

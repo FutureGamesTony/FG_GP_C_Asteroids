@@ -55,36 +55,30 @@ void DopeAssEngine::InitializeRenderManager()
     m_renderManager = new RenderManager(m_entityManager);
 }
 
-void DopeAssEngine::InitializePlayer()
+void DopeAssEngine::InitializeEntityManager()
 {
-    m_player = new Player();
-    m_renderManager->SetSprite(m_playerSprite);
+    m_entityManager = new EntityManager();
 }
+
+//void DopeAssEngine::InitializePlayer()
+//{
+//    m_player = new Player();
+//    //m_renderManager->SetSprite(m_playerSprite);
+//}
 
 void DopeAssEngine::InitializeInput()
 {
     m_inputManager = new InputManager();
 }
-//void DopeAssEngine::InitializeAsteroids()
-//{
-//        //TODO: When Asteroid class is done, add here m_asteroid = new Asteroid(); to create object Asteroid.
-//}
+
 void DopeAssEngine::InitializeEnteties()
 {
-    m_entityManager = new EntityManager(m_collisionManager);
-    m_player = m_entityManager->GetEntity();
-    m_playerSprite = m_player->GetSprite();
-    m_entities = m_entityManager->GetEnteties();
     for (int i = 0; i < m_entities.size(); i++)
     {
         m_colliders.push_back(m_entities[i]->GetCollider());
     }
     InitializeCollisionManager();
 }
-//void DopeAssEngine::InitializeSpriteManager()
-//{
-//    m_spriteManager = new SpriteManager();
-//}
 void DopeAssEngine::InitializeCollisionManager()
 {
     m_collisionManager = new CollisionManager();

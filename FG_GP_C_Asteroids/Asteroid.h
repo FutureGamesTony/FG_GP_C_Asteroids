@@ -8,10 +8,11 @@ class AsteroidCollider;
 class ICollider;
 class ISprite;
 class AsteroidSprite;
+
 class Asteroid : public IEntity 
 {
 public:
-	Asteroid(const char *path, SDL_Renderer* renderer, CollisionManager* collisionManager);
+	Asteroid();
 	~Asteroid();
 
 	void Split();
@@ -34,6 +35,9 @@ public:
 	Circle circleCollider;
 	int velocityX;
 	int velocityY;
+	virtual void CreateSprite(SDL_Renderer* renderer) override;
+
+
 private:
 	Entity_Type m_asteroid_Entity = Entity_Type::Asteroid_Entity;
 	void CreateAsteroid(Entity_Type &entityType, SDL_Window* window, SDL_Renderer* renderer, int renderIndex,
@@ -45,8 +49,9 @@ private:
 	Position position;
 	Movement movement;
 	Size size;
-
 	// Inherited via IEntity
 	Movement SetMovementInput(Keyboard::PlayerInput moveCommand) override;
+
+	// Inherited via IEntity
 };
 

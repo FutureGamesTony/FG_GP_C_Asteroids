@@ -7,12 +7,12 @@
 #include "ISprite.h"
 #include "SDL.h"
 #include "SDL_image.h"
-Asteroid::Asteroid(const char* path, SDL_Renderer* renderer, CollisionManager* collisionManager)
+Asteroid::Asteroid()
 {
-	path = filePath.c_str();
+	//path = filePath.c_str();
 
-	m_asteroidSprite = new AsteroidSprite(renderer);
-	m_asteroidCollider = new AsteroidCollider(Asteroid_Entity, collisionManager, size, position, movement, circleCollider);
+
+	//m_asteroidCollider = new AsteroidCollider(Asteroid_Entity, collisionManager, size, position, movement, circleCollider);
 }
 Asteroid::~Asteroid()
 {
@@ -89,5 +89,10 @@ void Asteroid::CreateAsteroid(Entity_Type& entityType, SDL_Window* window, SDL_R
 Movement Asteroid::SetMovementInput(Keyboard::PlayerInput moveCommand)
 {
 	return movement;
+}
+
+void Asteroid::CreateSprite(SDL_Renderer* renderer)
+{
+	m_asteroidSprite = new AsteroidSprite(renderer);
 }
 

@@ -3,10 +3,12 @@
 #include "SDL_image.h"
 #include "ICollider.h"
 #include "Keyboard.h"
+#include "SpriteManager.h"
 class ICollider;
 class ISprite;//TODO: Remove comments
 struct Circle;
 class Keyboard;
+class SpriteManager;
 struct Size // Just wanted an easier way to set size
 {
 	int width;
@@ -45,6 +47,6 @@ public:
 	virtual void UpdateMovement() = 0;
 	virtual ISprite* GetSprite() = 0;
 	virtual ICollider* GetCollider() = 0;
-
+	virtual void CreateSprite(SDL_Renderer* renderer) = 0;
 	virtual void Update() = 0;
 };

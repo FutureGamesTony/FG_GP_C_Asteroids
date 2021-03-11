@@ -31,8 +31,7 @@ public:
 
 private:
 	void InitializeRenderManager();
-	void InitializePlayer();
-	void InitializeAsteroids();
+	void InitializeEntityManager();
 	void InitializeEnteties();
 	void InitializeSpriteManager();
 	void InitializeCollisionManager();
@@ -55,7 +54,6 @@ private:
 	DrawWindow* m_drawWindow = nullptr;
 	EntityManager* m_entityManager = nullptr;
 	InputManager* m_inputManager = nullptr;
-	SpriteManager* m_spriteManager = nullptr;
 	CollisionManager* m_collisionManager = nullptr;
 	std::vector<IEntity*>(m_entities);
 	std::vector<ISprite*>(m_sprites);

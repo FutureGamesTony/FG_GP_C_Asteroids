@@ -9,7 +9,7 @@ static class Player : public IEntity
 private:
 //private stuff
 public:
-	Player(SDL_Renderer* renderer); // constructor play-time ship
+	Player(); // constructor play-time ship
 	Player(int extraLifes) {}; //constructor for extra lifes
 	~Player();
 		/////////
@@ -29,7 +29,7 @@ public:
 		void UpdateMovement() override;
 		ISprite* GetSprite() override;
 		SDL_Rect* m_collider;
-		
+		void CreateSprite(SDL_Renderer* renderer) override;
 		PlayerSprite* m_playerSprite;
 		PlayerCollider* m_playerCollider;
 		// Inherited via IEntity
