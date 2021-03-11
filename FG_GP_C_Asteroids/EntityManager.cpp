@@ -4,8 +4,8 @@
 using std::vector;
 EntityManager::EntityManager()
 {
-	CreatePlayer();
-	CreateAsteroid(spriteFilePath);
+	//CreatePlayer();
+	//CreateAsteroid(spriteFilePath);
 }
 
 EntityManager::~EntityManager()
@@ -25,6 +25,11 @@ IEntity* EntityManager::GetEntity()
 void EntityManager::Func()
 {
 
+}
+
+EntityManager* EntityManager::GetEntityManager()
+{
+	return this;
 }
 
 void EntityManager::CreatePlayer()

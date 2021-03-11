@@ -10,13 +10,14 @@ class DrawWindow;
 class AsteroidSprite;
 class ISprite;
 class SpriteManager;
+class EntityManager;
 struct SDL_Window;
 struct SDL_Renderer;
 struct SDL_Texture;
 class RenderManager
 {
 public:
-	RenderManager();
+	RenderManager(EntityManager* entityManager);
 	~RenderManager();
 	bool InitializeWidow();
 	bool InitializeRenderer();
@@ -50,6 +51,7 @@ private:
 	std::vector<ISprite*> s_renderSprites; // Holds our sprites
 	std::vector <ICollider*> s_colliders;
 	Renderer* m_createRenderer = nullptr;
+	EntityManager* m_entityManager = nullptr;
 	const char* m_windowTitle = "Window Title"; //TODO: Destroy pointer array
 };
 

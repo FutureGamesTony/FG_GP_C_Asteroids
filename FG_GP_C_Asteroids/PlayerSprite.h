@@ -21,6 +21,7 @@ public:
 	void ModifyRects() override;
 	SDL_Rect* GetSourceRect();
 	SDL_Rect* GetDestRect();
+	PlayerSprite* GetThis();
 	const char* GetFilepath() override;
 
 private:

@@ -14,10 +14,11 @@ public:
 	IEntity* GetEntity();
 	void Func();
 	Asteroid* ast;
-private:
+	EntityManager* GetEntityManager();
 	void CreatePlayer();
 	void CreateAsteroid(const char* path);
 	void CreateEnteties();
+private:
 	std::vector<IEntity*>m_enteties;
 	Entity_Type entityType;
 	SDL_Window* window; 

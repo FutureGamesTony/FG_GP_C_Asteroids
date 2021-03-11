@@ -61,7 +61,7 @@ void Player::UpdateMovement()
 
 ISprite* Player::GetSprite()
 {
-    return (m_playerSprite);
+    return m_playerSprite;
 }
 
 ICollider* Player::GetCollider()
