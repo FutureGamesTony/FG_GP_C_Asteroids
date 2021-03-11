@@ -68,12 +68,12 @@ void Keyboard::SetKeyDown()
 				break;
 
 			case SDLK_d:
-				cout << "D pressed\n";
+				cout << "D pressed - :(\n";
 				dPressed = true;
 				break;
 
 			case SDLK_SPACE:
-				cout << "Space pressed\n";
+				cout << "Space pressed - pew pew\n";
 				spacePressed = true;
 				break;
 
@@ -97,26 +97,26 @@ void Keyboard::SetKeyDown()
 			switch (e.key.keysym.sym)
 			{
 			case SDLK_w:
-				cout << "W pressed\n";
+				cout << "W released\n";
 				wPressed = false;
 				break;
 
 			case SDLK_a:
-				cout << "A pressed\n";
+				cout << "A released\n";
 				aPressed = false;
 				break;
 
 			case SDLK_s:
-				cout << "S pressed\n";
+				cout << "S released\n";
 				break;
 
 			case SDLK_d:
-				cout << "D pressed -  :(\n";
+				cout << "D released -  :(\n";
 				dPressed = false;
 				break;
 
 			case SDLK_SPACE:
-				cout << "Space pressed - pew pew\n";
+				cout << "Space released\n";
 				spacePressed = false;
 				break;
 
