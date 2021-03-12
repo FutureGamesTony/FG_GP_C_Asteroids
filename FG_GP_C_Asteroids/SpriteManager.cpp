@@ -1,13 +1,13 @@
 #include "SpriteManager.h"
 #include "PlayerSprite.h"
 #include "AsteroidSprite.h"
+#include "Player.h"
 #include "EntityManager.h"
 using std::vector;
-SpriteManager::SpriteManager(SDL_Renderer* renderer, EntityManager* entityManager)
+SpriteManager::SpriteManager(SDL_Renderer* renderer, Player* player)
 {
-	//SetSprite(renderer);
+	SetSprite(player->GetSprite());
 	SetAsteroidSprite(renderer);
-	m_entityManager = entityManager;
 }
 
 SpriteManager::~SpriteManager()
@@ -27,7 +27,6 @@ ISprite* SpriteManager::GetISprite()
 void SpriteManager::SetSprite(ISprite* sprite)
 {
 	ISprite* temp;
-	//playerSprite = (PlayerSprite*)m_entityManager->GetEntity()->GetSprite();
 	temp = dynamic_cast<ISprite*>(sprite);
 	m_sprites.push_back(temp);
 	

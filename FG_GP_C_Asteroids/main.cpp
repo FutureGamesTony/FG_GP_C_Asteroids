@@ -22,7 +22,6 @@ int main(int argc, char** argv)
 	//Asteroid asteroid({20.0f, 10.0f, 8.0f, -6.0f, 15}); //(debug)
 	bool running = dopeAssEngine.InitEngine();
 	//PlayerSprite* player;
-	//player = new PlayerSprite();
 	while (running)
 	{
 		//m_getRenderer.DrawAsteroids(asteroid);

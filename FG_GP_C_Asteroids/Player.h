@@ -7,7 +7,6 @@ class PlayerCollider;
 static class Player : public IEntity
 {
 private:
-//private stuff
 public:
 	Player(); // constructor play-time ship
 	Player(int extraLifes) {}; //constructor for extra lifes

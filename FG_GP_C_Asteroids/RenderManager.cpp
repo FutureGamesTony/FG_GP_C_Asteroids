@@ -15,12 +15,10 @@ RenderManager::RenderManager(EntityManager* entityManager)
 {
 	m_drawWindow = new DrawWindow();
 	m_createRenderer = new Renderer();
-
-	//m_renderSprite = new PlayerSprite(m_renderer); // Debug
+	m_entityManager = entityManager;
 	InitializeWidow();
 	InitializeRenderer();
 	InitializeSpriteManager();
-	m_entityManager = entityManager;
 	fps = 0;
 	framecount = 0;
 	fullscreen = 0;
@@ -54,7 +52,7 @@ bool RenderManager::InitializeRenderer()
 
 bool RenderManager::InitializeSpriteManager()
 {
-	m_spriteManager = new SpriteManager(m_renderer, m_entityManager);
+	m_spriteManager = new SpriteManager(m_renderer, (Player*)m_entityManager->GetEntity());
 	for (int i = 0; i < m_spriteManager->GetSprites().size(); i++)
 	{
 		s_renderSprites.push_back(m_spriteManager->GetSprites()[i]); //Gets all the sprites from ISprite, populates list
@@ -84,6 +82,7 @@ void RenderManager::UpdateWindow()
 	SDL_RenderClear(m_renderer);
 	for (ISprite* sprite : s_renderSprites) 
 	{
+		sprite->DrawSprite(m_renderer);
 		sprite->RenderSprite(m_renderer, sprite->GetSprite());
 		sprite->ModifyRects();
 	}

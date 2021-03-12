@@ -111,7 +111,7 @@ void Keyboard::SetKeyDown()
 				break;
 
 			case SDLK_d:
-				cout << "D released -  :(\n";
+				cout << "D released\n";
 				dPressed = false;
 				break;
 

@@ -4,10 +4,11 @@
 class AsteroidSprite;
 class PlayerSprite;
 class EntityManager;
+class Player;
 class SpriteManager
 {
 public:
-	SpriteManager(SDL_Renderer* renderer, EntityManager* entityManager);
+	SpriteManager(SDL_Renderer* renderer, Player* player);
 	~SpriteManager();
 	std::vector<ISprite*> GetSprites();
 	ISprite* GetISprite();

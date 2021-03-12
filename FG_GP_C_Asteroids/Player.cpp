@@ -3,10 +3,9 @@
 #include "PlayerSprite.h"
 #include "PlayerCollider.h"
 #include "Keyboard.h"
-
 Player::Player()
 {
-    //m_playerSprite = new PlayerSprite(renderer);
+    m_playerSprite = new PlayerSprite();
     //m_playerCollider = new PlayerCollider(playerEntity, size, position, movement, m_collider);
 }
 
@@ -29,6 +28,9 @@ void Player::ApplyRightRotation()
 void Player::ApplyAcceleration()
 {
     std::cout << "ACCELERATING" << std::endl;
+    position.yPosition = m_playerSprite->destinationRect.y;
+    movement.movementY = -3;
+    UpdateMovement();
 }
 
 void Player::FireWeapon()
@@ -56,7 +58,7 @@ Position Player::SetPosition()
 
 void Player::UpdateMovement()
 {
-    //TODO: Make gooder code
+    m_playerSprite->destinationRect.y += movement.movementY;
 }
 
 ISprite* Player::GetSprite()

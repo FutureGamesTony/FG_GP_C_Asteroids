@@ -32,11 +32,11 @@ DopeAssEngine::~DopeAssEngine()
 
 bool DopeAssEngine::InitEngine()
 {
+    InitializeEntityManager(); //(J)
+    InitializeEnteties();
     InitializeRenderManager();
     InitializeCollisionManager();
-    InitializeEnteties();
     //InitializeSpriteManager();
-
     InitializeInput();
     //InitializePlayer();
     return m_renderManager != nullptr && m_inputManager != nullptr;
@@ -46,6 +46,7 @@ bool DopeAssEngine::InitEngine()
 bool DopeAssEngine::UpdateEngine()
 {
     m_renderManager->UpdateWindow();
+    m_inputManager->GetKey(m_entityManager->GetEntity());
     return true;
 }
 
