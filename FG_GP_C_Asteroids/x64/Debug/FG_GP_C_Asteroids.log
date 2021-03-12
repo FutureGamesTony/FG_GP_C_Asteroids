@@ -1,2 +1,26 @@
-﻿  SpriteManager.cpp
-  FG_GP_C_Asteroids.vcxproj -> C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\x64\Debug\FG_GP_C_Asteroids.exe
+﻿  Asteroid.cpp
+  AsteroidCollider.cpp
+  CollisionManager.cpp
+  DopeAssEngine.cpp
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(45,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\DopeAssEngine.cpp(59,26): error C2512: 'Player::Player': no appropriate default constructor available
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\DopeAssEngine.cpp(60,46): error C2660: 'RenderManager::SetSprite': function does not take 1 arguments
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\RenderManager.h(35,7): message : see declaration of 'RenderManager::SetSprite'
+  DrawWindow.cpp
+  EntityManager.cpp
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(45,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\EntityManager.cpp(53,3): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  InputManager.cpp
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(45,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
+  Keyboard.cpp
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(45,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
+  Player.cpp
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(45,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
+  PlayerCollider.cpp
+  PlayerSprite.cpp
+  RenderManager.cpp
+  SpriteManager.cpp
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\SpriteManager.cpp(8,2): error C3861: 'SetPlayerSprite': identifier not found
+  main.cpp
+  Generating Code...
+C:\Users\Johan.Liljedahl\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\PlayerSprite.cpp(19): warning C4715: 'PlayerSprite::CreateSprite': not all control paths return a value

@@ -9,7 +9,7 @@ static class Player : public IEntity
 private:
 //private stuff
 public:
-	Player(SDL_Renderer* renderer); // constructor play-time ship
+	Player(); // constructor play-time ship
 	Player(int extraLifes) {}; //constructor for extra lifes
 	~Player();
 		/////////
