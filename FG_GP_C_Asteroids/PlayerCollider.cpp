@@ -38,10 +38,6 @@ Size PlayerCollider::SetSize()
 	return Size();
 }
 
-void PlayerCollider::DrawCollider()
-{
-}
-
 Position PlayerCollider::SetColliderPosition(Position colliderPosition)
 {
 	return Position();

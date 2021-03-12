@@ -9,7 +9,7 @@ class CollisionManager
 {
 public:
 
-    CollisionManager(std::vector<ICollider*> colliders);
+    CollisionManager();
     ~CollisionManager();
 	bool CheckCollision(SDL_Rect A, SDL_Rect B);
     //Circle/Circle collision detector

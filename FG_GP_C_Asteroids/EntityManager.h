@@ -4,6 +4,7 @@
 #include <vector>
 class Asteroid;
 class Player;
+class CollisionManager;
 class EntityManager 
 {
 public:
@@ -16,7 +17,7 @@ public:
 	Asteroid* ast;
 	EntityManager* GetEntityManager();
 	void CreatePlayer();
-	void CreateAsteroid(const char* path);
+	void CreateAsteroid();
 	void CreateEnteties();
 private:
 	std::vector<IEntity*>m_enteties;
@@ -24,7 +25,7 @@ private:
 	SDL_Window* window; 
 	SDL_Renderer* renderer; int renderIndex; 
 	Uint32 renderFlags;
-	ISprite* sprite; 
+	std::vector<ISprite*> sprites; 
 	Player* m_player;
 	std::vector<Asteroid*> m_asteroids; //asteroids will almost never be alone so created a vector. 
 	ICollider* collider; 

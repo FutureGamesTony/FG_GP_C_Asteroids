@@ -29,7 +29,7 @@ public:
 		void UpdateMovement() override;
 		ISprite* GetSprite() override;
 		SDL_Rect* m_collider;
-		
+		void CreateSprite(SDL_Renderer* renderer) override;
 		PlayerSprite* m_playerSprite;
 		PlayerCollider* m_playerCollider;
 		// Inherited via IEntity

@@ -8,7 +8,7 @@ struct SDL_Surface;
 class PlayerSprite : public ISprite //public so it can be cast to a vector in a sprite handeler;
 {
 public:
-	PlayerSprite(SDL_Renderer* renderer);
+	PlayerSprite();
 	~PlayerSprite();
 
 	SDL_Rect sourceRect{ 640,640,32,32 };

@@ -31,7 +31,7 @@ private:
     Circle cirle;
 
     // Inherited via ICollider
-     void DrawCollider() override;
+
 
      Position SetColliderPosition(Position colliderPosition) override;
 

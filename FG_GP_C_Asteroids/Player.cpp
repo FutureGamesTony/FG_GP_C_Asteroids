@@ -4,10 +4,10 @@
 #include "PlayerCollider.h"
 #include "Keyboard.h"
 
-Player::Player(SDL_Renderer* renderer)
+Player::Player()
 {
-    m_playerSprite = new PlayerSprite(renderer);
-    m_playerCollider = new PlayerCollider(playerEntity, size, position, movement, m_collider);
+    //m_playerSprite = new PlayerSprite(renderer);
+    //m_playerCollider = new PlayerCollider(playerEntity, size, position, movement, m_collider);
 }
 
 Player::~Player()
@@ -62,6 +62,10 @@ void Player::UpdateMovement()
 ISprite* Player::GetSprite()
 {
     return m_playerSprite;
+}
+
+void Player::CreateSprite(SDL_Renderer* renderer)
+{
 }
 
 ICollider* Player::GetCollider()
