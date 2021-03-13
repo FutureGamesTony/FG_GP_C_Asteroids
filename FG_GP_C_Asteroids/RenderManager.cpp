@@ -53,11 +53,17 @@ bool RenderManager::InitializeRenderer()
 bool RenderManager::InitializeSpriteManager()
 {
 	m_spriteManager = new SpriteManager(m_renderer, (Player*)m_entityManager->GetEntity());
-	for (int i = 0; i < m_spriteManager->GetSprites().size(); i++)
-	{
-		s_renderSprites.push_back(m_spriteManager->GetSprites()[i]); //Gets all the sprites from ISprite, populates list
-	}
+	//for (int i = 0; i < m_spriteManager->GetSprites().size(); i++)
+	//{
+	//	s_renderSprites.push_back(m_spriteManager->GetSprites()[i]); //Gets all the sprites from ISprite, populates list
+	//}
 	return m_spriteManager != nullptr;
+}
+
+void RenderManager::InitializeSprites()
+{
+	//s_renderSprites.push_back(sprite);
+	s_renderSprites = m_spriteManager->GetSprites();
 }
 
 void RenderManager::UpdateWindow()

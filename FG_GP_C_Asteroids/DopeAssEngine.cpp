@@ -33,10 +33,10 @@ DopeAssEngine::~DopeAssEngine()
 bool DopeAssEngine::InitEngine()
 {
     InitializeEntityManager(); //(J)
-    InitializeEnteties();
     InitializeRenderManager();
     InitializeCollisionManager();
-    //InitializeSpriteManager();
+    InitializeEnteties();
+    InitializeSprites();
     InitializeInput();
     //InitializePlayer();
     return m_renderManager != nullptr && m_inputManager != nullptr;
@@ -74,11 +74,15 @@ void DopeAssEngine::InitializeInput()
 
 void DopeAssEngine::InitializeEnteties()
 {
-    for (int i = 0; i < m_entities.size(); i++)
-    {
-        m_colliders.push_back(m_entities[i]->GetCollider());
-    }
-    InitializeCollisionManager();
+    //for (int i = 0; i < m_entities.size(); i++)
+    //{
+    //    m_colliders.push_back(m_entities[i]->GetCollider());
+    //}
+    //InitializeCollisionManager();
+}
+void DopeAssEngine::InitializeSprites()
+{
+    m_renderManager->InitializeSprites();
 }
 void DopeAssEngine::InitializeCollisionManager()
 {

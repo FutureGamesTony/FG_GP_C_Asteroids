@@ -13,10 +13,10 @@ public:
 	std::vector<ISprite*> GetSprites();
 	ISprite* GetISprite();
 	void SetSprite(ISprite* sprite);
+	void SetAsteroidSprite(SDL_Renderer* renderer);
 
 private:
 
-	void SetAsteroidSprite(SDL_Renderer* renderer);
 	ISprite* sprite = nullptr;
 	PlayerSprite* playerSprite = nullptr;
 	EntityManager* m_entityManager;
