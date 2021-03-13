@@ -33,8 +33,7 @@ private:
 	void InitializeRenderManager();
 	void InitializeEntityManager();
 	void InitializeEnteties();
-	void InitializeSpriteManager();
-	void UpdatePlayer();
+	void InitializeSprites();
 	void InitializeCollisionManager();
 	void InitializeInput();
 	int m_width = 800;

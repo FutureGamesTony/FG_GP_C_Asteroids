@@ -26,9 +26,8 @@ ISprite* SpriteManager::GetISprite()
 
 void SpriteManager::SetSprite(ISprite* sprite)
 {
-	ISprite* temp;
-	temp = dynamic_cast<ISprite*>(sprite);
-	m_sprites.push_back(temp);
+	
+	m_sprites.push_back(dynamic_cast<ISprite*>(sprite));
 	
 }
 

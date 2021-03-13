@@ -29,6 +29,7 @@ SDL_Texture* AsteroidSprite::DrawSprite(SDL_Renderer* drawSprite)
 	SDL_Surface* tempSurface = IMG_Load(GetFilepath());
 	m_enemyTex = SDL_CreateTextureFromSurface(drawSprite, tempSurface);
 	SDL_FreeSurface(tempSurface);
+	
 	return m_enemyTex;
 }
 

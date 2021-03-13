@@ -19,7 +19,9 @@ public:
 	void CreatePlayer();
 	void CreateAsteroid();
 	void CreateEnteties();
+
 private:
+	void SetEnteties();
 	std::vector<IEntity*>m_enteties;
 	Entity_Type entityType;
 	SDL_Window* window; 
