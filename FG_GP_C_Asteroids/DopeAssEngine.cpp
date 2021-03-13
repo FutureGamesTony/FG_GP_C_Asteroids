@@ -38,7 +38,7 @@ bool DopeAssEngine::InitEngine()
     InitializeEnteties();
     InitializeSprites();
     InitializeInput();
-    //InitializePlayer();
+	m_player = m_entityManager->GetEntity();
     return m_renderManager != nullptr && m_inputManager != nullptr;
     return true;
 }
@@ -47,6 +47,7 @@ bool DopeAssEngine::UpdateEngine()
 {
     m_renderManager->UpdateWindow();
     m_inputManager->GetKey(m_entityManager->GetEntity());
+	UpdatePlayerDebug();
     return true;
 }
 
@@ -70,6 +71,11 @@ void DopeAssEngine::InitializeEntityManager()
 void DopeAssEngine::InitializeInput()
 {
     m_inputManager = new InputManager();
+}
+
+void DopeAssEngine::UpdatePlayerDebug()
+{
+	m_player->Update();
 }
 
 void DopeAssEngine::InitializeEnteties()

@@ -31,10 +31,12 @@ SDL_Texture* PlayerSprite::GetSprite()
 {
 	return playerTex;
 }
-
+//int i = 0;
 void PlayerSprite::RenderSprite(SDL_Renderer* renderer, SDL_Texture* sprite)
 {
-	SDL_RenderCopy(renderer, sprite, NULL, GetDestRect());
+	//SDL_RenderCopy(renderer, sprite, NULL, GetDestRect());
+	//i++;
+	SDL_RenderCopyEx(renderer, sprite, NULL, GetDestRect(), degrees, NULL, SDL_FLIP_VERTICAL);
 }
 //int i = 0;
 void PlayerSprite::ModifyRects()
@@ -42,11 +44,15 @@ void PlayerSprite::ModifyRects()
 	//i++;
 	//sourceRect.h = 16;
 	//sourceRect.w = 16;
-
 	//destinationRect.h = 32;
 	//destinationRect.w = 32;
 	//destinationRect.x = i;
 	//destinationRect.y = i;
+}
+
+void PlayerSprite::ModifyDegrees(int newValue)
+{
+	degrees = newValue;
 }
 
 SDL_Rect* PlayerSprite::GetSourceRect()

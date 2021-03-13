@@ -44,7 +44,7 @@ public:
 	virtual Size SetSize() = 0;
 	virtual Position SetPosition() = 0;
 	virtual Movement SetMovementInput(Keyboard::PlayerInput moveCommand) = 0;
-	virtual void UpdateMovement(float X, float Y) = 0;
+	virtual void UpdateMovement(float moveX, float moveY, float xPos, float yPos) = 0;
 	virtual ISprite* GetSprite() = 0;
 	virtual ICollider* GetCollider() = 0;
 	virtual void CreateSprite(SDL_Renderer* renderer) = 0;

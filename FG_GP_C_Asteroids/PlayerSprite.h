@@ -19,6 +19,7 @@ public:
 	SDL_Texture* GetSprite() override;
 	void RenderSprite(SDL_Renderer* renderer, SDL_Texture* sprite);
 	void ModifyRects() override;
+	void ModifyDegrees(int degrees);
 	SDL_Rect* GetSourceRect();
 	SDL_Rect* GetDestRect();
 	PlayerSprite* GetThis();
@@ -27,6 +28,7 @@ public:
 private:
 	std::string m_playerPath = "assets/AsteroidShip.png";
 	SDL_Texture* playerTex;
+	int degrees = 180;
 	// Inherited via ISprite
 
 };

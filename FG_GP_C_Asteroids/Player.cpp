@@ -14,25 +14,37 @@ Player::~Player()
     delete m_playerSprite;
     m_playerSprite = nullptr;
 }
-
+int rotation = 180;
 void Player::ApplyLeftRotation()
 {
+	position.yPosition = m_playerSprite->destinationRect.y;
+	position.xPosition = m_playerSprite->destinationRect.x;
+
     std::cout << "ROTATING LEFT" << std::endl;
+	rotation--;
+	m_playerSprite->ModifyDegrees(rotation * 3);
+
 }
 
 void Player::ApplyRightRotation()
 {
+	position.yPosition = m_playerSprite->destinationRect.y;
+	position.xPosition = m_playerSprite->destinationRect.x;
+
     std::cout << "ROTATING RIGHT" << std::endl;
+	rotation++;
+	m_playerSprite->ModifyDegrees(rotation * 3);
 }
 
 void Player::ApplyAcceleration()
 {
-    std::cout << "ACCELERATING" << std::endl;
-    position.yPosition = m_playerSprite->destinationRect.y;
+	position.yPosition = m_playerSprite->destinationRect.y;
 	position.xPosition = m_playerSprite->destinationRect.x;
+
+    std::cout << "ACCELERATING" << std::endl;
     movement.movementY = -3;
 	movement.movementX = 0;
-    UpdateMovement(movement.movementX,movement.movementY);
+    UpdateMovement(movement.movementX,movement.movementY, position.xPosition, position.yPosition);
 }
 
 void Player::FireWeapon()
@@ -46,7 +58,7 @@ void Player::CreateEntity(Entity_Type entityType, SDL_Window* window, SDL_Render
 
 void Player::Update() 
 {
-	UpdateMovement(movement.movementX, movement.movementY);
+	UpdateMovement(movement.movementX, movement.movementY, position.xPosition, position.yPosition);
 }
 
 Size Player::SetSize()
@@ -59,12 +71,11 @@ Position Player::SetPosition()
     return Position();
 }
 
-void Player::UpdateMovement(float X, float Y)
+void Player::UpdateMovement(float moveX, float moveY, float xPos, float yPos)
 {
-	movement.movementY = Y;
-	movement.movementX = X;
-    m_playerSprite->destinationRect.y += movement.movementY;
-	m_playerSprite->destinationRect.x += movement.movementX;
+    m_playerSprite->destinationRect.y += moveY;
+	m_playerSprite->destinationRect.x += moveX;
+;
 }
 
 ISprite* Player::GetSprite()
