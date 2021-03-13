@@ -35,7 +35,7 @@ bool DopeAssEngine::InitEngine()
     InitializeEntityManager(); //(J)
     InitializeRenderManager();
     InitializeCollisionManager();
-    InitializeEnteties();
+    //InitializeEnteties();
     InitializeSprites();
     InitializeInput();
     //InitializePlayer();
@@ -61,24 +61,27 @@ void DopeAssEngine::InitializeEntityManager()
     m_entityManager = new EntityManager();
 }
 
-//void DopeAssEngine::InitializePlayer()
-//{
-//    m_player = new Player();
-//    //m_renderManager->SetSprite(m_playerSprite);
-//}
-
 void DopeAssEngine::InitializeInput()
 {
     m_inputManager = new InputManager();
 }
 
-void DopeAssEngine::InitializeEnteties()
+void DopeAssEngine::InitializeEnteties(Entity_Type entity)
 {
-    //for (int i = 0; i < m_entities.size(); i++)
-    //{
-    //    m_colliders.push_back(m_entities[i]->GetCollider());
-    //}
-    //InitializeCollisionManager();
+    switch (entity)
+    {
+    case Player_Entity:
+        m_entityManager->CreatePlayer();
+        break;
+    case Bullet_Entity:
+        m_entityManager->CreateBullet();
+        break;
+    case Asteroid_Entity:
+        m_entityManager->CreateAsteroid();
+        break;
+    default:
+        break;
+    }
 }
 void DopeAssEngine::InitializeSprites()
 {

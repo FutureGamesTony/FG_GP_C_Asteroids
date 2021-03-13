@@ -32,7 +32,7 @@ public:
 private:
 	void InitializeRenderManager();
 	void InitializeEntityManager();
-	void InitializeEnteties();
+	void InitializeEnteties(Entity_Type entity);
 	void InitializeSprites();
 	void InitializeCollisionManager();
 	void InitializeInput();

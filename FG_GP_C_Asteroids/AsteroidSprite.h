@@ -22,7 +22,7 @@ private:
 	SDL_Texture* m_enemyTex;
 	// Inherited via ISprite
 	SDL_Texture* GetSprite() override;
-	SDL_Rect sourceRect{ 1,1,16,16 };
-	SDL_Rect destinationRect{ 1,1,16,16 };
+	SDL_Rect sourceRect{ 0,0,32,32 };
+	SDL_Rect destinationRect{ 1,1,64,64 };
 };
 

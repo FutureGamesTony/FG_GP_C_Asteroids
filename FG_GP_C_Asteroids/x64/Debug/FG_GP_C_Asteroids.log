@@ -1,8 +1,11 @@
-﻿  Asteroid.cpp
-  DopeAssEngine.cpp
+﻿  DopeAssEngine.cpp
 C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(44,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
-  DrawWindow.cpp
+  EntityManager.cpp
+C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(44,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
+C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\EntityManager.cpp(65,3): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   RenderManager.cpp
+  SpriteManager.cpp
+C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(44,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
   main.cpp
   Generating Code...
   FG_GP_C_Asteroids.vcxproj -> C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\x64\Debug\FG_GP_C_Asteroids.exe
