@@ -39,9 +39,7 @@ void Bullet::CreateEntity(Entity_Type entityType, SDL_Window* window, SDL_Render
     entityType = m_bulletEntity;
 }
 
-void Bullet::UpdateMovement()
-{
-}
+
 
 ICollider* Bullet::GetCollider()
 {

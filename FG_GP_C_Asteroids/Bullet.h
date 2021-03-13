@@ -17,7 +17,7 @@ class Bullet : public IEntity
 	int getSize();
 	void CreateEntity(Entity_Type entityType, SDL_Window* window, SDL_Renderer* renderer, int renderIndex, Uint32 renderFlags,
 		ISprite* sprite, ICollider* collider, SDL_Surface* image, char* spriteFilePath, Size size, Circle circle, Position position, Movement movementInput) override;
-	void UpdateMovement() override;
+
 	ICollider* GetCollider() override;
 	ISprite* GetSprite() override;
 	Size SetSize() override;
