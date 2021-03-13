@@ -1,1 +1,15 @@
-﻿  FG_GP_C_Asteroids.vcxproj -> C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\x64\Debug\FG_GP_C_Asteroids.exe
+﻿  Player.cpp
+C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(44,2): warning C4091:  'static ': ignored on left of 'Player' when no variable is declared
+C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(24,29): warning C4553:  '==': result of expression not used; did you intend '='?
+C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(25,27): warning C4553:  '==': result of expression not used; did you intend '='?
+C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(37,29): warning C4553:  '==': result of expression not used; did you intend '='?
+C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(38,27): warning C4553:  '==': result of expression not used; did you intend '='?
+C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(48,36): warning C4244:  '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(49,36): warning C4244:  '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(52,87): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(52,67): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(66,85): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(66,65): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(81,47): warning C4244:  '+=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(82,44): warning C4244:  '+=': conversion from 'float' to 'int', possible loss of data
+  FG_GP_C_Asteroids.vcxproj -> C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\x64\Debug\FG_GP_C_Asteroids.exe
