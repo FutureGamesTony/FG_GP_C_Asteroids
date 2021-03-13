@@ -51,7 +51,7 @@ void Asteroid::CreateEntity(Entity_Type entityType, SDL_Window* window, SDL_Rend
 	CreateAsteroid(entityType, window, renderer, renderIndex, renderFlags, sprite, collider, image, spriteFilePath, circle, position, movementInput);
 }
 
-void Asteroid::UpdateMovement()
+void Asteroid::UpdateMovement(float X, float Y)
 {
 }
 

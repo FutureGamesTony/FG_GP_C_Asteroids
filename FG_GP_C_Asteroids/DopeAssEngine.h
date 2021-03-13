@@ -34,6 +34,7 @@ private:
 	void InitializeEntityManager();
 	void InitializeEnteties();
 	void InitializeSpriteManager();
+	void UpdatePlayer();
 	void InitializeCollisionManager();
 	void InitializeInput();
 	int m_width = 800;

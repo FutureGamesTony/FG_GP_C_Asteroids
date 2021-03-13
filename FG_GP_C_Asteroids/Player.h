@@ -25,7 +25,7 @@ public:
 		void Update() override;
 		Size SetSize() override;
 		Position SetPosition() override;
-		void UpdateMovement() override;
+		void UpdateMovement(float X, float Y) override;
 		ISprite* GetSprite() override;
 		SDL_Rect* m_collider;
 		void CreateSprite(SDL_Renderer* renderer) override;

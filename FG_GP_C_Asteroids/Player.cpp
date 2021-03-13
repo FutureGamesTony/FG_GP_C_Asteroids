@@ -29,8 +29,10 @@ void Player::ApplyAcceleration()
 {
     std::cout << "ACCELERATING" << std::endl;
     position.yPosition = m_playerSprite->destinationRect.y;
+	position.xPosition = m_playerSprite->destinationRect.x;
     movement.movementY = -3;
-    UpdateMovement();
+	movement.movementX = 0;
+    UpdateMovement(movement.movementX,movement.movementY);
 }
 
 void Player::FireWeapon()
@@ -44,6 +46,7 @@ void Player::CreateEntity(Entity_Type entityType, SDL_Window* window, SDL_Render
 
 void Player::Update() 
 {
+	UpdateMovement(movement.movementX, movement.movementY);
 }
 
 Size Player::SetSize()
@@ -56,9 +59,12 @@ Position Player::SetPosition()
     return Position();
 }
 
-void Player::UpdateMovement()
+void Player::UpdateMovement(float X, float Y)
 {
+	movement.movementY = Y;
+	movement.movementX = X;
     m_playerSprite->destinationRect.y += movement.movementY;
+	m_playerSprite->destinationRect.x += movement.movementX;
 }
 
 ISprite* Player::GetSprite()
