@@ -35,10 +35,10 @@ bool DopeAssEngine::InitEngine()
     InitializeEntityManager(); //(J)
     InitializeRenderManager();
     InitializeCollisionManager();
-    InitializeEnteties();
+    //InitializeEnteties();
     InitializeSprites();
     InitializeInput();
-	m_player = m_entityManager->GetEntity();
+    //InitializePlayer();
     return m_renderManager != nullptr && m_inputManager != nullptr;
     return true;
 }
@@ -47,7 +47,6 @@ bool DopeAssEngine::UpdateEngine()
 {
     m_renderManager->UpdateWindow();
     m_inputManager->GetKey(m_entityManager->GetEntity());
-	UpdatePlayerDebug();
     return true;
 }
 
@@ -62,29 +61,27 @@ void DopeAssEngine::InitializeEntityManager()
     m_entityManager = new EntityManager();
 }
 
-//void DopeAssEngine::InitializePlayer()
-//{
-//    m_player = new Player();
-//    //m_renderManager->SetSprite(m_playerSprite);
-//}
-
 void DopeAssEngine::InitializeInput()
 {
     m_inputManager = new InputManager();
 }
 
-void DopeAssEngine::UpdatePlayerDebug()
+void DopeAssEngine::InitializeEnteties(Entity_Type entity)
 {
-	m_player->Update();
-}
-
-void DopeAssEngine::InitializeEnteties()
-{
-    //for (int i = 0; i < m_entities.size(); i++)
-    //{
-    //    m_colliders.push_back(m_entities[i]->GetCollider());
-    //}
-    //InitializeCollisionManager();
+    switch (entity)
+    {
+    case Player_Entity:
+        m_entityManager->CreatePlayer();
+        break;
+    case Bullet_Entity:
+        m_entityManager->CreateBullet();
+        break;
+    case Asteroid_Entity:
+        m_entityManager->CreateAsteroid();
+        break;
+    default:
+        break;
+    }
 }
 void DopeAssEngine::InitializeSprites()
 {

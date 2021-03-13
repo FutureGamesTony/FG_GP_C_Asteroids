@@ -10,6 +10,13 @@ EntityManager::EntityManager()
 
 EntityManager::~EntityManager()
 {
+	for (Asteroid* asteroid : m_asteroids) 
+	{
+		delete asteroid;
+		asteroid = nullptr;
+	}
+	m_asteroids.clear();
+	m_asteroids.shrink_to_fit();
 }
 
 std::vector<IEntity*> EntityManager::GetEnteties()
@@ -40,6 +47,11 @@ void EntityManager::CreatePlayer()
 void EntityManager::CreateAsteroid()
 {
 	m_asteroids.push_back(new Asteroid());
+}
+
+void EntityManager::CreateBullet()
+{
+	
 }
 
 void EntityManager::CreateEnteties()
