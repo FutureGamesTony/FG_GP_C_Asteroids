@@ -36,6 +36,7 @@ private:
 	void InitializeSprites();
 	void InitializeCollisionManager();
 	void InitializeInput();
+	void UpdatePlayerDebug();
 	int m_width = 800;
 	int m_height = 600;
 	int framecount = 0;

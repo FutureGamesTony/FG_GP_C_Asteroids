@@ -87,7 +87,6 @@ void RenderManager::UpdateWindow()
 		SDL_Delay((1000 / 60) - timerFPS);
 	}
 	SDL_RenderPresent(m_renderer);
-
 	SDL_RenderClear(m_renderer);
 	for (ISprite* sprite : s_renderSprites) 
 	{

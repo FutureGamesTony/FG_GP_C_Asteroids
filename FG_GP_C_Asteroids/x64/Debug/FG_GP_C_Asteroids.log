@@ -1,5 +1,14 @@
-﻿  PlayerSprite.cpp
-  RenderManager.cpp
-  Generating Code...
-C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\PlayerSprite.cpp(21): warning C4715: 'PlayerSprite::CreateSprite': not all control paths return a value
-  FG_GP_C_Asteroids.vcxproj -> C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\x64\Debug\FG_GP_C_Asteroids.exe
+﻿  Player.cpp
+C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(44,2): warning C4091:  'static ': ignored on left of 'Player' when no variable is declared
+C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(45,26): warning C4244:  '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(47,87): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(47,67): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(47,47): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(47,28): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(61,85): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(61,65): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(61,45): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(61,25): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(76,47): warning C4244:  '+=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(77,44): warning C4244:  '+=': conversion from 'float' to 'int', possible loss of data
+  FG_GP_C_Asteroids.vcxproj -> C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\x64\Debug\FG_GP_C_Asteroids.exe
