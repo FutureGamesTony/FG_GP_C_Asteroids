@@ -42,7 +42,7 @@ void Player::ApplyAcceleration()
 	position.xPosition = m_playerSprite->destinationRect.x;
 
     std::cout << "ACCELERATING" << std::endl;
-    movement.movementY = -3;
+	movement.movementY = -3 * SDL_atan2(position.yPosition, position.xPosition);
 	movement.movementX = 0;
     UpdateMovement(movement.movementX,movement.movementY, position.xPosition, position.yPosition);
 }

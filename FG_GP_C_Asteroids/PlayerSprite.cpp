@@ -37,6 +37,7 @@ void PlayerSprite::RenderSprite(SDL_Renderer* renderer, SDL_Texture* sprite)
 	//SDL_RenderCopy(renderer, sprite, NULL, GetDestRect());
 	//i++;
 	SDL_RenderCopyEx(renderer, sprite, NULL, GetDestRect(), degrees, NULL, SDL_FLIP_VERTICAL);
+
 }
 //int i = 0;
 void PlayerSprite::ModifyRects()
