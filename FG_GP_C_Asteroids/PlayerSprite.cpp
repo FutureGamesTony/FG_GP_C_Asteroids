@@ -2,9 +2,10 @@
 #include "SpriteManager.h"
 #include "SDL.h"
 #include "SDL_image.h"
+
 PlayerSprite::PlayerSprite()
 {
-
+	
 }
 
 PlayerSprite::~PlayerSprite()
@@ -21,9 +22,9 @@ int PlayerSprite::CreateSprite()
 
 SDL_Texture* PlayerSprite::DrawSprite(SDL_Renderer* renderer)
 {
-	SDL_Surface* tempSurface = IMG_Load(GetFilepath());
-	playerTex = SDL_CreateTextureFromSurface(renderer, tempSurface);
-	SDL_FreeSurface(tempSurface);
+
+	playerTex = SDL_CreateTextureFromSurface(renderer, IMG_Load(GetFilepath()));
+	SDL_FreeSurface(IMG_Load(GetFilepath()));
 	return playerTex;
 }
 

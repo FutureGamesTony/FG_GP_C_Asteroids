@@ -150,7 +150,9 @@
     <ClCompile Include="Asteroid.cpp" />
     <ClCompile Include="AsteroidCollider.cpp" />
     <ClCompile Include="AsteroidSprite.cpp" />
+    <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="BulletCollider.cpp" />
+    <ClCompile Include="BulletSprite.cpp" />
     <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="DopeAssEngine.cpp" />
     <ClCompile Include="DrawWindow.cpp" />
@@ -171,7 +173,9 @@
     <ClInclude Include="Asteroid.h" />
     <ClInclude Include="AsteroidCollider.h" />
     <ClInclude Include="AsteroidSprite.h" />
+    <ClInclude Include="Bullet.h" />
     <ClInclude Include="BulletCollider.h" />
+    <ClInclude Include="BulletSprite.h" />
     <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="DopeAssEngine.h" />
     <ClInclude Include="DrawWindow.h" />

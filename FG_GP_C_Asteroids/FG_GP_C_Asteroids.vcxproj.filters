@@ -117,6 +117,12 @@
     <ClCompile Include="BulletCollider.cpp">
       <Filter>Source Files\Engine\Managers\Collision</Filter>
     </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>Source Files\Engine\Managers\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletSprite.cpp">
+      <Filter>Source Files\Engine\Managers\Sprite</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="InputManager.h">
@@ -181,6 +187,12 @@
     </ClInclude>
     <ClInclude Include="BulletCollider.h">
       <Filter>Header Files\Engine\Managers\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>Header Files\Engine\Managers\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletSprite.h">
+      <Filter>Header Files\Engine\Managers\Sprite</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

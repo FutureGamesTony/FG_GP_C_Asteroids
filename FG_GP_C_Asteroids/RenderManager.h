@@ -21,7 +21,7 @@ public:
 	~RenderManager();
 	bool InitializeWidow();
 	bool InitializeRenderer();
-	bool InitializeSpriteManager();
+	bool InitializeSpriteManager(EntityManager* entityManager);
 	bool InistializeTexture(ISprite* sprite);
 	void InitializeSprites();
 	void UpdateWindow();
@@ -43,15 +43,15 @@ private:
 	bool running = 0;
 	bool fullscreen = 0;
 	SDL_Window* m_window; // only window pointer, when used in other places, this should be passed in.
-	SDL_Texture* m_texture; // only window pointer, when used in other places, this should be passed in.
+	//SDL_Texture* m_texture; // only window pointer, when used in other places, this should be passed in.
 	//SDL_Renderer* m_renderer = nullptr; // only render pointer, when used in other places, this should be passed in.
 	DrawWindow* m_drawWindow = nullptr;
-	ISprite* m_renderSprite = nullptr;
+	//ISprite* m_renderSprite = nullptr;
 	SpriteManager* m_spriteManager = nullptr;
 	std::vector<ISprite*> s_renderSprites; // Holds our sprites
 	std::vector <ICollider*> s_colliders;
 	Renderer* m_createRenderer = nullptr;
-	EntityManager* m_entityManager = nullptr;
+	//EntityManager* m_entityManager = nullptr;
 	const char* m_windowTitle = "Window Title"; //TODO: Destroy pointer array
 };
 

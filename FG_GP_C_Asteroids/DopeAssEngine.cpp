@@ -28,6 +28,8 @@ DopeAssEngine::~DopeAssEngine()
     m_inputManager = nullptr;
     delete m_renderManager;
     m_renderManager = nullptr;
+    delete m_collisionManager;
+    m_collisionManager = nullptr;
 }
 
 bool DopeAssEngine::InitEngine()
@@ -39,7 +41,7 @@ bool DopeAssEngine::InitEngine()
     InitializeSprites();
     InitializeInput();
     //InitializePlayer();
-    return m_renderManager != nullptr && m_inputManager != nullptr;
+    return m_renderManager != nullptr /*&& m_inputManager != nullptr*/;
     return true;
 }
 
