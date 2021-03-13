@@ -22,8 +22,8 @@ struct Position // Just wanted an easier way to set position
 
 struct Movement // Just wanted an easier way to set movement
 {
-	int movementX;
-	int movementY;
+	float movementX;
+	float movementY;
 };
 enum Entity_Type //to easy identify what entity for an entity handler, without having to compare objects. 
 {

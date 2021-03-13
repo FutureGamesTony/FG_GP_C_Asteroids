@@ -14,15 +14,17 @@ Player::~Player()
     delete m_playerSprite;
     m_playerSprite = nullptr;
 }
-int rotation = 180;
+int degrees = 0;
 void Player::ApplyLeftRotation()
 {
 	position.yPosition = m_playerSprite->destinationRect.y;
 	position.xPosition = m_playerSprite->destinationRect.x;
 
-    std::cout << "ROTATING LEFT" << std::endl;
-	rotation--;
-	m_playerSprite->ModifyDegrees(rotation * 3);
+    //std::cout << "ROTATING LEFT" << std::endl;
+	if (degrees > 360) degrees == 0;
+	if (degrees < 0) degrees == 360;
+	degrees--;
+	m_playerSprite->ModifyDegrees(degrees);
 
 }
 
@@ -31,9 +33,11 @@ void Player::ApplyRightRotation()
 	position.yPosition = m_playerSprite->destinationRect.y;
 	position.xPosition = m_playerSprite->destinationRect.x;
 
-    std::cout << "ROTATING RIGHT" << std::endl;
-	rotation++;
-	m_playerSprite->ModifyDegrees(rotation * 3);
+    //std::cout << "ROTATING RIGHT" << std::endl;
+	if (degrees > 360) degrees == 0;
+	if (degrees < 0) degrees == 360;
+	degrees++;
+	m_playerSprite->ModifyDegrees(degrees);
 }
 
 void Player::ApplyAcceleration()
@@ -41,9 +45,10 @@ void Player::ApplyAcceleration()
 	position.yPosition = m_playerSprite->destinationRect.y;
 	position.xPosition = m_playerSprite->destinationRect.x;
 
-    std::cout << "ACCELERATING" << std::endl;
-	movement.movementY = -3 * SDL_atan2(position.yPosition, position.xPosition);
-	movement.movementX = 0;
+	movement.movementX = cos(degrees) * 5;
+	movement.movementY = sin(degrees) * 5;
+    std::cout << movement.movementX << ", " << movement.movementY << std::endl;
+
     UpdateMovement(movement.movementX,movement.movementY, position.xPosition, position.yPosition);
 }
 
