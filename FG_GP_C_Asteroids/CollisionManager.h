@@ -7,6 +7,7 @@
 #include <cmath>
 struct SDL_Rect;
 class EntityType;
+//Majority of code from https://lazyfoo.net/SDL_tutorials/lesson19/index.php
 class CollisionManager
 {
 public:

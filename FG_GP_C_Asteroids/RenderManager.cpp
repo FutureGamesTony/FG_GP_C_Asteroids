@@ -47,7 +47,6 @@ bool RenderManager::InitializeRenderer()
 {
 
 	m_renderer = m_createRenderer->CreateRenderer(m_window, m_renderer);
-	//m_renderSprite->DrawSprite(m_renderer); redundant?
 
 	return m_renderer != nullptr;
 	

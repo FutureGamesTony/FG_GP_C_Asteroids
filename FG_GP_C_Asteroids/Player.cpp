@@ -16,44 +16,17 @@ Player::~Player()
 int degrees = 0;
 void Player::ApplyLeftRotation()
 {
-	//position.y = m_playerSprite->destinationRect.y;
-	//position.x = m_playerSprite->destinationRect.x;
 
-    //std::cout << "ROTATING LEFT" << std::endl;
-	//if (degrees > 360) degrees == 0;
-	//if (degrees < 0) degrees == 360;
-	//degrees--;
-	//m_playerSprite->ModifyDegrees(degrees * M_PI / 1.8);
-	//std::cout << ((degrees * M_PI / 1.8)) << ", " << ((degrees * M_PI / 1.8)) << std::endl;
 }
 
 void Player::ApplyRightRotation()
 {
-	//position.y = m_playerSprite->destinationRect.y;
-	//position.x = m_playerSprite->destinationRect.x;
 
- //   //std::cout << "ROTATING RIGHT" << std::endl;
-	//if (degrees > 360) degrees == 0;
-	//if (degrees < 0) degrees == 360;
-	//degrees++;
-	//m_playerSprite->ModifyDegrees(degrees * M_PI / 1.8);
-	//std::cout << ((degrees * M_PI / 1.8)) << ", " << ((degrees * M_PI / 1.8)) << std::endl;
 }
 
 void Player::ApplyAcceleration()
 {
-	//position.y = m_playerSprite->destinationRect.y;
-	//position.x = m_playerSprite->destinationRect.x;
-	//int x;
-	//int y;
-	//SDL_GetMouseState(&x, &y);
-	//std::cout << "x: " << x << ", y: " << y << "\n";
-	//movement.x = position.x - x;
-	//movement.y = position.y - y;
-	//movement.x = movement.x / sqrt(pow(movement.x, 2) + (movement.y, 2));
-	//movement.y = movement.y / sqrt(pow(movement.x, 2) + (movement.y, 2));
-	//m_playerSprite->SetDestinationRect(movement.x, movement.y);
- //   std::cout << movement.x << ", " << movement.y << std::endl;
+
 	
 	movement.x = cos(degrees * M_PI / 1.8);
 	movement.y = sin(degrees * M_PI / 1.8);
@@ -72,7 +45,7 @@ void Player::CreateEntity(EngineConfig::EntityType entityType, SDL_Window* windo
 
 void Player::Update() 
 {
-	//UpdateMovement(movement.x, movement.y, position.x, position.y);
+
 }
 
 Size Player::SetSize()
@@ -87,10 +60,7 @@ Position Player::SetPosition()
 
 void Player::UpdateMovement(float moveX, float moveY, float xPos, float yPos)
 {
-	//moveX = moveX + xPos;
-	//moveY = moveY + yPos;
-	
-    //m_playerSprite->SetDestinationRect (moveX, moveY);
+
 
 ;
 }
@@ -102,7 +72,7 @@ ISprite* Player::GetSprite()
 
 void Player::CreateSprite(SDL_Renderer* renderer)
 {
-	//m_playerSprite = new PlayerSprite(renderer);
+
 }
 
 EngineConfig::EntityType Player::GetEntityType()
@@ -142,9 +112,5 @@ Movement Player::SetMovementInput(EngineConfig::PlayerInput moveCommand)
 	default:
 		break;
 	}
-    //if (moveCommand == Keyboard::PlayerForward) { ApplyAcceleration(); }
-    //else if (moveCommand == Keyboard::PlayerRotateLeft) { ApplyLeftRotation(); }
-    //else if (moveCommand == Keyboard::PlayerRotateRight) { ApplyRightRotation(); }
-    //else if (moveCommand == Keyboard::PlayerFireWeapon) { FireWeapon(); }
     return movement;
 }

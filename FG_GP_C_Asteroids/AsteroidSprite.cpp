@@ -28,7 +28,6 @@ void AsteroidSprite::RenderSprite(SDL_Renderer* renderer, SDL_Texture* sprite)
 
 SDL_Texture* AsteroidSprite::DrawSprite(SDL_Renderer* drawSprite)
 {
-	//SDL_Surface* tempSurface = IMG_Load(GetFilepath());
 	if (m_enemyTex != SDL_CreateTextureFromSurface(drawSprite, IMG_Load(GetFilepath()))) 
 	{
 		m_enemyTex = SDL_CreateTextureFromSurface(drawSprite, IMG_Load(GetFilepath()));

@@ -12,6 +12,6 @@ public:
 	~DrawWindow();
 	SDL_Window* CreateWindow(SDL_Window* window);
 
-	//SDL_Renderer* CreateRenderer(SDL_Window* window, SDL_Renderer* renderer);
+
 private:
 };

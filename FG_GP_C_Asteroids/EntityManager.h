@@ -29,7 +29,7 @@ private:
 	std::vector<ISprite*> sprites; 
 	Player* m_player;
 	Asteroid* m_asteroid;
-	std::vector<Asteroid*> m_asteroids; //asteroids will almost never be alone so created a vector. 
+	std::vector<Asteroid*> m_asteroids; 
 
 };
 

@@ -1,7 +1,7 @@
 #include "InputManager.h"
 #include "Mouse.h"
 #include "Player.h"
-//#include "SDL.h"
+
 
 InputManager::InputManager()
 {

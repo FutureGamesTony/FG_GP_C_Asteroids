@@ -26,7 +26,7 @@ private:
 	EngineConfig::PlayerInput SetKeyDown();
 	bool escapePressed;
 	const Uint8* keystates = SDL_GetKeyboardState(NULL); // borrowed the InputCode in main
-	//SDL_Scancode buttonPressed;
+
 	EngineConfig::PlayerInput e_keyPressed;
 
 };

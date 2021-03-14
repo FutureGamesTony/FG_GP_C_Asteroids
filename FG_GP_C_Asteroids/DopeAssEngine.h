@@ -1,5 +1,5 @@
 #pragma once
-#include "SDL_image.h" // debugging (new)
+#include "SDL_image.h" 
 #include "IEntity.h"
 #include "ICollider.h"
 #include "DopeAssEngine.h"

@@ -15,23 +15,14 @@
 
 int main(int argc, char** argv) 
 {
-	//InputManager m_getInputManager;
-	//RenderManager m_getRenderer;
 	DopeAssEngine dopeAssEngine;
-	//EntityManager entityManager;
-	//Asteroid asteroid({20.0f, 10.0f, 8.0f, -6.0f, 15}); //(debug)
 	bool running = dopeAssEngine.InitEngine();
-	//PlayerSprite* player;
 	while (running)
 	{
-		//m_getRenderer.DrawAsteroids(asteroid);
-		//m_getInputManager.GetKey(entityManager.GetEntity());
+
 		running = dopeAssEngine.UpdateEngine();
 		if (!running) dopeAssEngine.ShutDown();
 	}
-
-	//SDL_DestroyRenderer(renderer);
-	//SDL_DestroyWindow(window);
 	SDL_Quit();
 	return 0;
 }

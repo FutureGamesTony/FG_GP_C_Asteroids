@@ -33,7 +33,8 @@ public:
 		void CreateSprite(SDL_Renderer* renderer) override;
 		ISprite* m_playerSprite;
 		ICollider* m_playerCollider;
-		// Inherited via IEntity
+		Movement SetMovementInput(EngineConfig::PlayerInput moveCommand) override;
+
 		ICollider* GetCollider() override;
 		/////////
 		Circle circle;
@@ -44,7 +45,5 @@ private:
 		void CreatePlayer(EngineConfig::EntityType entityType, SDL_Window* window, SDL_Renderer* renderer, int renderIndex,
 			Uint32 renderFlags, ISprite* playerSprite, ICollider* playerCollider,
 			SDL_Surface* surface, char* spriteFilePath, Circle circle, Position position, Movement movement);
-		// Inherited via IEntity
-		Movement SetMovementInput(EngineConfig::PlayerInput moveCommand) override;
 };
 

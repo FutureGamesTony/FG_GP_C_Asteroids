@@ -62,7 +62,7 @@ void EntityManager::CreateEnteties()
 	{
 		m_enteties.push_back(dynamic_cast<IEntity*>(m_player));
 	}
-	if (m_enteties.size() - 1 < m_asteroids.size()) //TODO: add the bullet array as well, enteties.size - 1 - bullets.size < asteroids.size
+	if (m_enteties.size() - 1 < m_asteroids.size()) 
 	{
 		for (int i = m_enteties.size() - 1; i < m_asteroids.size(); i++)
 		{

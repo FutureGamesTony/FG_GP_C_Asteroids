@@ -98,7 +98,7 @@ Movement Asteroid::SetMovementInput(EngineConfig::PlayerInput moveCommand)
 
 void Asteroid::CreateSprite(SDL_Renderer* renderer)
 {
-	//m_asteroidSprite = new AsteroidSprite(renderer);
+
 }
 
 EngineConfig::EntityType Asteroid::GetEntityType()

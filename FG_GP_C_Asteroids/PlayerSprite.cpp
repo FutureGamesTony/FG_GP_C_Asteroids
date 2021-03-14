@@ -5,7 +5,6 @@
 
 PlayerSprite::PlayerSprite(SDL_Renderer* renderer)
 {
-	//sourceRect = { 640, 640, 32, 32 };
 	m_destinationRect = { 640,360,32,32 };
 	
 	DrawSprite(renderer);
@@ -41,8 +40,7 @@ SDL_Texture* PlayerSprite::GetSprite()
 //int i = 0;
 void PlayerSprite::RenderSprite(SDL_Renderer* renderer, SDL_Texture* sprite)
 {
-	//SDL_RenderCopy(renderer, sprite, NULL, GetDestRect());
-	//i++;
+
 	SDL_RenderCopyEx(renderer, sprite, NULL, GetDestRect(), degrees, NULL, SDL_FLIP_NONE);
 
 }
@@ -51,13 +49,6 @@ void PlayerSprite::ModifyRects(int rotation, int x, int y)
 {
 	ModifyDegrees(rotation);
 	SetDestinationRect(x, y);
-	//i++;
-	//sourceRect.h = 16;
-	//sourceRect.w = 16;
-	//destinationRect.h = 32;
-	//destinationRect.w = 32;
-	//destinationRect.x = i;
-	//destinationRect.y = i;
 }
 
 void PlayerSprite::ModifyDegrees(int newValue)
@@ -77,7 +68,6 @@ SDL_Rect* PlayerSprite::GetDestRect()
 
 void PlayerSprite::SetDestinationRect(float x, float y)
 {
-	//GetDestRect();
 	m_destinationRect.x = x;
 	m_destinationRect.y = y;
 }

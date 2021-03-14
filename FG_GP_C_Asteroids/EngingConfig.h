@@ -1,16 +1,16 @@
 #pragma once
-struct Size // Just wanted an easier way to set size
+struct Size
 {
 	int width;
 	int height;
 };
-struct Position // Just wanted an easier way to set position
+struct Position 
 {
 	int x;
 	int y;
 };
 
-struct Movement // Just wanted an easier way to set movement
+struct Movement 
 {
 	double x;
 	double y;
@@ -26,7 +26,7 @@ class EngineConfig
 public:
 	static const int WIDTH = 1280;
 	static const int HEIGHT = 720;
-	enum class EntityType//to easy identify what entity for an entity handler, without having to compare objects. 
+	enum class EntityType 
 	{
 		Player_Entity,
 		Bullet_Entity,

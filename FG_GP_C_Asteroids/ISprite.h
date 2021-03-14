@@ -4,8 +4,7 @@
 #include "EngingConfig.h"
 class IEntity;
 class  ISprite { 
-public: // By creating an abstract class, we can ensure all functions that inherits this class has everything needed, or it will give compilation error
-		// so if more or less things are needed, this is the first place to adjust. 
+public:
 	virtual int CreateSprite() = 0;
 	virtual void ModifyRects(int rotation, int x, int y) = 0;
 	virtual SDL_Texture* DrawSprite(SDL_Renderer* drawSprite) = 0;

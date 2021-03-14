@@ -5,7 +5,7 @@
 struct SDL_Renderer;
 struct SDL_Texture;
 struct SDL_Surface;
-class PlayerSprite : public ISprite //public so it can be cast to a vector in a sprite handeler;
+class PlayerSprite : public ISprite 
 {
 public:
 	PlayerSprite(SDL_Renderer* renderer);
@@ -31,6 +31,6 @@ private:
 	SDL_Texture* playerTex = nullptr;
 	int degrees = 0;
 	EngineConfig::EntityType m_playerEntity = EngineConfig::EntityType::Player_Entity;
-	// Inherited via ISprite
+
 };
 

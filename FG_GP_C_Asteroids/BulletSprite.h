@@ -5,7 +5,6 @@
 
 class BulletSprite : public ISprite
 {
-	// Inherited via ISprite
 	int CreateSprite() override;
 	void ModifyRects(int rotation, int x, int y) override;
 	SDL_Texture* DrawSprite(SDL_Renderer* drawSprite) override;
@@ -13,7 +12,6 @@ class BulletSprite : public ISprite
 	const char* GetFilepath() override;
 	SDL_Texture* GetSprite() override;
 	SDL_Rect m_destinationRect;
-	// Inherited via ISprite
 	Position SetSpritePosition(Position destinationRect) override;
 	SDL_Rect GetSourceRect() override;
 };

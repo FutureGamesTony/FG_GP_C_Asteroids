@@ -13,7 +13,7 @@
 #include "Mouse.h"
 #include "CollisionManager.h"
 #include "PlayerSprite.h"
-#include <random>
+
 DopeAssEngine::DopeAssEngine()
 {
     circle = { 0, 0, 0 };
@@ -28,10 +28,6 @@ DopeAssEngine::DopeAssEngine()
     playerPosition = { 0, 0 };
     playerMovement = { 0, 0 };
     entityType = EngineConfig::EntityType::Player_Entity;
-    //double  radians = 180 / 3.14;
-    //int movementSpeed = 10;
-    //float moveX = 0.0f;
-    //float moveY = 0.0f;
 }
 
 DopeAssEngine::~DopeAssEngine()
@@ -48,21 +44,20 @@ DopeAssEngine::~DopeAssEngine()
 
 bool DopeAssEngine::InitEngine()
 {
-    InitializeEntityManager(); //(J)
+    InitializeEntityManager();
     InitializeRenderManager();
     InitializeCollisionManager();
-    //InitializeEnteties();
+
     InitializeSprites();
     InitializeInput();
-    //InitializePlayer();
+
     m_sprites = m_renderManager->GetSprites();
-    return m_renderManager != nullptr /*&& m_inputManager != nullptr*/;
+    return m_renderManager != nullptr && m_inputManager != nullptr;
     return true;
 }
 
 bool DopeAssEngine::UpdateEngine()
 {
-    //m_inputManager->GetKey(m_entityManager->GetEntity(), playerRotation, x, y);
     keyPressed = m_inputManager->GetInput();
     switch (keyPressed)
     {
@@ -156,9 +151,7 @@ Position DopeAssEngine::UpdatePlayerPosition(int x, int y, int rotation) // Move
         playerPosition.y += static_cast<int>(moveY);
         moveX += 1;
     }
-    std::cout << "Player movement x: " << playerMovement.x << ", y: " << playerMovement.y << "\n";
-    std::cout << "Update player position: " << playerPosition.x << ", " << playerPosition.y << "\n";
-    std::cout << "Rotation: " << rotation << "\n";
+
     return playerPosition;
 }
 

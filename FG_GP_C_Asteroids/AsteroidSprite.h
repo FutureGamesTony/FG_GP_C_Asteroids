@@ -21,17 +21,16 @@ public:
 	virtual SDL_Rect GetSourceRect() override;
 	Position SetSpritePosition(Position destinationRect) override;
 	EngineConfig::EntityType GetEntityType() override;
+	SDL_Texture* GetSprite() override;
+
 private:
 	std::string filePath = "assets/AsteroidLarge.png";
 	SDL_Texture* m_enemyTex;
-	// Inherited via ISprite
-	SDL_Texture* GetSprite() override;
-	SDL_Rect sourceRect;//{ 0,0,32,32 };
-	SDL_Rect m_destinationRect/*{ 1,1,64,64 }*/;
+
+	SDL_Rect sourceRect;
+	SDL_Rect m_destinationRect;
 
 	EngineConfig::EntityType m_asteroidEntity = EngineConfig::EntityType::Asteroid_Entity;
-	// Inherited via ISprite
 
-	// Inherited via ISprite
 };
 

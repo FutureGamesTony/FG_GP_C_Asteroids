@@ -9,7 +9,7 @@ class ISprite;
 
 class Bullet : public IEntity
 {
-	Bullet(); //TODO: implement player rotation and position to spawn properly;
+	Bullet(); 
 	~Bullet();
 	int getXpos();
 	int getYpos();
