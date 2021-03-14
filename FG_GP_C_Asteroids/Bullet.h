@@ -1,5 +1,6 @@
 #pragma once
 #include "IEntity.h"
+#include "EngingConfig.h"
 class BulletSprite;
 class CollisionManager;
 class AsteroidCollider;
@@ -15,7 +16,7 @@ class Bullet : public IEntity
 	int getXvelocity();
 	int getYvelocity();
 	int getSize();
-	void CreateEntity(Entity_Type entityType, SDL_Window* window, SDL_Renderer* renderer, int renderIndex, Uint32 renderFlags,
+	void CreateEntity(EngineConfig::EntityType entityType, SDL_Window* window, SDL_Renderer* renderer, int renderIndex, Uint32 renderFlags,
 		ISprite* sprite, ICollider* collider, SDL_Surface* image, char* spriteFilePath, Size size, Circle circle, Position position, Movement movementInput) override;
 
 	ICollider* GetCollider() override;
@@ -28,7 +29,7 @@ class Bullet : public IEntity
 	Circle circleCollider;
 	int velocityX;
 	int velocityY;
-	Entity_Type m_bulletEntity = Entity_Type::Bullet_Entity;
+	EngineConfig::EntityType m_bulletEntity = EngineConfig::EntityType::Bullet_Entity;
 	BulletSprite* m_bulletSprite = nullptr;
 };
 

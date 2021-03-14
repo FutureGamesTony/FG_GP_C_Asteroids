@@ -5,51 +5,59 @@
 #include "Keyboard.h"
 Player::Player()
 {
-    m_playerSprite = new PlayerSprite();
+    //m_playerSprite = new PlayerSprite();
     //m_playerCollider = new PlayerCollider(playerEntity, size, position, movement, m_collider);
 }
 
 Player::~Player()
 {
-    delete m_playerSprite;
-    m_playerSprite = nullptr;
+
 }
 int degrees = 0;
 void Player::ApplyLeftRotation()
 {
-	position.yPosition = m_playerSprite->destinationRect.y;
-	position.xPosition = m_playerSprite->destinationRect.x;
+	//position.y = m_playerSprite->destinationRect.y;
+	//position.x = m_playerSprite->destinationRect.x;
 
     //std::cout << "ROTATING LEFT" << std::endl;
-	if (degrees > 360) degrees == 0;
-	if (degrees < 0) degrees == 360;
-	degrees--;
-	m_playerSprite->ModifyDegrees(degrees);
-
+	//if (degrees > 360) degrees == 0;
+	//if (degrees < 0) degrees == 360;
+	//degrees--;
+	//m_playerSprite->ModifyDegrees(degrees * M_PI / 1.8);
+	//std::cout << ((degrees * M_PI / 1.8)) << ", " << ((degrees * M_PI / 1.8)) << std::endl;
 }
 
 void Player::ApplyRightRotation()
 {
-	position.yPosition = m_playerSprite->destinationRect.y;
-	position.xPosition = m_playerSprite->destinationRect.x;
+	//position.y = m_playerSprite->destinationRect.y;
+	//position.x = m_playerSprite->destinationRect.x;
 
-    //std::cout << "ROTATING RIGHT" << std::endl;
-	if (degrees > 360) degrees == 0;
-	if (degrees < 0) degrees == 360;
-	degrees++;
-	m_playerSprite->ModifyDegrees(degrees);
+ //   //std::cout << "ROTATING RIGHT" << std::endl;
+	//if (degrees > 360) degrees == 0;
+	//if (degrees < 0) degrees == 360;
+	//degrees++;
+	//m_playerSprite->ModifyDegrees(degrees * M_PI / 1.8);
+	//std::cout << ((degrees * M_PI / 1.8)) << ", " << ((degrees * M_PI / 1.8)) << std::endl;
 }
 
 void Player::ApplyAcceleration()
 {
-	position.yPosition = m_playerSprite->destinationRect.y;
-	position.xPosition = m_playerSprite->destinationRect.x;
-
-	movement.movementX = cos(degrees) * 5;
-	movement.movementY = sin(degrees) * 5;
-    std::cout << movement.movementX << ", " << movement.movementY << std::endl;
-
-    UpdateMovement(movement.movementX,movement.movementY, position.xPosition, position.yPosition);
+	//position.y = m_playerSprite->destinationRect.y;
+	//position.x = m_playerSprite->destinationRect.x;
+	//int x;
+	//int y;
+	//SDL_GetMouseState(&x, &y);
+	//std::cout << "x: " << x << ", y: " << y << "\n";
+	//movement.x = position.x - x;
+	//movement.y = position.y - y;
+	//movement.x = movement.x / sqrt(pow(movement.x, 2) + (movement.y, 2));
+	//movement.y = movement.y / sqrt(pow(movement.x, 2) + (movement.y, 2));
+	//m_playerSprite->SetDestinationRect(movement.x, movement.y);
+ //   std::cout << movement.x << ", " << movement.y << std::endl;
+	
+	movement.x = cos(degrees * M_PI / 1.8);
+	movement.y = sin(degrees * M_PI / 1.8);
+    UpdateMovement(movement.x, movement.y, position.x, position.y);
 }
 
 void Player::FireWeapon()
@@ -57,13 +65,14 @@ void Player::FireWeapon()
     std::cout << "PEW PEW" << std::endl;
 }
 
-void Player::CreateEntity(Entity_Type entityType, SDL_Window* window, SDL_Renderer* renderer, int renderIndex, Uint32 renderFlags, ISprite* sprite, ICollider* collider, SDL_Surface* image, char* spriteFilePath, Size size, Circle circle, Position position, Movement movementInput)
+void Player::CreateEntity(EngineConfig::EntityType entityType, SDL_Window* window, SDL_Renderer* renderer, int renderIndex, Uint32 renderFlags, ISprite* sprite, ICollider* collider, SDL_Surface* image, char* spriteFilePath, Size size, Circle circle, Position position, Movement movementInput)
 {
+	CreatePlayer(entityType, window, renderer, renderIndex, renderFlags, sprite, collider, image, spriteFilePath, circle, position, movementInput);
 }
 
 void Player::Update() 
 {
-	UpdateMovement(movement.movementX, movement.movementY, position.xPosition, position.yPosition);
+	//UpdateMovement(movement.x, movement.y, position.x, position.y);
 }
 
 Size Player::SetSize()
@@ -78,8 +87,11 @@ Position Player::SetPosition()
 
 void Player::UpdateMovement(float moveX, float moveY, float xPos, float yPos)
 {
-    m_playerSprite->destinationRect.y += moveY;
-	m_playerSprite->destinationRect.x += moveX;
+	//moveX = moveX + xPos;
+	//moveY = moveY + yPos;
+	
+    //m_playerSprite->SetDestinationRect (moveX, moveY);
+
 ;
 }
 
@@ -90,18 +102,49 @@ ISprite* Player::GetSprite()
 
 void Player::CreateSprite(SDL_Renderer* renderer)
 {
+	//m_playerSprite = new PlayerSprite(renderer);
+}
+
+EngineConfig::EntityType Player::GetEntityType()
+{
+	return playerEntity;
 }
 
 ICollider* Player::GetCollider()
 {
-    return dynamic_cast<PlayerCollider*>(m_playerCollider);
+    return m_playerCollider;
 }
 
-Movement Player::SetMovementInput(Keyboard::PlayerInput moveCommand)
+void Player::CreatePlayer(EngineConfig::EntityType entityType, SDL_Window* window, SDL_Renderer* renderer, int renderIndex, Uint32 renderFlags, ISprite* playerSprite, ICollider* playerCollider, SDL_Surface* surface, char* spriteFilePath, Circle circle, Position position, Movement movement)
 {
-    if (moveCommand == Keyboard::PlayerForward) { ApplyAcceleration(); }
-    else if (moveCommand == Keyboard::PlayerRotateLeft) { ApplyLeftRotation(); }
-    else if (moveCommand == Keyboard::PlayerRotateRight) { ApplyRightRotation(); }
-    else if (moveCommand == Keyboard::PlayerFireWeapon) { FireWeapon(); }
+	
+	entityType = playerEntity;
+}
+
+Movement Player::SetMovementInput(EngineConfig::PlayerInput moveCommand)
+{
+	switch (moveCommand)
+	{
+	case EngineConfig::PlayerInput::NoKeyPressed:
+		break;
+	case EngineConfig::PlayerInput::PlayerForward:
+		ApplyAcceleration();
+		break;
+	case EngineConfig::PlayerInput::PlayerRotateLeft:
+		ApplyLeftRotation();
+		break;
+	case EngineConfig::PlayerInput::PlayerRotateRight:
+		ApplyRightRotation();
+		break;
+	case EngineConfig::PlayerInput::PlayerFireWeapon:
+		FireWeapon();
+		break;
+	default:
+		break;
+	}
+    //if (moveCommand == Keyboard::PlayerForward) { ApplyAcceleration(); }
+    //else if (moveCommand == Keyboard::PlayerRotateLeft) { ApplyLeftRotation(); }
+    //else if (moveCommand == Keyboard::PlayerRotateRight) { ApplyRightRotation(); }
+    //else if (moveCommand == Keyboard::PlayerFireWeapon) { FireWeapon(); }
     return movement;
 }

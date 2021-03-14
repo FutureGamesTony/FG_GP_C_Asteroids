@@ -2,7 +2,7 @@
 #include "DrawWindow.h"
 #include "Renderer.h"
 #include "EngingConfig.h"
-#include "ISprite.h"
+
 #include "PlayerSprite.h"
 #include "SpriteManager.h"
 #include "AsteroidSprite.h"
@@ -58,14 +58,13 @@ bool RenderManager::InitializeSpriteManager(EntityManager* entityManager)
 	m_spriteManager = new SpriteManager(m_renderer, (Player*)entityManager->GetEntity());
 	for (int i = 0; i < m_spriteManager->GetSprites().size(); i++)
 	{
-		s_renderSprites.push_back(m_spriteManager->GetSprites()[i]); //Gets all the sprites from ISprite, populates list
+		s_renderSprites.push_back(m_spriteManager->GetSprites()[i]);
 	}
 	return m_spriteManager != nullptr;
 }
 
 void RenderManager::InitializeSprites()
 {
-	//s_renderSprites.push_back(sprite);
 	s_renderSprites = m_spriteManager->GetSprites();
 }
 
@@ -90,15 +89,9 @@ void RenderManager::UpdateWindow()
 	SDL_RenderClear(m_renderer);
 	for (ISprite* sprite : s_renderSprites) 
 	{
-		sprite->DrawSprite(m_renderer);
 		sprite->RenderSprite(m_renderer, sprite->GetSprite());
-		sprite->ModifyRects();
 	}
-	//for (int i = 0; i < s_renderSprites.size(); i++)
-	//{
-	//	s_renderSprites[i]->DrawSprite();
 
-	//}
 	SDL_RenderPresent(m_renderer);
 }
 
@@ -113,4 +106,17 @@ void RenderManager::ShutDown()
 
 void RenderManager::RenderColliders()
 {
+}
+
+void RenderManager::UpdateSprite(ISprite* sprite, int rotation, int x, int y)
+{
+	if(sprite!= nullptr) 
+	{
+		m_spriteManager->SetPlayerSpriteRotationPosition(rotation, x, y);
+	}
+}
+
+std::vector<ISprite*> RenderManager::GetSprites()
+{
+	return s_renderSprites;
 }

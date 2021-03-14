@@ -3,7 +3,14 @@
 #include "SDL.h"
 CollisionManager::CollisionManager()
 {
-   
+    bottomA = 0;
+    bottomB = 0;
+    leftA = 0;
+    leftB = 0;
+    rightA = 0;
+    rightB = 0;
+    topA = 0;
+    topB = 0;
 }
 CollisionManager::~CollisionManager()
 {

@@ -1,6 +1,6 @@
 #include "PlayerCollider.h"
 
-PlayerCollider::PlayerCollider(Entity_Type entity_type, Size size, Position setPosition, Movement setMovement, SDL_Rect* collider)
+PlayerCollider::PlayerCollider(EngineConfig::EntityType entity_type, Size size, Position setPosition, Movement setMovement, SDL_Rect* collider)
 {
 	cirle.r = 0;
 	cirle.x = 0;
@@ -12,7 +12,7 @@ PlayerCollider::~PlayerCollider()
 {
 }
 
-void PlayerCollider::CreateCollider(Entity_Type entity_type, Size size, Position setPosition, Movement setMovement, SDL_Rect* collider, Circle circleCollider)
+void PlayerCollider::CreateCollider(EngineConfig::EntityType entity_type, Size size, Position setPosition, Movement setMovement, SDL_Rect* collider, Circle circleCollider)
 {
 }
 

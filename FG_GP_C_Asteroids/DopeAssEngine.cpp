@@ -9,15 +9,29 @@
 #include "ISprite.h"
 #include "IEntity.h"
 #include "SDL.h"
-
 #include "Keyboard.h"
 #include "Mouse.h"
 #include "CollisionManager.h"
 #include "PlayerSprite.h"
-
+#include <random>
 DopeAssEngine::DopeAssEngine()
 {
+    circle = { 0, 0, 0 };
 
+
+    position = { 0, 0 };
+    size = { 0, 0 };
+    playerRotation = 0;
+    
+    keyPressed = EngineConfig::PlayerInput::NoKeyPressed;
+    m_keyPressed = keyPressed;
+    playerPosition = { 0, 0 };
+    playerMovement = { 0, 0 };
+    entityType = EngineConfig::EntityType::Player_Entity;
+    //double  radians = 180 / 3.14;
+    //int movementSpeed = 10;
+    //float moveX = 0.0f;
+    //float moveY = 0.0f;
 }
 
 DopeAssEngine::~DopeAssEngine()
@@ -41,14 +55,55 @@ bool DopeAssEngine::InitEngine()
     InitializeSprites();
     InitializeInput();
     //InitializePlayer();
+    m_sprites = m_renderManager->GetSprites();
     return m_renderManager != nullptr /*&& m_inputManager != nullptr*/;
     return true;
 }
 
 bool DopeAssEngine::UpdateEngine()
 {
+    //m_inputManager->GetKey(m_entityManager->GetEntity(), playerRotation, x, y);
+    keyPressed = m_inputManager->GetInput();
+    switch (keyPressed)
+    {
+    case EngineConfig::PlayerInput::NoKeyPressed:
+        break;
+    case EngineConfig::PlayerInput::PlayerForward:
+        UpdatePlayerPosition(playerPosition.x, playerPosition.y, playerRotation);
+        break;
+    case EngineConfig::PlayerInput::PlayerRotateLeft:
+        playerRotation = UpdatePlayerRotation(playerRotation);
+        break;
+    case EngineConfig::PlayerInput::PlayerRotateRight:
+        playerRotation = UpdatePlayerRotation(playerRotation);
+        break;
+    case EngineConfig::PlayerInput::PlayerBreak:
+        break;
+    case EngineConfig::PlayerInput::PlayerFireWeapon:
+        break;
+    case EngineConfig::PlayerInput::PlayerQuit:
+        break;
+    default:
+        break;
+    }
+    if (m_playerSprite == nullptr)
+    {
+        for (ISprite* playerSprite : m_sprites) 
+        {
+            if (playerSprite->GetEntityType() == EngineConfig::EntityType::Player_Entity) m_playerSprite = playerSprite;
+        }
+    }
+    if (playerPosition.x > EngineConfig::WIDTH) playerPosition.x = 0;
+    if (playerPosition.x < 0) playerPosition.x = EngineConfig::WIDTH;
+    if (playerPosition.y > EngineConfig::HEIGHT) playerPosition.y = 0;
+    if (playerPosition.y < 0) playerPosition.y = EngineConfig::HEIGHT;
+    
+    if (playerRotation > 360) playerRotation = playerRotation - 360;
+    if (playerRotation < 0) playerRotation = playerRotation + 360;
+    m_renderManager->UpdateSprite(m_playerSprite, playerRotation, playerPosition.x, playerPosition.y);
+
     m_renderManager->UpdateWindow();
-    m_inputManager->GetKey(m_entityManager->GetEntity());
+
     return true;
 }
 
@@ -68,18 +123,72 @@ void DopeAssEngine::InitializeInput()
     m_inputManager = new InputManager();
 }
 
-void DopeAssEngine::InitializeEnteties(Entity_Type entity)
+void DopeAssEngine::UpdatePlayerDebug()
+{
+}
+
+Position DopeAssEngine::UpdatePlayerPosition(int x, int y, int rotation) // Move in rotation not working correctly. 
+{
+    
+    playerMovement.x = cos(rotation); 
+    playerMovement.y = sin(rotation);
+    
+    moveX += playerMovement.x;
+    moveY += playerMovement.y;
+    playerPosition.y += static_cast<int>(playerMovement.y);
+    if (moveX > 1) 
+    {
+        playerPosition.x += static_cast<int>(moveX);
+        moveX -= 1;
+    }
+    if (moveY > 1)
+    {
+        playerPosition.y += static_cast<int>(moveY);
+        moveY -= 1;
+    }
+    if (moveX < -1)
+    {
+        playerPosition.x += static_cast<int>(moveX);
+        moveX += 1;
+    }
+    if (moveY < -1)
+    {
+        playerPosition.y += static_cast<int>(moveY);
+        moveX += 1;
+    }
+    std::cout << "Player movement x: " << playerMovement.x << ", y: " << playerMovement.y << "\n";
+    std::cout << "Update player position: " << playerPosition.x << ", " << playerPosition.y << "\n";
+    std::cout << "Rotation: " << rotation << "\n";
+    return playerPosition;
+}
+
+int DopeAssEngine::UpdatePlayerRotation(int rotation)
+{
+    switch (keyPressed)
+    {
+
+    case EngineConfig::PlayerInput::PlayerRotateLeft:
+        rotation--;
+        break;
+    case EngineConfig::PlayerInput::PlayerRotateRight:
+        rotation++;
+        break;
+    }
+    return rotation;
+}
+
+void DopeAssEngine::InitializeEnteties(EngineConfig::EntityType entity)
 {
     switch (entity)
     {
-    case Player_Entity:
+    case EngineConfig::EntityType::Player_Entity:
         m_entityManager->CreatePlayer();
         break;
-    case Bullet_Entity:
+    case EngineConfig::EntityType::Bullet_Entity:
         m_entityManager->CreateBullet();
         break;
-    case Asteroid_Entity:
-        m_entityManager->CreateAsteroid();
+    case EngineConfig::EntityType::Asteroid_Entity:
+        SpawnAsteroids();
         break;
     default:
         break;
@@ -95,4 +204,13 @@ void DopeAssEngine::InitializeCollisionManager()
 }
 void DopeAssEngine::ShutDown()
 {
+}
+
+void DopeAssEngine::SpawnAsteroids()
+{
+    circle = {10,10,10};
+    position.x = circle.x;
+    position.y = circle.y;
+    size = { 10 };
+    m_entityManager->CreateAsteroid(EngineConfig::EntityType::Asteroid_Entity, circle, collider, m_asteroidSprite, position, size);
 }

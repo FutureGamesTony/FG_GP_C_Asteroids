@@ -5,6 +5,7 @@ class AsteroidSprite;
 class PlayerSprite;
 class EntityManager;
 class Player;
+class ISprite;
 class SpriteManager
 {
 public:
@@ -14,7 +15,8 @@ public:
 	ISprite* GetISprite();
 	void SetSprite(ISprite* sprite);
 	void SetAsteroidSprite(SDL_Renderer* renderer);
-
+	void SetPlayerSprite(SDL_Renderer* renderer);
+	void SetPlayerSpriteRotationPosition(int rotation, int x, int y);
 private:
 
 	ISprite* sprite = nullptr;

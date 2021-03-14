@@ -5,7 +5,8 @@ using std::vector;
 EntityManager::EntityManager()
 {
 	CreatePlayer();
-	CreateAsteroid();
+	//CreateAsteroid();
+	
 }
 
 EntityManager::~EntityManager()
@@ -44,9 +45,10 @@ void EntityManager::CreatePlayer()
 	m_player = new Player();
 }
 
-void EntityManager::CreateAsteroid()
+void EntityManager::CreateAsteroid(EngineConfig::EntityType entity,  Circle circle, ICollider* collider, ISprite* sprite, Position position, Size size)
 {
-	m_asteroids.push_back(new Asteroid());
+	entityType = entity;
+	m_asteroids.push_back(new Asteroid(entity, circle, collider, sprite, position, size));
 }
 
 void EntityManager::CreateBullet()

@@ -5,7 +5,7 @@ int BulletSprite::CreateSprite()
     return 0;
 }
 
-void BulletSprite::ModifyRects()
+void BulletSprite::ModifyRects(int rotation, int x, int y)
 {
 }
 
@@ -26,4 +26,16 @@ const char* BulletSprite::GetFilepath()
 SDL_Texture* BulletSprite::GetSprite()
 {
     return nullptr;
+}
+
+Position BulletSprite::SetSpritePosition(Position destinationRect)
+{
+    m_destinationRect.x = destinationRect.x;
+    m_destinationRect.y = destinationRect.y;
+    return destinationRect;
+}
+
+SDL_Rect BulletSprite::GetSourceRect()
+{
+    return SDL_Rect();
 }

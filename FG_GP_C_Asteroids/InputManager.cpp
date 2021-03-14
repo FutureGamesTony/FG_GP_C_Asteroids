@@ -1,5 +1,4 @@
 #include "InputManager.h"
-#include "Keyboard.h"
 #include "Mouse.h"
 #include "Player.h"
 //#include "SDL.h"
@@ -8,6 +7,7 @@ InputManager::InputManager()
 {
 	keyboard = new Keyboard();
 	mouse = new Mouse();
+	getKeyPressed == EngineConfig::PlayerInput::NoKeyPressed;
 }
 
 InputManager::~InputManager()
@@ -18,12 +18,23 @@ InputManager::~InputManager()
 	mouse = nullptr;
 }
 
-void InputManager::GetKey(IEntity* player)
+void InputManager::GetKey(IEntity* player, int rotation, int x, int y)
 {
-	player->SetMovementInput(keyboard->GetKeyDown());
+	keyboard->GetKeyDown();
+	getKeyPressed = keyboard->GetKeyDown();
 }
 
 bool InputManager::QuitApplication()
 {
 	return keyboard->GetEscapePressed();
+}
+
+void InputManager::GetMousePosition(int x, int y)
+{
+	mouse->GetMousePosition(x, y);
+}
+
+EngineConfig::PlayerInput InputManager::GetInput()
+{
+	return keyboard->GetKeyDown();
 }

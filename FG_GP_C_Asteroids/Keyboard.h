@@ -1,7 +1,7 @@
 #pragma once
 #include "SDL.h"
 #include <vector>
-
+#include "EngingConfig.h"
 class Player;
 class Keyboard
 {
@@ -9,31 +9,25 @@ public:
 	Keyboard();
 	~Keyboard();
 
-	enum PlayerInput
-	{
-		NoKeyPressed,
-		PlayerForward,
-		PlayerRotateLeft,
-		PlayerRotateRight,
-		PlayerFireWeapon
-	};
+
 
 	bool GetEscapePressed();
-	PlayerInput GetKeyDown();
-	bool checkForwardPressed();
-	bool checkRotateLeftPressed();
-	bool checkRootateRightPressed();
+	EngineConfig::PlayerInput GetKeyDown();
+	int checkForwardPressed(int x, int y);
+	int checkRotateLeftPressed(int rotateLeft);
+	int checkRootateRightPressed(int rotateRight);
 	bool checkFireWeaponPressed();
-
 	bool wPressed = false;
 	bool aPressed = false;
 	bool dPressed = false;
 	bool spacePressed = false;
 private:
 	bool SetEscapePressed();
-	void SetKeyDown();
+	EngineConfig::PlayerInput SetKeyDown();
 	bool escapePressed;
 	const Uint8* keystates = SDL_GetKeyboardState(NULL); // borrowed the InputCode in main
-	SDL_Scancode buttonPressed;
+	//SDL_Scancode buttonPressed;
+	EngineConfig::PlayerInput e_keyPressed;
+
 };
 

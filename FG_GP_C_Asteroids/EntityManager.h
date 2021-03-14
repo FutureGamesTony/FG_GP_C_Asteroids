@@ -5,6 +5,7 @@
 class Asteroid;
 class Player;
 class CollisionManager;
+
 class EntityManager 
 {
 public:
@@ -17,18 +18,18 @@ public:
 	Asteroid* ast;
 	EntityManager* GetEntityManager();
 	void CreatePlayer();
-	void CreateAsteroid();
+	void CreateAsteroid(EngineConfig::EntityType entity, Circle circle, ICollider* collider, ISprite* sprite, Position position, Size size);
 	void CreateBullet();
 	void CreateEnteties();
-
+	void MovePlayer();
 private:
 	void SetEnteties();
 	std::vector<IEntity*>m_enteties;
-	Entity_Type entityType;
+	EngineConfig::EntityType entityType;
 	std::vector<ISprite*> sprites; 
 	Player* m_player;
+	Asteroid* m_asteroid;
 	std::vector<Asteroid*> m_asteroids; //asteroids will almost never be alone so created a vector. 
-	ICollider* collider; 
-	SDL_Surface* image;
+
 };
 

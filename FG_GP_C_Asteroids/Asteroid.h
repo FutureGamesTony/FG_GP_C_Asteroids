@@ -8,11 +8,11 @@ class AsteroidCollider;
 class ICollider;
 class ISprite;
 class AsteroidSprite;
-
+class EntityType;
 class Asteroid : public IEntity 
 {
 public:
-	Asteroid();
+	Asteroid(EngineConfig::EntityType entityType, Circle circle, ICollider* collider, ISprite* sprite, Position position, Size size);
 	~Asteroid();
 
 	void Split();
@@ -23,7 +23,7 @@ public:
 	int getXvelocity();
 	int getYvelocity();
 	int getSize();
-	void CreateEntity(Entity_Type entityType, SDL_Window* window, SDL_Renderer* renderer, int renderIndex, Uint32 renderFlags,
+	void CreateEntity(EngineConfig::EntityType entityType, SDL_Window* window, SDL_Renderer* renderer, int renderIndex, Uint32 renderFlags,
 		ISprite* sprite, ICollider* collider, SDL_Surface* image, char* spriteFilePath, Size size, Circle circle, Position position, Movement movementInput) override;
 	void UpdateMovement(float moveX, float moveY, float xPos, float yPos) override;
 	ICollider* GetCollider() override;
@@ -36,22 +36,19 @@ public:
 	int velocityX;
 	int velocityY;
 	virtual void CreateSprite(SDL_Renderer* renderer) override;
-
+	EngineConfig::EntityType GetEntityType() override;
 
 private:
-	Entity_Type m_asteroid_Entity = Entity_Type::Asteroid_Entity;
-	void CreateAsteroid(Entity_Type &entityType, SDL_Window* window, SDL_Renderer* renderer, int renderIndex,
+	EngineConfig::EntityType m_asteroid_Entity;
+	void CreateAsteroid(EngineConfig::EntityType entityType, SDL_Window* window, SDL_Renderer* renderer, int renderIndex,
 						Uint32 renderFlags, ISprite* asteroidSprite, ICollider* asteroidCollider, 
 						SDL_Surface* surface, char* spriteFilePath, Circle circle, Position position, Movement movement);
 	std::string filePath = "assets/AsteroidLarge.png";
-	AsteroidSprite* m_asteroidSprite;
-	AsteroidCollider* m_asteroidCollider;
-	Position position;
-	Movement movement;
-	Size size;
-	// Inherited via IEntity
-	Movement SetMovementInput(Keyboard::PlayerInput moveCommand) override;
-
-	// Inherited via IEntity
+	ISprite* m_asteroidSprite;
+	ICollider* m_asteroidCollider;
+	Position m_position;
+	Movement m_movement;
+	Size m_size;
+	Movement SetMovementInput(EngineConfig::PlayerInput moveCommand) override;
 };
 

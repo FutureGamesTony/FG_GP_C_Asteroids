@@ -7,28 +7,33 @@
 #include "ISprite.h"
 #include "SDL.h"
 #include "SDL_image.h"
-Asteroid::Asteroid()
+Asteroid::Asteroid(EngineConfig::EntityType entityType, Circle circle, ICollider* collider, ISprite* sprite, Position position, Size size)
 {
+	m_asteroidSprite = sprite;
+
 	//path = filePath.c_str();
-
-
+	m_asteroid_Entity = entityType;
+	circleCollider = circle;
+	m_asteroidCollider = collider;
+	m_movement = { 0,0 };
+	m_position = position;
+	m_size = size;
+	velocityX = 0;
+	velocityY = 0;
 	//m_asteroidCollider = new AsteroidCollider(Asteroid_Entity, collisionManager, size, position, movement, circleCollider);
 }
 Asteroid::~Asteroid()
 {
-	delete m_asteroidSprite;
-	m_asteroidSprite = nullptr;
-	delete m_asteroidCollider;
-	m_asteroidCollider = nullptr;
+
 }
 int Asteroid::getXpos()
 {
-	return this->position.xPosition;
+	return this->m_position.x;
 }
 
 int Asteroid::getYpos()
 {
-	return this->position.yPosition;
+	return this->m_position.y;
 }
 
 int Asteroid::getXvelocity()
@@ -43,10 +48,10 @@ int Asteroid::getYvelocity()
 
 int Asteroid::getSize()
 {
-	return this->size.height;
+	return this->m_size.height;
 }
 
-void Asteroid::CreateEntity(Entity_Type entityType, SDL_Window* window, SDL_Renderer* renderer, int renderIndex, Uint32 renderFlags, ISprite* sprite, ICollider* collider, SDL_Surface* image, char* spriteFilePath, Size size, Circle circle, Position position, Movement movementInput)
+void Asteroid::CreateEntity(EngineConfig::EntityType entityType, SDL_Window* window, SDL_Renderer* renderer, int renderIndex, Uint32 renderFlags, ISprite* sprite, ICollider* collider, SDL_Surface* image, char* spriteFilePath, Size size, Circle circle, Position position, Movement movementInput)
 {
 	CreateAsteroid(entityType, window, renderer, renderIndex, renderFlags, sprite, collider, image, spriteFilePath, circle, position, movementInput);
 }
@@ -57,42 +62,47 @@ void Asteroid::UpdateMovement(float moveX, float moveY, float xPos, float yPos)
 
 ICollider* Asteroid::GetCollider()
 {
-	return dynamic_cast<AsteroidCollider*>(m_asteroidCollider);
+	return m_asteroidCollider;
 }
 
 ISprite* Asteroid::GetSprite()
 {
-	return dynamic_cast<AsteroidSprite*>(m_asteroidSprite);
+	return m_asteroidSprite;
 }
 
 Size Asteroid::SetSize()
 {
-	return size;
+	return m_size;
 }
 
 Position Asteroid::SetPosition()
 {
-	return position;
+	return m_position;
 }
 
 void Asteroid::Update()
 {
 }
 
-void Asteroid::CreateAsteroid(Entity_Type& entityType, SDL_Window* window, SDL_Renderer* renderer, int renderIndex, Uint32 renderFlags, ISprite* asteroidSprite, ICollider* asteroidCollider, SDL_Surface* surface, char* spriteFilePath, Circle circle, Position position, Movement movement)
+void Asteroid::CreateAsteroid(EngineConfig::EntityType entityType, SDL_Window* window, SDL_Renderer* renderer, int renderIndex, Uint32 renderFlags, ISprite* asteroidSprite, ICollider* asteroidCollider, SDL_Surface* surface, char* spriteFilePath, Circle circle, Position position, Movement movement)
 {
 
-	asteroidSprite = dynamic_cast<AsteroidSprite*>(m_asteroidSprite);
+	asteroidSprite = m_asteroidSprite;
 	entityType = m_asteroid_Entity;
 }
 
-Movement Asteroid::SetMovementInput(Keyboard::PlayerInput moveCommand)
+Movement Asteroid::SetMovementInput(EngineConfig::PlayerInput moveCommand)
 {
-	return movement;
+	return m_movement;
 }
 
 void Asteroid::CreateSprite(SDL_Renderer* renderer)
 {
-	m_asteroidSprite = new AsteroidSprite(renderer);
+	//m_asteroidSprite = new AsteroidSprite(renderer);
+}
+
+EngineConfig::EntityType Asteroid::GetEntityType()
+{
+	return m_asteroid_Entity;
 }
 

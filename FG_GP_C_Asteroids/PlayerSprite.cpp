@@ -3,9 +3,12 @@
 #include "SDL.h"
 #include "SDL_image.h"
 
-PlayerSprite::PlayerSprite()
+PlayerSprite::PlayerSprite(SDL_Renderer* renderer)
 {
+	//sourceRect = { 640, 640, 32, 32 };
+	m_destinationRect = { 640,360,32,32 };
 	
+	DrawSprite(renderer);
 }
 
 PlayerSprite::~PlayerSprite()
@@ -23,8 +26,11 @@ int PlayerSprite::CreateSprite()
 SDL_Texture* PlayerSprite::DrawSprite(SDL_Renderer* renderer)
 {
 
-	playerTex = SDL_CreateTextureFromSurface(renderer, IMG_Load(GetFilepath()));
-	SDL_FreeSurface(IMG_Load(GetFilepath()));
+	if (playerTex != SDL_CreateTextureFromSurface(renderer, IMG_Load(GetFilepath())))
+	{
+		playerTex = SDL_CreateTextureFromSurface(renderer, IMG_Load(GetFilepath()));
+		SDL_FreeSurface(IMG_Load(GetFilepath()));
+	}
 	return playerTex;
 }
 
@@ -37,12 +43,14 @@ void PlayerSprite::RenderSprite(SDL_Renderer* renderer, SDL_Texture* sprite)
 {
 	//SDL_RenderCopy(renderer, sprite, NULL, GetDestRect());
 	//i++;
-	SDL_RenderCopyEx(renderer, sprite, NULL, GetDestRect(), degrees, NULL, SDL_FLIP_VERTICAL);
+	SDL_RenderCopyEx(renderer, sprite, NULL, GetDestRect(), degrees, NULL, SDL_FLIP_NONE);
 
 }
 //int i = 0;
-void PlayerSprite::ModifyRects()
+void PlayerSprite::ModifyRects(int rotation, int x, int y)
 {
+	ModifyDegrees(rotation);
+	SetDestinationRect(x, y);
 	//i++;
 	//sourceRect.h = 16;
 	//sourceRect.w = 16;
@@ -57,20 +65,39 @@ void PlayerSprite::ModifyDegrees(int newValue)
 	degrees = newValue;
 }
 
-SDL_Rect* PlayerSprite::GetSourceRect()
+SDL_Rect PlayerSprite::GetSourceRect()
 {
-	return &sourceRect;
+	return m_sourceRect;
 }
 
 SDL_Rect* PlayerSprite::GetDestRect()
 {
-	return &destinationRect;
+	return &m_destinationRect;
+}
+
+void PlayerSprite::SetDestinationRect(float x, float y)
+{
+	//GetDestRect();
+	m_destinationRect.x = x;
+	m_destinationRect.y = y;
 }
 
 
 const char* PlayerSprite::GetFilepath()
 {
 	return m_playerPath.c_str();
+}
+
+Position PlayerSprite::SetSpritePosition(Position destinationRect)
+{
+	m_destinationRect.x = destinationRect.x;
+	m_destinationRect.y = destinationRect.y;
+	return destinationRect;
+}
+
+EngineConfig::EntityType PlayerSprite::GetEntityType()
+{
+	return m_playerEntity;
 }
 
 

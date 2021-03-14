@@ -1,13 +1,13 @@
 #pragma once
 #include "ICollider.h"
-
+#include "EngingConfig.h"
 class PlayerCollider : public ICollider
 {
 public:// LazyFoo 
-    PlayerCollider(Entity_Type entity_type, Size size, Position setPosition, Movement setMovement, SDL_Rect* collider);
+    PlayerCollider(EngineConfig::EntityType entity_type, Size size, Position setPosition, Movement setMovement, SDL_Rect* collider);
     ~PlayerCollider();
     //Initializes the variables
-	void CreateCollider(Entity_Type entity_type, Size size, Position setPosition, Movement setMovement, SDL_Rect* collider, Circle circleCollider) override;
+	void CreateCollider(EngineConfig::EntityType entity_type, Size size, Position setPosition, Movement setMovement, SDL_Rect* collider, Circle circleCollider) override;
 
     //Takes key presses and adjusts the square's velocity
     void handle_input();

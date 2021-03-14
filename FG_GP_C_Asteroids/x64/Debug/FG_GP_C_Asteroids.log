@@ -1,15 +1,38 @@
-﻿  Player.cpp
-C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(44,2): warning C4091:  'static ': ignored on left of 'Player' when no variable is declared
-C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(24,29): warning C4553:  '==': result of expression not used; did you intend '='?
-C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(25,27): warning C4553:  '==': result of expression not used; did you intend '='?
-C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(37,29): warning C4553:  '==': result of expression not used; did you intend '='?
-C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(38,27): warning C4553:  '==': result of expression not used; did you intend '='?
-C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(48,36): warning C4244:  '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(49,36): warning C4244:  '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(52,87): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(52,67): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(66,85): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(66,65): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(81,47): warning C4244:  '+=': conversion from 'float' to 'int', possible loss of data
-C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(82,44): warning C4244:  '+=': conversion from 'float' to 'int', possible loss of data
-  FG_GP_C_Asteroids.vcxproj -> C:\Users\Johan\Documents\GitHub\FG_GP_C_Asteroids\FG_GP_C_Asteroids\x64\Debug\FG_GP_C_Asteroids.exe
+﻿  Asteroid.cpp
+  AsteroidCollider.cpp
+  AsteroidSprite.cpp
+C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\AsteroidSprite.cpp(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Bullet.cpp
+  BulletSprite.cpp
+  CollisionManager.cpp
+  DopeAssEngine.cpp
+C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(49,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
+  DrawWindow.cpp
+  EntityManager.cpp
+C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(49,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
+C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\EntityManager.cpp(67,3): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  InputManager.cpp
+C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(49,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
+C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\InputManager.cpp(10,16): warning C4553: '==': result of expression not used; did you intend '='?
+  Keyboard.cpp
+C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(49,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
+C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Keyboard.cpp(30,26): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+  Player.cpp
+C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(49,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
+C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(60,64): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(60,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(60,40): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.cpp(60,28): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  PlayerSprite.cpp
+C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\PlayerSprite.cpp(53,24): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\PlayerSprite.cpp(53,21): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\PlayerSprite.cpp(81,24): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\PlayerSprite.cpp(82,24): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  RenderManager.cpp
+  SpriteManager.cpp
+C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\Player.h(49,2): warning C4091: 'static ': ignored on left of 'Player' when no variable is declared
+  main.cpp
+  Generating Code...
+C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\PlayerSprite.cpp(24): warning C4715: 'PlayerSprite::CreateSprite': not all control paths return a value
+C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\AsteroidSprite.cpp(17): warning C4715: 'AsteroidSprite::CreateSprite': not all control paths return a value
+  FG_GP_C_Asteroids.vcxproj -> C:\Programming\FG\FG_GP_C_Asteroids\FG_GP_C_Asteroids\x64\Debug\FG_GP_C_Asteroids.exe

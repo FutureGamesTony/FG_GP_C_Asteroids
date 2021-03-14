@@ -17,6 +17,7 @@ struct SDL_Texture;
 class RenderManager
 {
 public:
+	
 	RenderManager(EntityManager* entityManager);
 	~RenderManager();
 	bool InitializeWidow();
@@ -30,6 +31,8 @@ public:
 	void DrawAsteroids(AsteroidSprite asteroid);
 	void DrawSprites();
 	void RenderColliders();
+	void UpdateSprite(ISprite* sprite, int rotation, int x, int y);
+	std::vector<ISprite*> GetSprites();
 	SDL_Renderer* m_renderer = nullptr; // only render pointer, when used in other places, this should be passed in.
 private:
 	void SetSprite();
@@ -53,5 +56,6 @@ private:
 	Renderer* m_createRenderer = nullptr;
 	//EntityManager* m_entityManager = nullptr;
 	const char* m_windowTitle = "Window Title"; //TODO: Destroy pointer array
+	
 };
 

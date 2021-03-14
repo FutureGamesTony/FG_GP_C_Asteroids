@@ -1,10 +1,12 @@
 #pragma once
 #include "ICollider.h"
+#include "EngingConfig.h"
+#include "IEntity.h"
 #include <string>
 #include <vector>
 #include <cmath>
 struct SDL_Rect;
-enum Entity_Type;
+class EntityType;
 class CollisionManager
 {
 public:
@@ -24,7 +26,7 @@ public:
     //Calculates distance squared between two points
     double DistanceSquared(int x1, int y1, int x2, int y2);
 private:
-    std::vector<Entity_Type> s_entityTypes;
+    std::vector<EngineConfig::EntityType> s_entityTypes;
     //The sides of the rectangles
     int leftA, leftB;
     int rightA, rightB;

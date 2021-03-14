@@ -1,9 +1,11 @@
 #include "Player.h"
 #include "Keyboard.h"
 #include <iostream>
+#include <math.h>
 using std::cout;
 Keyboard::Keyboard()
 {
+	
 }
 
 Keyboard::~Keyboard()
@@ -17,33 +19,35 @@ bool Keyboard::GetEscapePressed()
 	return escapePressed;
 }
 
-Keyboard::PlayerInput Keyboard::GetKeyDown()
+EngineConfig::PlayerInput Keyboard::GetKeyDown()
 {
-	SetKeyDown();
-	if (wPressed) return PlayerForward;
-	else if (aPressed) return PlayerRotateLeft;
-	else if (dPressed) return PlayerRotateRight;
-	else if (spacePressed) return PlayerFireWeapon;
-	else return NoKeyPressed;
+	//SetKeyDown();
+	return SetKeyDown();
 }
-bool Keyboard::checkForwardPressed()
+int Keyboard::checkForwardPressed(int x, int y)
 {
-	return wPressed;
+	
+	if (x != 0) return round(y / x);
+	else return 0;
 }
-bool Keyboard::checkRotateLeftPressed()
+int Keyboard::checkRotateLeftPressed(int rotation)
 {
-	return aPressed;
+	rotation--;
+	if (rotation < 0)rotation = 360;
+	return rotation;
 }
-bool Keyboard::checkRootateRightPressed()
+int Keyboard::checkRootateRightPressed(int rotation)
 {
-	return dPressed;
+	rotation++;
+	if (rotation > 360) rotation = 0;
+	return rotation;
 }
 bool Keyboard::checkFireWeaponPressed()
 {
 	return spacePressed;
 }
 
-void Keyboard::SetKeyDown()
+EngineConfig::PlayerInput Keyboard::SetKeyDown()
 {
 	SDL_Event e;
 	while (SDL_PollEvent(&e))
@@ -53,34 +57,49 @@ void Keyboard::SetKeyDown()
 			switch (e.key.keysym.sym)
 			{
 			case SDLK_w:
-				cout << "W pressed\n";
+				e_keyPressed = EngineConfig::PlayerInput::PlayerForward;
+				//checkForwardPressed(x, y);
+				//cout << "W pressed\n";
 				wPressed = true;
+				return e_keyPressed;
 				break;
 
 			case SDLK_a:
-				cout << "A pressed\n";
+				//cout << "A pressed\n";
+				e_keyPressed = EngineConfig::PlayerInput::PlayerRotateLeft;
+				//rotation = checkRotateLeftPressed(rotation);
 				aPressed = true;
+				return e_keyPressed;
 				break;
 
 			case SDLK_s:
-				cout << "S pressed\n";
+				e_keyPressed = EngineConfig::PlayerInput::PlayerBreak;
+				//cout << "S pressed\n";
 				//nothing should happen
+				return e_keyPressed;
 				break;
 
 			case SDLK_d:
-				cout << "D pressed - :(\n";
+				//rotation = checkRootateRightPressed(rotation);
+				//cout << "D pressed - :(\n";
+				e_keyPressed = EngineConfig::PlayerInput::PlayerRotateRight;
 				dPressed = true;
+				return e_keyPressed;
 				break;
 
 			case SDLK_SPACE:
-				cout << "Space pressed - pew pew\n";
+				e_keyPressed = EngineConfig::PlayerInput::PlayerFireWeapon;
+				//cout << "Space pressed - pew pew\n";
 				spacePressed = true;
+				return e_keyPressed;
 				break;
 
 			case SDLK_ESCAPE:
+				e_keyPressed = EngineConfig::PlayerInput::PlayerQuit;
 				cout << "Escape pressed\n";
 				//QuitGame()
 				escapePressed = true;
+				return e_keyPressed;
 				break;
 
 			case SDLK_F11:
@@ -94,39 +113,42 @@ void Keyboard::SetKeyDown()
 		}
 		if (e.type == SDL_KEYUP)
 		{
-			switch (e.key.keysym.sym)
-			{
-			case SDLK_w:
-				cout << "W released\n";
-				wPressed = false;
-				break;
+			e_keyPressed = EngineConfig::PlayerInput::NoKeyPressed;
+			return e_keyPressed;
+			//switch (e.key.keysym.sym)
+			//{
+			//case SDLK_w:
+			//	//cout << "W released\n";
+			//	wPressed = false;
+			//	break;
 
-			case SDLK_a:
-				cout << "A released\n";
-				aPressed = false;
-				break;
+			//case SDLK_a:
+			//	//cout << "A released\n";
+			//	aPressed = false;
+			//	break;
 
-			case SDLK_s:
-				cout << "S released\n";
-				break;
+			//case SDLK_s:
+			//	//cout << "S released\n";
+			//	break;
 
-			case SDLK_d:
-				cout << "D released\n";
-				dPressed = false;
-				break;
+			//case SDLK_d:
+			//	//cout << "D released\n";
+			//	dPressed = false;
+			//	break;
 
-			case SDLK_SPACE:
-				cout << "Space released\n";
-				spacePressed = false;
-				break;
+			//case SDLK_SPACE:
+			//	//cout << "Space released\n";
+			//	spacePressed = false;
+			//	break;
 
-			case SDLK_ESCAPE:
-				cout << "Escape released\n";
-				escapePressed = false;
-				break;
-			default:
-				break;
-			}
+			//case SDLK_ESCAPE:
+			//	//cout << "Escape released\n";
+			//	escapePressed = false;
+			//	break;
+			//default:
+			//	break;
+			//}
 		}
 	}
+	return e_keyPressed;
 }

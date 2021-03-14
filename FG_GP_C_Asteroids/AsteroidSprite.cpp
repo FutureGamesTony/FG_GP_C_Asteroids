@@ -2,6 +2,7 @@
 #include "SDL.h";
 AsteroidSprite::AsteroidSprite(SDL_Renderer* renderer)
 {
+	sourceRect = { 0, 0, 32, 32 };
 	DrawSprite(renderer);
 }
 AsteroidSprite::~AsteroidSprite()
@@ -15,8 +16,9 @@ int AsteroidSprite::CreateSprite()
 	}
 }
 
-void AsteroidSprite::ModifyRects()
+void AsteroidSprite::ModifyRects(int rotation, int x, int y)
 {
+
 }
 
 void AsteroidSprite::RenderSprite(SDL_Renderer* renderer, SDL_Texture* sprite)
@@ -42,10 +44,27 @@ const char* AsteroidSprite::GetFilepath()
 
 SDL_Rect* AsteroidSprite::GetDestRect()
 {
-	return &destinationRect;
+	return &m_destinationRect;
 }
 
 SDL_Texture* AsteroidSprite::GetSprite()
 {
 	return m_enemyTex;
+}
+
+Position AsteroidSprite::SetSpritePosition(Position destinationRect)
+{
+	m_destinationRect.x = destinationRect.x;
+	m_destinationRect.y = destinationRect.y;
+	return destinationRect;
+}
+
+EngineConfig::EntityType AsteroidSprite::GetEntityType()
+{
+	return m_asteroidEntity;
+}
+
+SDL_Rect AsteroidSprite::GetSourceRect()
+{
+	return sourceRect;
 }
