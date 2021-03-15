@@ -125,33 +125,36 @@ void DopeAssEngine::UpdatePlayerDebug()
 Position DopeAssEngine::UpdatePlayerPosition(int x, int y, int rotation) // Move in rotation not working correctly. 
 {
     
-    playerMovement.x = cos(rotation); 
-    playerMovement.y = sin(rotation);
-    
-    moveX += playerMovement.x;
-    moveY += playerMovement.y;
+    //playerMovement.x = cos(rotation); 
+    //playerMovement.y = sin(rotation);
+    playerMovement.x = cos((rotation + 270) * 3.14159265 / 180) * 3;
+    playerMovement.y = sin((rotation + 90)* 3.14159265 / 180) * -3;
+    moveX = playerMovement.x;
+    moveY = playerMovement.y;
     playerPosition.y += static_cast<int>(playerMovement.y);
-    if (moveX > 1) 
-    {
-        playerPosition.x += static_cast<int>(moveX);
-        moveX -= 1;
-    }
-    if (moveY > 1)
-    {
-        playerPosition.y += static_cast<int>(moveY);
-        moveY -= 1;
-    }
-    if (moveX < -1)
-    {
-        playerPosition.x += static_cast<int>(moveX);
-        moveX += 1;
-    }
-    if (moveY < -1)
-    {
-        playerPosition.y += static_cast<int>(moveY);
-        moveX += 1;
-    }
-
+    playerPosition.x += playerMovement.x;
+    playerPosition.y += playerMovement.y;
+    //if (moveX > 1) 
+    //{
+    //    playerPosition.x += static_cast<int>(moveX);
+    //    moveX -= 1;
+    //}
+    //if (moveY > 1)
+    //{
+    //    playerPosition.y += static_cast<int>(moveY);
+    //    moveY -= 1;
+    //}
+    //if (moveX < -1)
+    //{
+    //    playerPosition.x += static_cast<int>(moveX);
+    //    moveX += 1;
+    //}
+    //if (moveY < -1)
+    //{
+    //    playerPosition.y += static_cast<int>(moveY);
+    //    moveX += 1;
+    //}
+    std::cout << "PlayerMovement: " << playerMovement.x << ", " << playerMovement.y << "\n";
     return playerPosition;
 }
 
