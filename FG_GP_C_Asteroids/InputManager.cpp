@@ -24,11 +24,6 @@ void InputManager::GetKey(IEntity* player, int rotation, int x, int y)
 	getKeyPressed = keyboard->GetKeyDown();
 }
 
-bool InputManager::QuitApplication()
-{
-	return keyboard->GetEscapePressed();
-}
-
 void InputManager::GetMousePosition(int x, int y)
 {
 	mouse->GetMousePosition(x, y);

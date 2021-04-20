@@ -47,10 +47,8 @@ bool DopeAssEngine::InitEngine()
     InitializeEntityManager();
     InitializeRenderManager();
     InitializeCollisionManager();
-
     InitializeSprites();
     InitializeInput();
-
     m_sprites = m_renderManager->GetSprites();
     return m_renderManager != nullptr && m_inputManager != nullptr;
     return true;
@@ -58,43 +56,31 @@ bool DopeAssEngine::InitEngine()
 
 bool DopeAssEngine::UpdateEngine()
 {
-    keyPressed = m_inputManager->GetInput();
-    switch (keyPressed)
-    {
-    case EngineConfig::PlayerInput::NoKeyPressed:
-        break;
-    case EngineConfig::PlayerInput::PlayerForward:
-        UpdatePlayerPosition(playerPosition.x, playerPosition.y, playerRotation);
-        break;
-    case EngineConfig::PlayerInput::PlayerRotateLeft:
-        playerRotation = UpdatePlayerRotation(playerRotation);
-        break;
-    case EngineConfig::PlayerInput::PlayerRotateRight:
-        playerRotation = UpdatePlayerRotation(playerRotation);
-        break;
-    case EngineConfig::PlayerInput::PlayerBreak:
-        break;
-    case EngineConfig::PlayerInput::PlayerFireWeapon:
-        break;
-    case EngineConfig::PlayerInput::PlayerQuit:
-        break;
-    default:
-        break;
-    }
     if (m_playerSprite == nullptr)
     {
         for (ISprite* playerSprite : m_sprites) 
         {
+
             if (playerSprite->GetEntityType() == EngineConfig::EntityType::Player_Entity) m_playerSprite = playerSprite;
         }
     }
-    if (playerPosition.x > EngineConfig::WIDTH) playerPosition.x = 0;
-    if (playerPosition.x < 0) playerPosition.x = EngineConfig::WIDTH;
-    if (playerPosition.y > EngineConfig::HEIGHT) playerPosition.y = 0;
-    if (playerPosition.y < 0) playerPosition.y = EngineConfig::HEIGHT;
-    
-    if (playerRotation > 360) playerRotation = playerRotation - 360;
-    if (playerRotation < 0) playerRotation = playerRotation + 360;
+    for (IEntity* entity : m_entities)
+    {
+        entityType = entity->GetEntityType();
+        switch (entityType)
+        {
+        case EngineConfig::EntityType::Player_Entity:
+            break;
+        case EngineConfig::EntityType::Bullet_Entity:
+            break;
+        case EngineConfig::EntityType::Asteroid_Entity:
+            break;
+        default:
+            break;
+        }
+
+    EngineConfig::PlayerInput input = m_inputManager->GetInput();
+    m_entityManager->UpdatePlayer(input);
     m_renderManager->UpdateSprite(m_playerSprite, playerRotation, playerPosition.x, playerPosition.y);
 
     m_renderManager->UpdateWindow();
@@ -122,39 +108,36 @@ void DopeAssEngine::UpdatePlayerDebug()
 {
 }
 
-Position DopeAssEngine::UpdatePlayerPosition(int x, int y, int rotation) // Move in rotation not working correctly. 
+void DopeAssEngine::GetInput()
 {
-    
-    //playerMovement.x = cos(rotation); 
-    //playerMovement.y = sin(rotation);
-    playerMovement.x = cos((rotation + 270) * 3.14159265 / 180) * 3;
-    playerMovement.y = sin((rotation + 90)* 3.14159265 / 180) * -3;
-    moveX = playerMovement.x;
-    moveY = playerMovement.y;
-    playerPosition.y += static_cast<int>(playerMovement.y);
-    playerPosition.x += playerMovement.x;
-    playerPosition.y += playerMovement.y;
-    //if (moveX > 1) 
-    //{
-    //    playerPosition.x += static_cast<int>(moveX);
-    //    moveX -= 1;
-    //}
-    //if (moveY > 1)
-    //{
-    //    playerPosition.y += static_cast<int>(moveY);
-    //    moveY -= 1;
-    //}
-    //if (moveX < -1)
-    //{
-    //    playerPosition.x += static_cast<int>(moveX);
-    //    moveX += 1;
-    //}
-    //if (moveY < -1)
-    //{
-    //    playerPosition.y += static_cast<int>(moveY);
-    //    moveX += 1;
-    //}
-    std::cout << "PlayerMovement: " << playerMovement.x << ", " << playerMovement.y << "\n";
+    keyPressed = m_inputManager->GetInput();
+    switch (keyPressed)
+    {
+    case EngineConfig::PlayerInput::NoKeyPressed:
+        break;
+    case EngineConfig::PlayerInput::PlayerForward:
+        //UpdatePlayerPosition(playerPosition.x, playerPosition.y, playerRotation);
+        break;
+    case EngineConfig::PlayerInput::PlayerRotateLeft:
+        //playerRotation = UpdatePlayerRotation(playerRotation);
+        break;
+    case EngineConfig::PlayerInput::PlayerRotateRight:
+        //playerRotation = UpdatePlayerRotation(playerRotation);
+        break;
+    case EngineConfig::PlayerInput::PlayerBreak:
+        break;
+    case EngineConfig::PlayerInput::PlayerFireWeapon:
+        break;
+    case EngineConfig::PlayerInput::PlayerQuit:
+        break;
+    default:
+        break;
+    }
+
+}
+
+Position DopeAssEngine::UpdatePosition(int x, int y, int rotation) //Needs calibration
+{
     return playerPosition;
 }
 

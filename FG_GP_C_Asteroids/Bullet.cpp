@@ -56,7 +56,7 @@ Size Bullet::SetSize()
     return Size();
 }
 
-Position Bullet::SetPosition()
+Position Bullet::SetPosition( )
 {
     return Position();
 }

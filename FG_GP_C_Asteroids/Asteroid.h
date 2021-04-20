@@ -25,11 +25,11 @@ public:
 	int getSize();
 	void CreateEntity(EngineConfig::EntityType entityType, SDL_Window* window, SDL_Renderer* renderer, int renderIndex, Uint32 renderFlags,
 		ISprite* sprite, ICollider* collider, SDL_Surface* image, char* spriteFilePath, Size size, Circle circle, Position position, Movement movementInput) override;
-	void UpdateMovement(float moveX, float moveY, float xPos, float yPos) override;
+
 	ICollider* GetCollider() override;
 	ISprite* GetSprite() override;
 	Size SetSize() override;
-	Position SetPosition() override;
+	Position SetPosition( ) override;
 	void Update() override;
 	SDL_Rect* collider = nullptr;
 	Circle circleCollider;
@@ -37,7 +37,7 @@ public:
 	int velocityY;
 	virtual void CreateSprite(SDL_Renderer* renderer) override;
 	EngineConfig::EntityType GetEntityType() override;
-
+	double GetRotation();
 private:
 	EngineConfig::EntityType m_asteroid_Entity;
 	void CreateAsteroid(EngineConfig::EntityType entityType, SDL_Window* window, SDL_Renderer* renderer, int renderIndex,
@@ -50,5 +50,8 @@ private:
 	Movement m_movement;
 	Size m_size;
 	Movement SetMovementInput(EngineConfig::PlayerInput moveCommand) override;
+
+	// Inherited via IEntity
+	virtual Position GetPosition() override;
 };
 

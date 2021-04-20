@@ -22,7 +22,7 @@ class Bullet : public IEntity
 	ICollider* GetCollider() override;
 	ISprite* GetSprite() override;
 	Size SetSize() override;
-	Position SetPosition() override;
+	Position SetPosition( ) override;
 	void Update() override;
 	virtual void CreateSprite(SDL_Renderer* renderer) override;
 	SDL_Rect* collider = nullptr;

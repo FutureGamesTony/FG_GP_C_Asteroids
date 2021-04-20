@@ -56,9 +56,6 @@ void Asteroid::CreateEntity(EngineConfig::EntityType entityType, SDL_Window* win
 	CreateAsteroid(entityType, window, renderer, renderIndex, renderFlags, sprite, collider, image, spriteFilePath, circle, position, movementInput);
 }
 
-void Asteroid::UpdateMovement(float moveX, float moveY, float xPos, float yPos)
-{
-}
 
 ICollider* Asteroid::GetCollider()
 {
@@ -75,7 +72,7 @@ Size Asteroid::SetSize()
 	return m_size;
 }
 
-Position Asteroid::SetPosition()
+Position Asteroid::SetPosition( )
 {
 	return m_position;
 }
@@ -96,6 +93,11 @@ Movement Asteroid::SetMovementInput(EngineConfig::PlayerInput moveCommand)
 	return m_movement;
 }
 
+Position Asteroid::GetPosition()
+{
+	return Position();
+}
+
 void Asteroid::CreateSprite(SDL_Renderer* renderer)
 {
 
@@ -104,5 +106,10 @@ void Asteroid::CreateSprite(SDL_Renderer* renderer)
 EngineConfig::EntityType Asteroid::GetEntityType()
 {
 	return m_asteroid_Entity;
+}
+
+double Asteroid::GetRotation()
+{
+	return 0.0;
 }
 

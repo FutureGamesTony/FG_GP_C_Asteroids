@@ -12,40 +12,11 @@ Keyboard::~Keyboard()
 {
 }
 
-
-
-bool Keyboard::GetEscapePressed()
-{
-	return escapePressed;
-}
-
 EngineConfig::PlayerInput Keyboard::GetKeyDown()
 {
-	//SetKeyDown();
 	return SetKeyDown();
 }
-int Keyboard::checkForwardPressed(int x, int y)
-{
-	
-	if (x != 0) return round(y / x);
-	else return 0;
-}
-int Keyboard::checkRotateLeftPressed(int rotation)
-{
-	rotation--;
-	if (rotation < 0)rotation = 360;
-	return rotation;
-}
-int Keyboard::checkRootateRightPressed(int rotation)
-{
-	rotation++;
-	if (rotation > 360) rotation = 0;
-	return rotation;
-}
-bool Keyboard::checkFireWeaponPressed()
-{
-	return spacePressed;
-}
+
 
 EngineConfig::PlayerInput Keyboard::SetKeyDown()
 {
@@ -58,48 +29,37 @@ EngineConfig::PlayerInput Keyboard::SetKeyDown()
 			{
 			case SDLK_w:
 				e_keyPressed = EngineConfig::PlayerInput::PlayerForward;
-				wPressed = true;
-				return e_keyPressed;
+				//return e_keyPressed;
 				break;
-
 			case SDLK_a:
 				e_keyPressed = EngineConfig::PlayerInput::PlayerRotateLeft;
-				aPressed = true;
-				return e_keyPressed;
+				//return e_keyPressed;
 				break;
-
 			case SDLK_s:
 				e_keyPressed = EngineConfig::PlayerInput::PlayerBreak;
-				return e_keyPressed;
+				//return e_keyPressed;
 				break;
-
 			case SDLK_d:
 				e_keyPressed = EngineConfig::PlayerInput::PlayerRotateRight;
-				dPressed = true;
-				return e_keyPressed;
+				//return e_keyPressed;
 				break;
-
 			case SDLK_SPACE:
 				e_keyPressed = EngineConfig::PlayerInput::PlayerFireWeapon;
-				spacePressed = true;
-				return e_keyPressed;
+				//return e_keyPressed;
 				break;
-
 			case SDLK_ESCAPE:
 				e_keyPressed = EngineConfig::PlayerInput::PlayerQuit;
 				cout << "Escape pressed\n";
 				//QuitGame()
-				escapePressed = true;
-				return e_keyPressed;
+				//return e_keyPressed;
 				break;
-
 			case SDLK_F11:
 				cout << "F11 pressed\n";
 				break;
-
 			default:
 				break;
 			}
+			return e_keyPressed;
 		}
 		if (e.type == SDL_KEYUP)
 		{

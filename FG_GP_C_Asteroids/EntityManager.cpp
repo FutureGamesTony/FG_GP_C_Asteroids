@@ -4,8 +4,6 @@
 using std::vector;
 EntityManager::EntityManager()
 {
-	CreatePlayer();
-	//CreateAsteroid();
 	
 }
 
@@ -35,14 +33,11 @@ void EntityManager::Func()
 
 }
 
-EntityManager* EntityManager::GetEntityManager()
-{
-	return this;
-}
-
 void EntityManager::CreatePlayer()
 {
-	m_player = new Player();
+	Position position = { EngineConfig::HEIGHT / 2, EngineConfig::WIDTH / 2 };
+	double rotation = 0.0;
+	m_player = new Player(entityType, sprites[0], colliders[0], position, rotation);
 }
 
 void EntityManager::CreateAsteroid(EngineConfig::EntityType entity,  Circle circle, ICollider* collider, ISprite* sprite, Position position, Size size)
@@ -69,6 +64,20 @@ void EntityManager::CreateEnteties()
 			m_enteties.push_back(dynamic_cast<IEntity*>(m_asteroids[i]));
 		}
 	}
+}
+
+void EntityManager::UpdateEnteties()
+{
+}
+
+void EntityManager::UpdatePlayer(EngineConfig::PlayerInput playerInput)
+{
+
+	m_player->SetMovementInput(playerInput);
+}
+
+void EntityManager::UpdateAsteroids()
+{
 }
 
 void EntityManager::SetEnteties()

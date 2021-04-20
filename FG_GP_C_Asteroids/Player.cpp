@@ -2,9 +2,16 @@
 #include "SDL_image.h"
 #include "PlayerSprite.h"
 #include "PlayerCollider.h"
-#include "Keyboard.h"
-Player::Player()
+
+Player::Player(EngineConfig::EntityType entityType, ISprite* playerSprite, ICollider* playerCollider, Position position, double rotation)
 {
+	playerEntity = entityType;
+	m_playerSprite = playerSprite;
+	m_playerCollider = playerCollider;
+	m_playerRotation = rotation;
+	keyPressed = EngineConfig::PlayerInput::NoKeyPressed;
+	m_collider = new SDL_Rect();
+	playerMovement = { 0,0 };
     //m_playerSprite = new PlayerSprite();
     //m_playerCollider = new PlayerCollider(playerEntity, size, position, movement, m_collider);
 }
@@ -14,24 +21,7 @@ Player::~Player()
 
 }
 int degrees = 0;
-void Player::ApplyLeftRotation()
-{
 
-}
-
-void Player::ApplyRightRotation()
-{
-
-}
-
-void Player::ApplyAcceleration()
-{
-
-	
-	movement.x = cos(degrees * M_PI / 1.8);
-	movement.y = sin(degrees * M_PI / 1.8);
-    UpdateMovement(movement.x, movement.y, position.x, position.y);
-}
 
 void Player::FireWeapon()
 {
@@ -53,17 +43,21 @@ Size Player::SetSize()
     return Size();
 }
 
+Position Player::GetPosition()
+{
+	return playerPosition;
+}
+
 Position Player::SetPosition()
 {
-    return Position();
+	return playerPosition;
 }
 
-void Player::UpdateMovement(float moveX, float moveY, float xPos, float yPos)
+double Player::GetRotation()
 {
-
-
-;
+	return playerRotation;
 }
+
 
 ISprite* Player::GetSprite()
 {
@@ -91,6 +85,39 @@ void Player::CreatePlayer(EngineConfig::EntityType entityType, SDL_Window* windo
 	entityType = playerEntity;
 }
 
+Position Player::SetPlayerPosition()
+{
+	double moveX = cos(((m_playerRotation + 270.0)) * 3.14159265 / 180) * movementSpeed;
+	double moveY = sin(((m_playerRotation + 90.0)) * 3.14159265 / 180) * -movementSpeed;
+
+	playerPosition.x += moveX;
+	playerPosition.y += moveY;
+
+	if (playerPosition.x > EngineConfig::WIDTH) playerPosition.x = 0;
+	if (playerPosition.x < 0) playerPosition.x = EngineConfig::WIDTH;
+	if (playerPosition.y > EngineConfig::HEIGHT) playerPosition.y = 0;
+	if (playerPosition.y < 0) playerPosition.y = EngineConfig::HEIGHT;
+	if (m_playerRotation > 360) m_playerRotation = m_playerRotation - 360;
+	if (m_playerRotation < 0) m_playerRotation = m_playerRotation + 360;
+	std::cout << "PlayerMovement: " << moveX << ", " << moveY << "\n";
+	return playerPosition;
+}
+
+int Player::SetPlayerRotation()
+{
+	switch (keyPressed)
+	{
+
+	case EngineConfig::PlayerInput::PlayerRotateLeft:
+		m_playerRotation--;
+		break;
+	case EngineConfig::PlayerInput::PlayerRotateRight:
+		m_playerRotation++;
+		break;
+	}
+	return m_playerRotation;
+}
+
 Movement Player::SetMovementInput(EngineConfig::PlayerInput moveCommand)
 {
 	switch (moveCommand)
@@ -98,19 +125,22 @@ Movement Player::SetMovementInput(EngineConfig::PlayerInput moveCommand)
 	case EngineConfig::PlayerInput::NoKeyPressed:
 		break;
 	case EngineConfig::PlayerInput::PlayerForward:
-		ApplyAcceleration();
+		SetPlayerPosition();
 		break;
 	case EngineConfig::PlayerInput::PlayerRotateLeft:
-		ApplyLeftRotation();
+		SetPlayerRotation();
 		break;
 	case EngineConfig::PlayerInput::PlayerRotateRight:
-		ApplyRightRotation();
+		SetPlayerRotation();
+		break;
+	case EngineConfig::PlayerInput::PlayerBreak:
 		break;
 	case EngineConfig::PlayerInput::PlayerFireWeapon:
-		FireWeapon();
+		break;
+	case EngineConfig::PlayerInput::PlayerQuit:
 		break;
 	default:
 		break;
 	}
-    return movement;
+    return playerMovement;
 }

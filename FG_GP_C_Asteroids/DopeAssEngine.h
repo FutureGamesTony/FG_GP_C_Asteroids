@@ -32,14 +32,17 @@ public:
 	void ShutDown();
 	void SpawnAsteroids();
 private:
+	//Initialize engine
 	void InitializeRenderManager();
 	void InitializeEntityManager();
 	void InitializeEnteties(EngineConfig::EntityType entity);
 	void InitializeSprites();
 	void InitializeCollisionManager();
 	void InitializeInput();
+	//Uppdate Engine
 	void UpdatePlayerDebug();
-	Position UpdatePlayerPosition(int x, int y, int rotation);
+	void GetInput();
+	Position UpdatePosition(int x, int y, int rotation);
 	int UpdatePlayerRotation(int rotation);
 	int m_width = 800;
 	int m_height = 600;
@@ -71,7 +74,7 @@ private:
 	EngineConfig::EntityType entityType;
 	Circle circle; 
 	ICollider* collider; 
-	ISprite* sprite; 
+	//ISprite* sprite; 
 	Position position; 
 	Size size;
 	int playerRotation;
@@ -79,7 +82,7 @@ private:
 	Position playerPosition;
 	Movement playerMovement;
 	double  radians = 180 / 3.14;
-	int movementSpeed = 10;
+	int movementSpeed = 3;
 	double moveX = 0.0;
 	double moveY = 0.0;
 
